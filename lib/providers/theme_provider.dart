@@ -12,7 +12,6 @@ class ThemeProvider extends ChangeNotifier {
     bool? cacheTheme = cache.get('theme');
     isDark = cacheTheme ?? false;
       log(cacheTheme.toString());
-    //notifyListeners();
   }
 
   bool get theme => isDark;
