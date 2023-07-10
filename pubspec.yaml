@@ -1,0 +1,81 @@
+name: beautify
+description: A new Flutter project.
+
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+
+  cupertino_icons: ^1.0.2
+  flutter_bloc:
+#  google_fonts:
+  dio:
+#  flutter_stripe:
+  loading_animation_widget:
+  cached_network_image:
+  carousel_slider:
+  bottom_navy_bar:
+  get:
+  flutter_rating_bar:
+  intro_slider:
+  get_storage:
+  share_plus:
+  hive:
+  hive_flutter:
+  lottie:
+  badges:
+  auto_size_text:
+  auto_size_text_field:
+  shared_preferences:
+  image_picker:
+  barcode:
+  flutter_svg:
+  url_launcher:
+  dropdown_button2:
+  flutter_staggered_grid_view:
+  
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator:
+  build_runner:
+
+
+
+
+
+  flutter_lints: ^2.0.0
+  change_app_package_name: ^1.1.0
+  flutter_launcher_icons: "^0.11.0"
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/Logo/Logo.png"  
+
+  
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/Img/
+    - assets/Logo/
+
+
+  
