@@ -1,13 +1,13 @@
+import 'package:beautify/view/onboarding_screen/onboarding_screen.dart';
+import 'package:beautify/view/rootscreen/root.dart';
+import 'package:beautify/viewmodel/initial/initial.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import 'model/controllers/binding/initial_binding.dart';
+import 'model/controllers/duplicate_controller.dart';
 
-import 'Model/controllers/Binding/initial_binding.dart';
-import 'Model/controllers/duplicate_controller.dart';
-import 'View/IntroScreen/intro_screen.dart';
-import 'View/RootScreen/root.dart';
-import 'ViewModel/Initial/initial.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
