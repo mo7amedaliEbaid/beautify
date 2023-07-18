@@ -43,7 +43,7 @@ build_runner:
 
 
 #### features management
-dio:
+dio:     
 image_picker:       
 dropdown_button2:       
 share_plus:     
@@ -58,7 +58,7 @@ intro_slider:
 lottie:     
 badges:     
 auto_size_text:     
-auto_size_text_field:
+auto_size_text_field:    
 barcode:        
 flutter_svg:        
 flutter_staggered_grid_view:        
