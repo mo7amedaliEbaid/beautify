@@ -27,6 +27,7 @@ import 'bloc/checkout_bloc.dart';
 class CheckoutScreen extends StatefulWidget {
   final List<ProductEntity> productList;
   final String totalPrice;
+
   const CheckoutScreen(
       {super.key, required this.productList, required this.totalPrice});
 
@@ -101,7 +102,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               postalController: postalController,
               postalKey: postalKey,
               dropDown: DropdownButtonFormField2(
-                //  buttonWidth: Get.size.width * 0.9,
+                  //  buttonWidth: Get.size.width * 0.9,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15))),
@@ -110,21 +111,28 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     "select country",
                     style: state.textStyle.bodyNormal,
                   ),
-                 dropdownStyleData:DropdownStyleData(maxHeight:Get.size.height * 0.4,decoration: dropDownDecoration(), ) ,
-                 // dropdownDecoration: dropDownDecoration(),
+                  dropdownStyleData: DropdownStyleData(
+                    maxHeight: Get.size.height * 0.4,
+                    decoration: dropDownDecoration(),
+                  ),
+                  // dropdownDecoration: dropDownDecoration(),
                   onChanged: (value) {
                     country = value;
                   },
-                  dropdownSearchData: DropdownSearchData(searchController:searchController,searchInnerWidget:Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: TextField(
-                      controller: searchController,
-                      decoration:
-                      const InputDecoration(hintText: "search here"),
+                  dropdownSearchData: DropdownSearchData(
+                    searchController: searchController,
+                    searchInnerWidgetHeight: 100,
+                    searchInnerWidget: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: TextField(
+                        controller: searchController,
+                        decoration:
+                            const InputDecoration(hintText: "search here"),
+                      ),
                     ),
-                  ),  ),
-                //  searchController: searchController,
-                 /* searchInnerWidget: Padding(
+                  ),
+                  //  searchController: searchController,
+                  /* searchInnerWidget: Padding(
                     padding: const EdgeInsets.all(12),
                     child: TextField(
                       controller: searchController,
@@ -218,7 +226,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                         "Select an address",
                                                     hintStyle:
                                                         textStyle.bodySmall),
-                                                dropdownStyleData: DropdownStyleData(maxHeight: Get.width * 0.6,decoration: dropDownDecoration() ),
+                                                dropdownStyleData:
+                                                    DropdownStyleData(
+                                                        maxHeight:
+                                                            Get.width * 0.6,
+                                                        decoration:
+                                                            dropDownDecoration()),
                                                 isExpanded: true,
                                                 items: addresList,
                                                 onChanged: (value) {

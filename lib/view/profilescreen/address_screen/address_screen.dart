@@ -98,6 +98,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   country = value;
                 },
                 dropdownSearchData: DropdownSearchData(
+                  searchInnerWidgetHeight: 150,
                   searchController: searchController,
                   searchInnerWidget: Padding(
                     padding: const EdgeInsets.all(12),

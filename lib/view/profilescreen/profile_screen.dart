@@ -71,9 +71,9 @@ class ProfileScreen extends StatelessWidget {
                     profileName(
                         textStyle: textStyle,
                         profileController: profileController),
-                    const SizedBox(
+                    /*const SizedBox(
                       height: 10,
-                    ),
+                    ),*/
                     profileEmail(
                         textStyle: textStyle,
                         profileController: profileController)
@@ -237,7 +237,7 @@ class ProfileScreen extends StatelessWidget {
       required CustomColors colors,
       required GestureTapCallback callback}) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15, bottom: 15),
+      padding: const EdgeInsets.only(top: 5, bottom: 5),
       child: Column(
         children: [
           Container(

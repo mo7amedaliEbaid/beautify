@@ -19,9 +19,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_bloc:
-#  google_fonts:
   dio:
-#  flutter_stripe:
   loading_animation_widget:
   cached_network_image:
   carousel_slider:
@@ -41,7 +39,6 @@ dependencies:
   image_picker:
   barcode:
   flutter_svg:
-  url_launcher:
   dropdown_button2:
   flutter_staggered_grid_view:
   

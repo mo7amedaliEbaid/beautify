@@ -111,7 +111,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     color: colors.blackColor,
                   ),
                   onPressed: () {
-                    Share.shareWithResult("");
+                    Share.shareWithResult("mohamed");
                   },
                 ),
               )
