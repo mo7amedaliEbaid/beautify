@@ -131,15 +131,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ),
                     ),
                   ),
-                  //  searchController: searchController,
-                  /* searchInnerWidget: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: TextField(
-                      controller: searchController,
-                      decoration:
-                          const InputDecoration(hintText: "search here"),
-                    ),
-                  ),*/
                   items: state.popupMenuItemList),
             );
           }

@@ -74,7 +74,7 @@ class _AddressScreenState extends State<AddressScreen> {
           Widget dropDown({required List<DropdownMenuItem> countryList}) {
             return DropdownButtonFormField2(
                 buttonStyleData: ButtonStyleData(
-                  width: Get.size.width * 0.9,
+                  width: Get.size.width*.8 ,
                 ),
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -92,7 +92,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   }
                 },
                 dropdownStyleData: DropdownStyleData(
-                    maxHeight: Get.size.height * 0.4,
+                    maxHeight: Get.size.height * 0.6,
                     decoration: dropDownDecoration()),
                 onChanged: (value) {
                   country = value;
@@ -101,7 +101,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   searchInnerWidgetHeight: 150,
                   searchController: searchController,
                   searchInnerWidget: Padding(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(2),
                     child: TextField(
                       controller: searchController,
                       decoration:
@@ -122,7 +122,7 @@ class _AddressScreenState extends State<AddressScreen> {
                     FloatingActionButtonLocation.centerFloat,
                 floatingActionButton: SizedBox(
                   height: 60,
-                  width: Get.size.width * 0.5,
+                 width: Get.size.width * 0.5,
                   child: FloatingActionButton.extended(
                       backgroundColor: colors.primary,
                       onPressed: () {
