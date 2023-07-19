@@ -76,4 +76,10 @@ flutter_staggered_grid_view:
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots/searchresult.jpg" width="170" />
 </p>
 
-For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots        
+For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots       
+
+## APK
+https://drive.google.com/drive/folders/1CLV36YolNhIGQIrm5r094isY2yt7LWsT?usp=sharing
+
+## Video
+https://drive.google.com/drive/folders/1pgcdRzZwbv0q-MUSG1ZbRfsci5IlU4jp?usp=sharing
