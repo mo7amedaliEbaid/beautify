@@ -1,5 +1,5 @@
 # Beautify
-Beautify is a flutter e-commerce app for displaying makeup products ,managing user's orders and sales
+Beautify is a flutter e-commerce app for displaying makeup products ,managing user's orders and sales.
 
 ## Architecture
 ✔️ Clean Architecture
