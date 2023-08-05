@@ -31,8 +31,8 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
     final profileController = Get.find<ProfileController>();
-    final CustomTextStyle textStyle = duplicateController.textStyle;
-    final CustomColors colors = duplicateController.colors;
+    //final CustomTextStyle textStyle = duplicateController.textStyle;
+   // final CustomColors colors = duplicateController.colors;
     final CartFunctions cartFunctions = duplicateController.cartFunctions;
     final profileFunctions = profileController.profileFunctions;
     final bool isInFavorite =
@@ -130,8 +130,8 @@ class _DetailScreenState extends State<DetailScreen> {
           actions: [
             CartLengthBadge(
               duplicateController: duplicateController,
-              colors: colors,
-              textStyle: textStyle,
+          //    colors: colors,
+            //  textStyle: textStyle,
               badgeCallback: () {
                 Get.to(const CartScreen());
               },

@@ -60,8 +60,8 @@ class _HomeScreenState extends State<HomeScreen>
       },
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-          final CustomColors colors = duplicateController.colors;
-          final CustomTextStyle textStyle = duplicateController.textStyle;
+      //    final CustomColors colors = duplicateController.colors;
+        //  final CustomTextStyle textStyle = duplicateController.textStyle;
           final ScrollPhysics physics =
               duplicateController.uiDuplicate.defaultScroll;
           if (state is HomeLoading) {
@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ],
               ),
               body: duplicateContainer(
-                colors: colors,
+           //     colors: colors,
                 child: ListView.builder(
                   physics: physics,
                   itemCount: 6,
@@ -124,11 +124,11 @@ class _HomeScreenState extends State<HomeScreen>
                         );
                       case 2:
                         return ProductListView(
-                            colors: colors,
+                    //        colors: colors,
                             profileFunctions: profileFunctions,
                             reverse: false,
                             physics: physics,
-                            textStyle: textStyle,
+                      //      textStyle: textStyle,
                             productList: productList,
                             callback: () {
                               Get.to(ShopScreen(
@@ -144,14 +144,14 @@ class _HomeScreenState extends State<HomeScreen>
                                   productList: productList));
                             },
                             produtList: productList,
-                            colors: colors,
-                            textStyle: textStyle);
+                         //   colors: colors,
+                           /* textStyle: textStyle*/);
 
                       case 4:
                         return ProductListView(
                             profileFunctions: profileFunctions,
-                            colors: colors,
-                            textStyle: textStyle,
+                         //   colors: colors,
+                            //textStyle: textStyle,
                             productList: productList.reversed.toList(),
                             title: "Featured products",
                             physics: physics,

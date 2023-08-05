@@ -55,7 +55,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         bloc.add(CheckoutStart());
         subscription = bloc.stream.listen((state) {
           if (state is CheckoutGetAddreesScreen) {
-            final colors = state.colors;
+          //  final colors = state.colors;
             final adNameController = TextEditingController();
             final GlobalKey<FormState> adNameKey = GlobalKey();
             final addressController = TextEditingController();
@@ -68,8 +68,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 TextEditingController();
             String country = "";
             addAddressBottomSheet(
-              textStyle: state.textStyle,
-              colors: colors,
+           //   textStyle: state.textStyle,
+          //    colors: colors,
               scrollPhysics: state.uiDuplicate.defaultScroll,
               osSaveClicked: () {
                 if (stateKey.currentState!.validate() &&
@@ -88,8 +88,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     snackBar(
                         title: "Country",
                         message: "Please slecet you're country",
-                        textStyle: state.textStyle,
-                        colors: colors);
+                     //   textStyle: state.textStyle,
+                       /* colors: colors*/);
                   }
                 }
               },
@@ -143,8 +143,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             final addresList = state.addressList;
             final duplicateController = state.duplicateController;
             final profileController = state.profileController;
-            final CustomColors colors = duplicateController.colors;
-            final CustomTextStyle textStyle = duplicateController.textStyle;
+         //   final CustomColors colors = duplicateController.colors;
+         //   final CustomTextStyle textStyle = duplicateController.textStyle;
             String addressDetail = "";
             return Scaffold(
               appBar: AppBar(
@@ -158,8 +158,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 actions: [
                   CartLengthBadge(
                     duplicateController: duplicateController,
-                    colors: colors,
-                    textStyle: textStyle,
+                  //  colors: colors,
+                 //   textStyle: textStyle,
                     badgeCallback: () {
                       Get.to(const CartScreen());
                     },
@@ -284,8 +284,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                         },
                                       );
                                     },
-                                    colors: colors,
-                                    textStyle: textStyle)
+                                 /*   colors: colors,
+                                    textStyle: textStyle*/)
                               ],
                             ),
                           ),
@@ -312,11 +312,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             itemBuilder: (context, index) {
                               final product = widget.productList[index];
                               return HorizontalProductView(
-                                  colors: colors,
+                             //     colors: colors,
                                   margin: const EdgeInsets.only(
                                       top: 10, bottom: 10),
                                   product: product,
-                                  textStyle: textStyle,
+                                 // textStyle: textStyle,
                                   widget: Icon(
                                     CupertinoIcons.shopping_cart,
                                 //    color: colors.whiteColor,
@@ -328,9 +328,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     ),
                   ),
                   CartBottomItem(
-                    colors: colors,
+                    //colors: colors,
                     navigateName: "Continue to Payment",
-                    textStyle: textStyle,
+                    //textStyle: textStyle,
                     callback: () {
                       final isLogin = profileController.islogin;
                       if (isLogin) {
@@ -344,11 +344,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           snackBar(
                               title: "Address required",
                               message: "please select an address",
-                              textStyle: textStyle,
-                              colors: colors);
+                           //   textStyle: textStyle,
+                              /*colors: colors*/);
                         }
                       } else {
-                        loginRequiredDialog(textStyle: textStyle);
+                        loginRequiredDialog(/*textStyle: textStyle*/);
                       }
                     },
                   ),

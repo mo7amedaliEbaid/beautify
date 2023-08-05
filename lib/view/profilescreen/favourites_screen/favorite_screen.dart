@@ -33,8 +33,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     final profileController = Get.find<ProfileController>();
     final ProfileFunctions profileFunctions =
         profileController.profileFunctions;
-    final textStyle = duplicateController.textStyle;
-    final colors = duplicateController.colors;
+  //  final textStyle = duplicateController.textStyle;
+    //final colors = duplicateController.colors;
     return BlocProvider(
       create: (context) {
         final bloc = FavoriteBloc();
@@ -47,8 +47,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           if (state is FavoriteSuccess) {
             return DuplicateTemplate(
               title: "Favorite Screen",
-              colors: colors,
-              textStyle: textStyle,
+             // colors: colors,
+              //textStyle: textStyle,
               child: ListView.builder(
                 padding: const EdgeInsets.only(bottom: 40),
                 physics: duplicateController.uiDuplicate.defaultScroll,
@@ -56,9 +56,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 itemBuilder: (context, index) {
                   final product = state.productList[index];
                   return HorizontalProductView(
-                      colors: colors,
+                     // colors: colors,
                       product: product,
-                      textStyle: textStyle,
+                      //textStyle: textStyle,
                       widget: CupertinoButton(
                         child: Icon(
                           Icons.delete,
@@ -79,8 +79,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             );
           } else if (state is FavoriteEmpty) {
             return EmptyScreen(
-                colors: colors,
-                textStyle: textStyle,
+            //    colors: colors,
+               // textStyle: textStyle,
                 title: "Favorite Screen",
                 content: "you're favorite list is empty",
                 lottieName: emptyListLottie);

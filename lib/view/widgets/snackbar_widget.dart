@@ -10,8 +10,8 @@ import '../../model/tools/fonts/font.dart';
 void snackBar(
     {required String title,
       required String message,
-      required CustomTextStyle textStyle,
-      required CustomColors colors}) {
+     // required CustomTextStyle textStyle,
+/*      required CustomColors colors*/}) {
   Get.snackbar(title, "",
       messageText: AutoSizeText(
         message,

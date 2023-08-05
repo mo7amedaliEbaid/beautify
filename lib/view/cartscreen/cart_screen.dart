@@ -43,15 +43,15 @@ class _CartScreenState extends State<CartScreen> {
       child: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
           final duplicateController = Get.find<DuplicateController>();
-          final colors = duplicateController.colors;
-          final textStyle = duplicateController.textStyle;
+         // final colors = duplicateController.colors;
+          //final textStyle = duplicateController.textStyle;
           final uiDuplicate = duplicateController.uiDuplicate;
           if (state is CartSuccess) {
             final productList = state.productList;
             final String totalPrice = state.totalPrice;
             return DuplicateTemplate(
-                colors: colors,
-                textStyle: textStyle,
+              //  colors: colors,
+                //textStyle: textStyle,
                 title:"Cart Screen",
                 child: Stack(
                     children: [
@@ -63,7 +63,7 @@ class _CartScreenState extends State<CartScreen> {
                           itemBuilder: (context, index) {
                             final product = productList[index];
                             return HorizontalProductView(
-                                colors: colors,
+                              //  colors: colors,
                                 margin: const EdgeInsets.only(
                                     top: 15, right: 10, bottom: 15, left: 10),
                                 product: product,
@@ -87,12 +87,12 @@ class _CartScreenState extends State<CartScreen> {
                                         cartBloc!.add(CartStart());
                                       }
                                     }),
-                                textStyle: textStyle);
+                               /* textStyle: textStyle*/);
                           },
                         ),
                       ),
                       CartBottomItem(
-                        colors: colors,
+                       // colors: colors,
                         navigateName: "Checkout",
                         widget: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +118,7 @@ class _CartScreenState extends State<CartScreen> {
                             ),
                           ],
                         ),
-                        textStyle: textStyle,
+                     //   textStyle: textStyle,
                         callback: () {
                           Get.to(CheckoutScreen(
                               productList: productList,
@@ -137,8 +137,8 @@ class _CartScreenState extends State<CartScreen> {
             );
           } else if (state is CartEmpty) {
             return EmptyScreen(
-              colors: colors,
-              textStyle: textStyle,
+          //    colors: colors,
+            //  textStyle: textStyle,
               lottieName: emptyCartLottie,
               content: "your cart is empty , try to add something",
               title: "My cart",

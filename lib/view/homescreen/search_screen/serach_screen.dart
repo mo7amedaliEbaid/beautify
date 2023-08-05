@@ -28,8 +28,8 @@ class _SearchScreenState extends State<SearchScreen> {
   SearchBloc? searchBloc;
   final homeController = Get.find<HomeController>();
   final duplicateController = Get.find<DuplicateController>();
-  late CustomColors colors = duplicateController.colors;
-  late CustomTextStyle textStyle = duplicateController.textStyle;
+//  late CustomColors colors = duplicateController.colors;
+  //late CustomTextStyle textStyle = duplicateController.textStyle;
   @override
   void dispose() {
     searchBloc?.close();
@@ -67,8 +67,8 @@ class _SearchScreenState extends State<SearchScreen> {
                             snackBar(
                                 title: "Search",
                                 message: "please type somethings ...",
-                                textStyle: textStyle,
-                                colors: colors);
+                        //        textStyle: textStyle,
+                                /*colors: colors*/);
                             return "";
                           }
                         },
@@ -112,17 +112,17 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
                 body: gridViewScreensContainer(
-                    colors: colors,
+                 //   colors: colors,
                     child: ProductGrideView(
                         productList: state.productList,
                         uiDuplicate: duplicateController.uiDuplicate,
-                        colors: colors,
-                        textStyle: textStyle)),
+                      /*  colors: colors,
+                        textStyle: textStyle*/)),
               );
             } else if (state is SearchEmptyScreen) {
               return EmptyScreen(
-                  colors: colors,
-                  textStyle: textStyle,
+              //    colors: colors,
+                //  textStyle: textStyle,
                   title: "Search Result",
                   content: "Nothing found",
                   lottieName: emtySearchLottie);

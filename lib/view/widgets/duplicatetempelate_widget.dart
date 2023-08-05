@@ -6,14 +6,14 @@ import 'duplicatecontainer_widget.dart';
 class DuplicateTemplate extends StatelessWidget {
   const DuplicateTemplate({
     Key? key,
-    required this.colors,
-    required this.textStyle,
+  //  required this.colors,
+    //required this.textStyle,
     required this.child,
     required this.title,
   }) : super(key: key);
 
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+ // final CustomColors colors;
+  //final CustomTextStyle textStyle;
   final Widget child;
   final String title;
   @override
@@ -30,7 +30,7 @@ class DuplicateTemplate extends StatelessWidget {
       ),
       body: Container(
       //  color: colors.blackColor,
-        child: duplicateContainer(colors: colors, child: child),
+        child: duplicateContainer(/*colors: colors,*/ child: child),
       ),
     );
   }

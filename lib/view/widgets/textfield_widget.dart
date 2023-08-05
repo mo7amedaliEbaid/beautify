@@ -5,11 +5,11 @@ import '../../model/tools/fonts/font.dart';
 
 
 Widget textField(
-    {required CustomTextStyle textStyle,
+    {/*required CustomTextStyle textStyle,*/
       required TextEditingController controller,
       required GlobalKey<FormState> formKey,
       required String lable,
-      required CustomColors colors,
+  //    required CustomColors colors,
       required EdgeInsetsGeometry edgeInsetsGeometry,
       TextInputType inputType = TextInputType.emailAddress,
       bool obscureText = false,Widget? suffix}) {

@@ -9,15 +9,15 @@ import 'duplicatecontainer_widget.dart';
 class EmptyScreen extends StatelessWidget {
   const EmptyScreen({
     Key? key,
-    required this.colors,
-    required this.textStyle,
+  //  required this.colors,
+    //required this.textStyle,
     required this.title,
     required this.content,
     required this.lottieName,
   }) : super(key: key);
 
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+//  final CustomColors colors;
+  //final CustomTextStyle textStyle;
   final String title;
   final String content;
   final String lottieName;
@@ -34,7 +34,7 @@ class EmptyScreen extends StatelessWidget {
         ),
       ),
       body: duplicateContainer(
-          colors: colors,
+         // colors: colors,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

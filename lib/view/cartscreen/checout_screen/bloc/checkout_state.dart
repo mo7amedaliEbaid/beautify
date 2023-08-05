@@ -18,12 +18,12 @@ class CheckoutInitialScreen extends CheckoutState {
 
 class CheckoutGetAddreesScreen extends CheckoutState {
   final List<DropdownMenuItem> popupMenuItemList;
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+ // final CustomColors colors;
+//  final CustomTextStyle textStyle;
   final UiDuplicate uiDuplicate;
   CheckoutGetAddreesScreen(
       {required this.popupMenuItemList,
-      required this.colors,
+   //   required this.colors,
       required this.uiDuplicate,
-      required this.textStyle});
+      /*required this.textStyle*/});
 }

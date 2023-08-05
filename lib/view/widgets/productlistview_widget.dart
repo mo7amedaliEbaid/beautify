@@ -9,16 +9,16 @@ import 'homeproduct_widget.dart';
 class ProductListView extends StatelessWidget {
   const ProductListView(
       {super.key,
-        required this.colors,
-        required this.textStyle,
+     //   required this.colors,
+       // required this.textStyle,
         required this.productList,
         required this.title,
         required this.physics,
         required this.reverse,
         required this.callback,
         required this.profileFunctions});
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+//  final CustomColors colors;
+  //final CustomTextStyle textStyle;
   final List<ProductEntity> productList;
   final String title;
   final ScrollPhysics physics;
@@ -81,8 +81,8 @@ class ProductListView extends StatelessWidget {
                   child: HomeProductView(
                     profileFunctions: profileFunctions,
                     product: product,
-                    textStyle: textStyle,
-                    colors: colors,
+                  //  textStyle: textStyle,
+                    //colors: colors,
                   ),
                 );
               },

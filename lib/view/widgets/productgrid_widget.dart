@@ -16,14 +16,14 @@ class ProductGrideView extends StatelessWidget {
     Key? key,
     required this.productList,
     required this.uiDuplicate,
-    required this.colors,
-    required this.textStyle,
+//    required this.colors,
+  //  required this.textStyle,
   }) : super(key: key);
 
   final List<ProductEntity> productList;
   final UiDuplicate uiDuplicate;
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+//  final CustomColors colors;
+  //final CustomTextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +44,8 @@ class ProductGrideView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15)),
             child: ShopProductView(
               product: productList[index],
-              textStyle: textStyle,
-              colors: colors,
+     //         textStyle: textStyle,
+       //       colors: colors,
             ),
           );
         },

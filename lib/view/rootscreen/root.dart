@@ -21,8 +21,8 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
   final duplicateController = Get.find<DuplicateController>();
   final initialController = Get.find<InitialController>();
-  late CustomColors colors = duplicateController.colors;
-  late CustomTextStyle textStyle = duplicateController.textStyle;
+ // late CustomColors colors = duplicateController.colors;
+  //late CustomTextStyle textStyle = duplicateController.textStyle;
   late int slectedIndex = widget.index;
   late PageController pageController =
       PageController(initialPage: slectedIndex, keepPage: true);

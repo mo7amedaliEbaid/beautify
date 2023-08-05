@@ -13,7 +13,7 @@ class AppException extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<DuplicateController>();
-    final textStyle = controller.textStyle;
+ //   final textStyle = controller.textStyle;
     return Scaffold(
       body: Center(
         child: Column(

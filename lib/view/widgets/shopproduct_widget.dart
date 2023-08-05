@@ -13,13 +13,13 @@ class ShopProductView extends StatelessWidget {
   const ShopProductView({
     Key? key,
     required this.product,
-    required this.textStyle,
-    required this.colors,
+ //   required this.textStyle,
+   // required this.colors,
   }) : super(key: key);
 
   final ProductEntity product;
-  final CustomTextStyle textStyle;
-  final CustomColors colors;
+  //final CustomTextStyle textStyle;
+  //final CustomColors colors;
   @override
   Widget build(BuildContext context) {
     return InkWell(

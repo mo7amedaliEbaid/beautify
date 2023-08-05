@@ -11,11 +11,11 @@ import '../tools/fonts/font.dart';
 import '../tools/jsonparse/product_parse.dart';
 
 class DuplicateController extends GetxController {
-  final CustomColors colorsInstance = CustomColors();
-  CustomColors get colors => colorsInstance;
+//  final CustomColors colorsInstance = CustomColors();
+  //CustomColors get colors => colorsInstance;
 
-  final CustomTextStyle textStyleInstance = CustomTextStyle();
-  CustomTextStyle get textStyle => textStyleInstance;
+ // final CustomTextStyle textStyleInstance = CustomTextStyle();
+  //CustomTextStyle get textStyle => textStyleInstance;
 
   final UiDuplicate uiDuplicateInstance = UiDuplicate();
   UiDuplicate get uiDuplicate => uiDuplicateInstance;

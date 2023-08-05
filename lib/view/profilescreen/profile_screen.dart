@@ -26,11 +26,11 @@ class ProfileScreen extends StatelessWidget {
     final profileController = Get.find<ProfileController>();
     final ProfileFunctions profileFunctions =
         profileController.profileFunctions;
-    final colors = duplicateController.colors;
-    final textStyle = duplicateController.textStyle;
+   // final colors = duplicateController.colors;
+    //final textStyle = duplicateController.textStyle;
     return DuplicateTemplate(
-        colors: colors,
-        textStyle: textStyle,
+      //  colors: colors,
+        //textStyle: textStyle,
         title: "Profile",
         child: Padding(
           padding: const EdgeInsets.only(top: 20, right: 15, left: 15),
@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                   width: 100,
                   decoration: BoxDecoration(
                      /* color: colors.blackColor,*/ shape: BoxShape.circle),
-                  child: profileImage(colors: colors),
+                  child: profileImage(/*colors: colors*/),
                 ),
               ),
               Padding(
@@ -69,13 +69,13 @@ class ProfileScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     profileName(
-                        textStyle: textStyle,
+                       // textStyle: textStyle,
                         profileController: profileController),
                     /*const SizedBox(
                       height: 10,
                     ),*/
                     profileEmail(
-                        textStyle: textStyle,
+                      //  textStyle: textStyle,
                         profileController: profileController)
                   ],
                 ),
@@ -85,32 +85,32 @@ class ProfileScreen extends StatelessWidget {
                     Get.to(const FavoriteScreen());
                   },
                   itemName: "Favourits",
-                  textStyle: textStyle,
-                  colors: colors),
+                //  textStyle: textStyle,
+              /*    colors: colors*/),
               profileItem(
                   callback: () {
                     bool isLogin = profileController.islogin;
                     if (isLogin) {
                       Get.to(const AddressScreen());
                     } else {
-                      loginRequiredDialog(textStyle: textStyle);
+                      loginRequiredDialog(/*textStyle: textStyle*/);
                     }
                   },
                   itemName: "My Address",
-                  textStyle: textStyle,
-                  colors: colors),
+                //  textStyle: textStyle,
+           /*       colors: colors*/),
               profileItem(
                   callback: () {
                     bool isLogin = profileController.islogin;
                     if (isLogin) {
                       Get.to(const OrderScreen());
                     } else {
-                      loginRequiredDialog(textStyle: textStyle);
+                      loginRequiredDialog(/*textStyle: textStyle*/);
                     }
                   },
                   itemName: "Order History",
-                  textStyle: textStyle,
-                  colors: colors),
+             //     textStyle: textStyle,
+             /*     colors: colors*/),
               Obx(
                 () => profileItem(
                     callback: () {
@@ -162,17 +162,17 @@ class ProfileScreen extends StatelessWidget {
                       }
                     },
                     itemName: signStatus(profileController: profileController),
-                    textStyle: textStyle,
-                    colors: colors),
+                  //  textStyle: textStyle,
+               /*     colors: colors*/),
               ),
             ],
           ),
         ));
   }
 
-  Widget profileImage({
-    required CustomColors colors,
-  }) {
+  Widget profileImage(/*{
+    //required CustomColors colors,
+  }*/) {
     return GetX<ProfileController>(
       builder: (controller) {
         if (controller.userSetImage) {
@@ -196,7 +196,7 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget profileName(
-      {required CustomTextStyle textStyle,
+      {/*required CustomTextStyle textStyle,*/
       required ProfileController profileController}) {
     return Obx(() {
       if (profileController.islogin) {
@@ -214,7 +214,7 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget profileEmail(
-      {required CustomTextStyle textStyle,
+      {/*required CustomTextStyle textStyle,*/
       required ProfileController profileController}) {
     return Obx(() {
       if (profileController.islogin) {
@@ -233,8 +233,8 @@ class ProfileScreen extends StatelessWidget {
 
   Widget profileItem(
       {required String itemName,
-      required CustomTextStyle textStyle,
-      required CustomColors colors,
+     // required CustomTextStyle textStyle,
+      //required CustomColors colors,
       required GestureTapCallback callback}) {
     return Padding(
       padding: const EdgeInsets.only(top: 5, bottom: 5),

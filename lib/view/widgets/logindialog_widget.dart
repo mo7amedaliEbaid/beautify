@@ -10,7 +10,7 @@ import '../profilescreen/auth_screen/authentication_screen.dart';
 
 
 
-void loginRequiredDialog({required CustomTextStyle textStyle}) {
+void loginRequiredDialog(/*{required CustomTextStyle textStyle}*/) {
   showCupertinoDialog(
       context: Get.context!,
       builder: (context) => CupertinoAlertDialog(

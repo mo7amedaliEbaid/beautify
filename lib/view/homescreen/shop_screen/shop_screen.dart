@@ -19,8 +19,8 @@ class ShopScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final DuplicateController duplicateController =
         Get.find<DuplicateController>();
-    final colors = duplicateController.colors;
-    final textStyle = duplicateController.textStyle;
+//    final colors = duplicateController.colors;
+  //  final textStyle = duplicateController.textStyle;
     final uiDuplicate = duplicateController.uiDuplicate;
     return Scaffold(
       appBar: AppBar(
@@ -34,12 +34,12 @@ class ShopScreen extends StatelessWidget {
       ),
      // backgroundColor: colors.blackColor,
       body: gridViewScreensContainer(
-        colors: colors,
+    //    colors: colors,
         child: ProductGrideView(
             productList: productList,
             uiDuplicate: uiDuplicate,
-            colors: colors,
-            textStyle: textStyle),
+          //  colors: colors,
+         /*   textStyle: textStyle*/),
       ),
     );
   }

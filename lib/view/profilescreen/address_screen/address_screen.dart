@@ -40,8 +40,8 @@ class _AddressScreenState extends State<AddressScreen> {
   @override
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
-    final colors = duplicateController.colors;
-    final textStyle = duplicateController.textStyle;
+   // final colors = duplicateController.colors;
+    //final textStyle = duplicateController.textStyle;
     return BlocProvider(
       create: (context) {
         final bloc = AddressBloc();
@@ -52,8 +52,8 @@ class _AddressScreenState extends State<AddressScreen> {
             snackBar(
                 title: "Address",
                 message: "Your address edited successfully",
-                textStyle: textStyle,
-                colors: colors);
+            //    textStyle: textStyle,
+               /* colors: colors*/);
           }
         });
         return bloc;
@@ -114,8 +114,8 @@ class _AddressScreenState extends State<AddressScreen> {
 
           if (state is AddressDefaultScreen) {
             return DuplicateTemplate(
-              colors: colors,
-              textStyle: textStyle,
+        //      colors: colors,
+          //    textStyle: textStyle,
               title: "My Address",
               child: Scaffold(
                 floatingActionButtonLocation:
@@ -128,8 +128,8 @@ class _AddressScreenState extends State<AddressScreen> {
                       onPressed: () {
                         addAddressBottomSheet(
                             scrollPhysics: defaultPhysics,
-                            textStyle: textStyle,
-                            colors: colors,
+                   //         textStyle: textStyle,
+                     //       colors: colors,
                             osSaveClicked: () {
                               if (adNameKey.currentState!.validate() &&
                                   addressKey.currentState!.validate() &&
@@ -148,8 +148,8 @@ class _AddressScreenState extends State<AddressScreen> {
                                   snackBar(
                                       title: "Country",
                                       message: "Please select your country",
-                                      textStyle: textStyle,
-                                      colors: colors);
+                             //         textStyle: textStyle,
+                                      /*colors: colors*/);
                                 }
                               }
                             },
@@ -279,8 +279,8 @@ class _AddressScreenState extends State<AddressScreen> {
 
                                       addAddressBottomSheet(
                                         scrollPhysics: defaultPhysics,
-                                        textStyle: textStyle,
-                                        colors: colors,
+                                 //       textStyle: textStyle,
+                                   //     colors: colors,
                                         osSaveClicked: () {
                                           if (adNameKey.currentState!
                                                   .validate() &&
@@ -312,8 +312,8 @@ class _AddressScreenState extends State<AddressScreen> {
                                                   title: "Country",
                                                   message:
                                                       "Please select your country",
-                                                  textStyle: textStyle,
-                                                  colors: colors);
+                                              //    textStyle: textStyle,
+                                                 /* colors: colors*/);
                                             }
                                           }
                                         },
@@ -329,8 +329,8 @@ class _AddressScreenState extends State<AddressScreen> {
                                             countryList: state.countryItemList),
                                       );
                                     },
-                                    colors: colors,
-                                    textStyle: textStyle),
+                                 /*   colors: colors,
+                                    textStyle: textStyle*/),
                               ],
                             ),
                           ),
@@ -351,8 +351,8 @@ class _AddressScreenState extends State<AddressScreen> {
             );
           } else if (state is AddressEmpty) {
             return DuplicateTemplate(
-              colors: colors,
-              textStyle: textStyle,
+           /*   colors: colors,
+              textStyle: textStyle,*/
               title: "My Address",
               child: Scaffold(
                 floatingActionButtonLocation:
@@ -365,8 +365,8 @@ class _AddressScreenState extends State<AddressScreen> {
                       onPressed: () {
                         addAddressBottomSheet(
                             scrollPhysics: defaultPhysics,
-                            textStyle: textStyle,
-                            colors: colors,
+                       /*     textStyle: textStyle,
+                            colors: colors,*/
                             osSaveClicked: () {
                               if (adNameKey.currentState!.validate() &&
                                   addressKey.currentState!.validate() &&
@@ -385,8 +385,8 @@ class _AddressScreenState extends State<AddressScreen> {
                                   snackBar(
                                       title: "Country",
                                       message: "Please select your country",
-                                      textStyle: textStyle,
-                                      colors: colors);
+                                 /*     textStyle: textStyle,
+                                      colors: colors*/);
                                 }
                               }
                             },

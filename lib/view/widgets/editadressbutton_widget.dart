@@ -8,8 +8,8 @@ import '../../model/tools/fonts/font.dart';
 
 Widget addressEditButton(
     {required GestureTapCallback callback,
-      required CustomColors colors,
-      required CustomTextStyle textStyle}) {
+  //    required CustomColors colors,
+/*      required CustomTextStyle textStyle*/}) {
   return CupertinoButton(
       onPressed: callback,
       child: Icon(

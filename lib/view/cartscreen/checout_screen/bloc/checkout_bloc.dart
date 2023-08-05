@@ -25,22 +25,22 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
 
       if (event is CheckoutStart) {
         final addressList = await addressFunctions.addressItemList(
-            textStyle: duplicateController.textStyle);
+            /*textStyle: duplicateController.textStyle*/);
         emit(CheckoutInitialScreen(
             addressList: addressList,
             duplicateController: duplicateController,
             profileController: profileController));
       } else if (event is CheckoutGetUserAddress) {
         final popupMenuItemList = await addressFunctions.countryMenuList(
-            textStyle: duplicateController.textStyle);
+         /*   textStyle: duplicateController.textStyle*/);
         emit(CheckoutGetAddreesScreen(
           uiDuplicate: duplicateController.uiDuplicate,
             popupMenuItemList: popupMenuItemList,
-            textStyle: duplicateController.textStyle,
-            colors: duplicateController.colors));
+          //  textStyle: duplicateController.textStyle,
+            /*colors: duplicateController.colors*/));
 
         final addressList = await addressFunctions.addressItemList(
-            textStyle: duplicateController.textStyle);
+        /*    textStyle: duplicateController.textStyle*/);
         emit(CheckoutInitialScreen(
             addressList: addressList,
             duplicateController: duplicateController,
@@ -50,7 +50,7 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
             addressEntity: event.addressEntity);
 
         final addressList = await addressFunctions.addressItemList(
-            textStyle: duplicateController.textStyle);
+         /*   textStyle: duplicateController.textStyle*/);
         emit(CheckoutInitialScreen(
             duplicateController: duplicateController,
             profileController: profileController,

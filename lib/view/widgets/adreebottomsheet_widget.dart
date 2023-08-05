@@ -9,8 +9,8 @@ import '../../model/tools/fonts/font.dart';
 
 
 void addAddressBottomSheet(
-    {required CustomTextStyle textStyle,
-      required CustomColors colors,
+    {/*required CustomTextStyle textStyle,*/
+     // required CustomColors colors,
       required ScrollPhysics scrollPhysics,
       required GestureTapCallback osSaveClicked,
       required TextEditingController adNameController,
@@ -76,34 +76,34 @@ void addAddressBottomSheet(
                         dropDown,
                         textField(
                             inputType: TextInputType.streetAddress,
-                            textStyle: textStyle,
+                        //    textStyle: textStyle,
                             controller: stateController,
                             formKey: stateKey,
                             lable: "State",
-                            colors: colors,
+                        //    colors: colors,
                             edgeInsetsGeometry: const EdgeInsets.all(12)),
                         textField(
                             inputType: TextInputType.streetAddress,
-                            textStyle: textStyle,
+                      //      textStyle: textStyle,
                             controller: addressController,
                             formKey: addressKey,
                             lable: "Address detail",
-                            colors: colors,
+                       //     colors: colors,
                             edgeInsetsGeometry: const EdgeInsets.all(12)),
                         textField(
                             inputType: TextInputType.streetAddress,
-                            textStyle: textStyle,
+                           // textStyle: textStyle,
                             controller: adNameController,
                             formKey: adNameKey,
                             lable: "Address name",
-                            colors: colors,
+                        //    colors: colors,
                             edgeInsetsGeometry: const EdgeInsets.all(12)),
                         textField(
-                            textStyle: textStyle,
+                        //    textStyle: textStyle,
                             controller: postalController,
                             formKey: postalKey,
                             lable: "Postal code",
-                            colors: colors,
+                        //    colors: colors,
                             edgeInsetsGeometry: const EdgeInsets.all(12),
                             inputType: TextInputType.number),
                       ],

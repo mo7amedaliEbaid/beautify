@@ -9,15 +9,15 @@ import '../../model/tools/fonts/font.dart';
 class CartBottomItem extends StatelessWidget {
   const CartBottomItem({
     Key? key,
-    required this.colors,
-    required this.textStyle,
+  //  required this.colors,
+    //required this.textStyle,
     this.widget,
     required this.callback,
     required this.navigateName,
   }) : super(key: key);
 
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+//  final CustomColors colors;
+  //final CustomTextStyle textStyle;
   final GestureTapCallback callback;
   final Widget? widget;
   final String navigateName;

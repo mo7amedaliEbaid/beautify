@@ -15,14 +15,14 @@ class HomeProductView extends StatelessWidget {
   const HomeProductView(
       {Key? key,
         required this.product,
-        required this.textStyle,
-        required this.colors,
+    //    required this.textStyle,
+      //  required this.colors,
         required this.profileFunctions})
       : super(key: key);
 
   final ProductEntity product;
-  final CustomTextStyle textStyle;
-  final CustomColors colors;
+ // final CustomTextStyle textStyle;
+  //final CustomColors colors;
   final ProfileFunctions profileFunctions;
   @override
   Widget build(BuildContext context) {

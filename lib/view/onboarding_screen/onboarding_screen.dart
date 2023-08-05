@@ -19,7 +19,7 @@ class IntroScreen extends StatefulWidget {
 
 class _IntroScreenState extends State<IntroScreen> {
   final duplicateController = Get.find<DuplicateController>();
-  late CustomColors colors = duplicateController.colors;
+ // late CustomColors colors = duplicateController.colors;
   late List<ContentConfig> contentList = [
     ContentConfig(
         //backgroundColor: colors.primary,

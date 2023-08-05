@@ -9,12 +9,12 @@ class BannerListView extends StatelessWidget {
   const BannerListView(
       {super.key,
         required this.produtList,
-        required this.colors,
-        required this.textStyle,
+       // required this.colors,
+        //required this.textStyle,
         required this.callback});
   final List<ProductEntity> produtList;
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+ // final CustomColors colors;
+  //final CustomTextStyle textStyle;
   final GestureTapCallback callback;
   @override
   Widget build(BuildContext context) {

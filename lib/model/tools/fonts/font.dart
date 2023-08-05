@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import '../colors/color.dart';
 
 
-class CustomTextStyle {
-  final CustomColors colors = CustomColors();
+//class CustomTextStyle {
+ // final CustomColors colors = CustomColors();
 /*
   late TextStyle bodyNormal =
       TextStyle(fontSize: 20, color: colors.blackColor);
@@ -14,4 +14,4 @@ class CustomTextStyle {
 
   late TextStyle titleLarge =TextStyle(
       fontSize: 30, color: colors.blackColor, fontWeight: FontWeight.bold);*/
-}
+//}

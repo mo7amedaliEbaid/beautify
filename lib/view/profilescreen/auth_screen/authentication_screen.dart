@@ -46,9 +46,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        final CustomColors colors = Get.find<DuplicateController>().colors;
-        final CustomTextStyle textStyle =
-            Get.find<DuplicateController>().textStyle;
+       // final CustomColors colors = Get.find<DuplicateController>().colors;
+        //final CustomTextStyle textStyle =
+          //  Get.find<DuplicateController>().textStyle;
         final bloc = AuthenticationBloc();
         bloc.add(AuthenticationStart());
         subscription = bloc.stream.listen((state) {
@@ -56,15 +56,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             snackBar(
                 title: "sign",
                 message: "sign in successfull",
-                textStyle: textStyle,
-                colors: colors);
+            //    textStyle: textStyle,
+              /*  colors: colors*/);
             Navigator.pop(context);
           } else if (state is LoginSuccess) {
             snackBar(
                 title: "sign",
                 message: "sign in successfull",
-                textStyle: textStyle,
-                colors: colors);
+             //   textStyle: textStyle,
+                /*colors: colors*/);
             Navigator.pop(context);
           } else if (state is ChangeInformation) {
             final TextEditingController userNameController =
@@ -100,7 +100,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     content: Container(
                  //     color: colors.blackColor,
                       child: duplicateContainer(
-                        colors: colors,
+                      //  colors: colors,
                         child: Container(
                           padding: const EdgeInsets.all(15),
                           width: Get.mediaQuery.size.width * 0.8,
@@ -108,18 +108,18 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           child: Column(
                             children: [
                               textField(
-                                  textStyle: textStyle,
+                                //  textStyle: textStyle,
                                   controller: userNameController,
                                   formKey: userNameKey,
                                   lable: "user name",
-                                  colors: colors,
+                              //    colors: colors,
                                   edgeInsetsGeometry: const EdgeInsets.all(5)),
                               textField(
-                                  textStyle: textStyle,
+                                 // textStyle: textStyle,
                                   controller: passwordController,
                                   formKey: passwordKey,
                                   lable: "Password",
-                                  colors: colors,
+                              //    colors: colors,
                                   edgeInsetsGeometry: const EdgeInsets.all(5)),
                             ],
                           ),
@@ -160,14 +160,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             snackBar(
                 title: "Account",
                 message: "Account not found",
-                textStyle: textStyle,
-                colors: colors);
+             //   textStyle: textStyle,
+                /*colors: colors*/);
           } else if (state is LoginUnSuccess) {
             snackBar(
                 title: "Incorrect information",
                 message: "Incorrect username and password entered",
-                textStyle: textStyle,
-                colors: colors);
+            //    textStyle: textStyle,
+         /*       colors: colors*/);
           }
         });
         authenticationBloc = bloc;
@@ -179,13 +179,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             final duplicateController = state.duplicateController;
             final profileController = state.profileController;
 
-            final CustomColors colors = duplicateController.colors;
-            final CustomTextStyle textStyle = duplicateController.textStyle;
+        //    final CustomColors colors = duplicateController.colors;
+          //  final CustomTextStyle textStyle = duplicateController.textStyle;
 
             const EdgeInsetsGeometry edgeInsets = EdgeInsets.all(15);
             return DuplicateTemplate(
-              colors: colors,
-              textStyle: textStyle,
+        //      colors: colors,
+          //    textStyle: textStyle,
               title: "Login",
               child: Column(
                 children: [
@@ -220,8 +220,8 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           ),
                           textField(
                               edgeInsetsGeometry: edgeInsets,
-                              colors: colors,
-                              textStyle: textStyle,
+                         //     colors: colors,
+                           //   textStyle: textStyle,
                               controller: userNameController,
                               formKey: userNameKey,
                               lable: "UserName or Email"),
@@ -240,8 +240,8 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                 ),
                                 obscureText: profileController.obscureText,
                                 edgeInsetsGeometry: edgeInsets,
-                                colors: colors,
-                                textStyle: textStyle,
+                             //   colors: colors,
+                               // textStyle: textStyle,
                                 controller: passwordController,
                                 formKey: passwordKey,
                                 lable: "Password"),
@@ -337,13 +337,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
           } else if (state is AuthenticationSignUpScreen) {
             final duplicateController = state.duplicateController;
             final profileController = state.profileController;
-            final CustomColors colors = duplicateController.colors;
-            final CustomTextStyle textStyle = duplicateController.textStyle;
+          //  final CustomColors colors = duplicateController.colors;
+            //final CustomTextStyle textStyle = duplicateController.textStyle;
 
             const EdgeInsetsGeometry edgeInsets = EdgeInsets.all(15);
             return DuplicateTemplate(
-                colors: colors,
-                textStyle: textStyle,
+            //    colors: colors,
+              //  textStyle: textStyle,
                 title: "Signup",
                 child: Column(
                   children: [
@@ -379,15 +379,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                             ),
                             textField(
                                 edgeInsetsGeometry: edgeInsets,
-                                colors: colors,
-                                textStyle: textStyle,
+                      //          colors: colors,
+                        //        textStyle: textStyle,
                                 controller: nameController,
                                 formKey: nameKey,
                                 lable: "Full Name"),
                             textField(
                                 edgeInsetsGeometry: edgeInsets,
-                                colors: colors,
-                                textStyle: textStyle,
+                          //      colors: colors,
+                            //    textStyle: textStyle,
                                 controller: userNameController,
                                 formKey: userNameKey,
                                 lable: "UserName or Email"),
@@ -406,8 +406,8 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                   ),
                                   obscureText: profileController.obscureText,
                                   edgeInsetsGeometry: edgeInsets,
-                                  colors: colors,
-                                  textStyle: textStyle,
+                       //           colors: colors,
+                         //         textStyle: textStyle,
                                   controller: passwordController,
                                   formKey: passwordKey,
                                   lable: "Password"),

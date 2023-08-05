@@ -14,12 +14,12 @@ class OrderDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
-    final colors = duplicateController.colors;
-    final textStyle = duplicateController.textStyle;
+ //   final colors = duplicateController.colors;
+   // final textStyle = duplicateController.textStyle;
 
     return DuplicateTemplate(
-      colors: colors,
-      textStyle: textStyle,
+    //  colors: colors,
+      //textStyle: textStyle,
       title: "Order detail",
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

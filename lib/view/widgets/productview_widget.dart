@@ -10,16 +10,16 @@ import 'networkimage_widget.dart';
 class HorizontalProductView extends StatelessWidget {
   const HorizontalProductView({
     Key? key,
-    required this.colors,
+  //  required this.colors,
     required this.product,
-    required this.textStyle,
+  //  required this.textStyle,
     required this.widget,
     required this.margin,
   }) : super(key: key);
 
-  final CustomColors colors;
+ // final CustomColors colors;
   final ProductEntity product;
-  final CustomTextStyle textStyle;
+  //final CustomTextStyle textStyle;
   final Widget widget;
   final EdgeInsetsGeometry margin;
   @override

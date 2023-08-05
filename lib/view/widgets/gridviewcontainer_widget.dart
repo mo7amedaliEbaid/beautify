@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../model/tools/colors/color.dart';
 
 Widget gridViewScreensContainer(
-    {required Widget child, required CustomColors colors}) {
+    {required Widget child,/* required CustomColors colors*/}) {
   return Container(
     alignment: Alignment.center,
     margin: const EdgeInsets.only(top: 30),

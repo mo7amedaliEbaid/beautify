@@ -38,11 +38,11 @@ class _OrderScreenState extends State<OrderScreen> {
         builder: (context, state) {
           if (state is OrderInitialScreen) {
             final duplicateController = state.duplicateController;
-            final colors = duplicateController.colors;
-            final textStyle = duplicateController.textStyle;
+       //     final colors = duplicateController.colors;
+          //  final textStyle = duplicateController.textStyle;
             return DuplicateTemplate(
-              colors: colors,
-              textStyle: textStyle,
+       //       colors: colors,
+         //     textStyle: textStyle,
               title: "Order history",
               child: ListView.builder(
                 physics: duplicateController.uiDuplicate.defaultScroll,
@@ -105,8 +105,8 @@ class _OrderScreenState extends State<OrderScreen> {
           } else if (state is OrderEmpty) {
             final duplicateController = state.duplicateController;
             return EmptyScreen(
-                colors: duplicateController.colors,
-                textStyle: duplicateController.textStyle,
+             //   colors: duplicateController.colors,
+               // textStyle: duplicateController.textStyle,
                 title: "Order history",
                 content: "Your order history is empty",
                 lottieName: emptyListLottie);

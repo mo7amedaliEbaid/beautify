@@ -25,8 +25,8 @@ class PaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
     final profileController = Get.find<ProfileController>();
-    final colors = duplicateController.colors;
-    final textStyle = duplicateController.textStyle;
+ //   final colors = duplicateController.colors;
+   // final textStyle = duplicateController.textStyle;
     final paymentFunctions = duplicateController.paymentFunctions;
     final DateTime dateTime = DateTime.now();
 
@@ -77,8 +77,8 @@ class PaymentScreen extends StatelessWidget {
                             snackBar(
                                 title: "Pay",
                                 message: "Successfully payed",
-                                textStyle: textStyle,
-                                colors: colors);
+                              //  textStyle: textStyle,
+                               /* colors: colors*/);
                           }
                         },
                       ),
@@ -115,7 +115,7 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ),
               duplicateContainer(
-                colors: colors,
+              //  colors: colors,
                 widget: Column(
                   children: [
                     SizedBox(
@@ -187,11 +187,11 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ),
               duplicateContainer(
-                  colors: colors,
+                 // colors: colors,
                   widget: Column(
                     children: [
                       duplicateRowItem(
-                          colors: colors,
+                   //       colors: colors,
                           prefix: Text(
                             "Recipient Name",
                            // style: textStyle.bodyNormal,
@@ -202,7 +202,7 @@ class PaymentScreen extends StatelessWidget {
                            //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                          colors: colors,
+                         // colors: colors,
                           prefix: Text(
                             "Address",
                          //   style: textStyle.bodyNormal,
@@ -213,7 +213,7 @@ class PaymentScreen extends StatelessWidget {
                              //   .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                          colors: colors,
+                        //  colors: colors,
                           prefix: Text(
                             "Payment Methods",
                          //   style: textStyle.bodyNormal,
@@ -224,7 +224,7 @@ class PaymentScreen extends StatelessWidget {
                            //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                          colors: colors,
+                         // colors: colors,
                           prefix: Text(
                             "Date",
                           //  style: textStyle.bodyNormal,
@@ -235,7 +235,7 @@ class PaymentScreen extends StatelessWidget {
                            //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                          colors: colors,
+                      //   colors: colors,
                           prefix: Text(
                             "Total",
                            // style: textStyle.bodyNormal,
@@ -255,7 +255,7 @@ class PaymentScreen extends StatelessWidget {
   }
 
   Widget duplicateContainer(
-      {required Widget widget, required CustomColors colors}) {
+      {required Widget widget/*, required CustomColors colors*/}) {
     return Container(
         width: Get.mediaQuery.size.width,
         margin: const EdgeInsets.only(top: 25, bottom: 25),
@@ -270,7 +270,7 @@ class PaymentScreen extends StatelessWidget {
   Widget duplicateRowItem(
       {required Widget prefix,
       required Widget suffix,
-      required CustomColors colors}) {
+   /*   required CustomColors colors*/}) {
     return Column(
       children: [
         Padding(

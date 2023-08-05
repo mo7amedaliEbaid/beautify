@@ -7,7 +7,7 @@ import '../../model/controllers/duplicate_controller.dart';
 
 Widget imageLoading() {
   final controller = Get.find<DuplicateController>();
-  final colors = controller.colors;
+ // final colors = controller.colors;
   return LoadingAnimationWidget.halfTriangleDot(
       color: Colors.white, size: 20);
 }

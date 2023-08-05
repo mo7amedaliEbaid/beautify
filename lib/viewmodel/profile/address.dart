@@ -81,9 +81,9 @@ class AddressFunctions {
     return true;
   }
 
-  Future<List<DropdownMenuItem>> countryMenuList({
+  Future<List<DropdownMenuItem>> countryMenuList(/*{
     required CustomTextStyle textStyle,
-  }) async {
+  }*/) async {
     List<DropdownMenuItem> popupMenuList = [];
     for (var element in countriesList) {
       popupMenuList.add(
@@ -100,7 +100,7 @@ class AddressFunctions {
   }
 
   Future<List<DropdownMenuItem>> addressItemList(
-      {required CustomTextStyle textStyle}) async {
+    /*  {required CustomTextStyle textStyle}*/) async {
     final List<AddressEntity> addressList = await getAddressList();
     final List<DropdownMenuItem> popupMenuList = [];
     for (var element in addressList) {

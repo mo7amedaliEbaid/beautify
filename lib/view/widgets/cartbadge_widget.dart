@@ -9,14 +9,14 @@ class CartLengthBadge extends StatelessWidget {
   const CartLengthBadge({
     Key? key,
     required this.duplicateController,
-    required this.colors,
-    required this.textStyle,
+ //   required this.colors,
+   // required this.textStyle,
     required this.badgeCallback,
   }) : super(key: key);
 
   final DuplicateController duplicateController;
-  final CustomColors colors;
-  final CustomTextStyle textStyle;
+//  final CustomColors colors;
+//  final CustomTextStyle textStyle;
   final GestureTapCallback badgeCallback;
   @override
   Widget build(BuildContext context) {

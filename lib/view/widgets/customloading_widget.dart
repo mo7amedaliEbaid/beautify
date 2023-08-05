@@ -7,7 +7,7 @@ class CustomLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CustomColors colors = CustomColors();
+   // final CustomColors colors = CustomColors();
     return Scaffold(
       body: Center(
         child: LoadingAnimationWidget.staggeredDotsWave(
