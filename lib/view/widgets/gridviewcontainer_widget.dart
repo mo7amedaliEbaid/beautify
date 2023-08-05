@@ -9,7 +9,7 @@ Widget gridViewScreensContainer(
     margin: const EdgeInsets.only(top: 30),
     padding: const EdgeInsets.all(15),
     decoration: BoxDecoration(
-        color: colors.whiteColor,
+        //color: colors.whiteColor,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(15))),
     child: child,
   );

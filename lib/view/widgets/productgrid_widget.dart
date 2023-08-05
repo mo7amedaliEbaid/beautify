@@ -40,7 +40,7 @@ class ProductGrideView extends StatelessWidget {
           return Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: colors.captionColor,
+             //   color: colors.captionColor,
                 borderRadius: BorderRadius.circular(15)),
             child: ShopProductView(
               product: productList[index],

@@ -32,7 +32,7 @@ class HorizontalProductView extends StatelessWidget {
         margin: margin,
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-            color: colors.blackColor, borderRadius: BorderRadius.circular(15)),
+     /*       color: colors.blackColor*/ borderRadius: BorderRadius.circular(15)),
         child: Row(
           children: [
             ClipRRect(
@@ -51,8 +51,8 @@ class HorizontalProductView extends StatelessWidget {
                   width: Get.mediaQuery.size.width * 0.5,
                   child: AutoSizeText(
                     product.name,
-                    style: textStyle.bodyNormal.copyWith(
-                        fontWeight: FontWeight.bold, color: colors.whiteColor),
+                   // style: textStyle.bodyNormal.copyWith(
+                     //   fontWeight: FontWeight.bold, color: colors.whiteColor),
                     overflow: TextOverflow.clip,
                   ),
                 ),
@@ -69,17 +69,17 @@ class HorizontalProductView extends StatelessWidget {
                         children: [
                           Text(
                             product.productType,
-                            style: textStyle.bodyNormal
-                                .copyWith(color: colors.whiteColor),
+                        //    style: textStyle.bodyNormal
+                          //      .copyWith(color: colors.whiteColor),
                           ),
                           const SizedBox(
                             height: 10,
                           ),
                           Text(
                             "€${product.price}",
-                            style: textStyle.bodyNormal.copyWith(
-                                color: colors.whiteColor,
-                                fontWeight: FontWeight.bold),
+                        //    style: textStyle.bodyNormal.copyWith(
+                          //      color: colors.whiteColor,
+                            //    fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

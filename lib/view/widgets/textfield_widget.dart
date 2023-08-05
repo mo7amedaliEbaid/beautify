@@ -18,7 +18,7 @@ Widget textField(
       child: Theme(
         data: ThemeData(
             colorScheme: ColorScheme.light(
-                primary: colors.captionColor, onSurface: colors.captionColor)),
+                /*primary: colors.captionColor, onSurface: colors.captionColor*/)),
         child: Form(
           key: formKey,
           child: TextFormField(
@@ -34,16 +34,19 @@ Widget textField(
                 }
               },
               controller: controller,
-              cursorColor: colors.captionColor,
+            //  cursorColor: colors.captionColor,
               focusNode: FocusNode(),
               decoration: InputDecoration(
                   labelText: lable,
-                  labelStyle: textStyle.bodyNormal,
+              //    labelStyle: textStyle.bodyNormal,
                   suffix: suffix,
-                  floatingLabelStyle:
-                  textStyle.bodySmall.copyWith(fontWeight: FontWeight.w700),
+                  //floatingLabelStyle:
+                 // textStyle.bodySmall.copyWith(fontWeight: FontWeight.w700),
                   focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12)))),
+                      borderRadius: BorderRadius.circular(12)
+                  )
+              )
+          ),
         ),
       ));
 }

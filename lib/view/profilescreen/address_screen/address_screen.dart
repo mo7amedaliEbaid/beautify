@@ -82,7 +82,7 @@ class _AddressScreenState extends State<AddressScreen> {
                 isDense: true,
                 hint: Text(
                   "select country",
-                  style: textStyle.bodyNormal,
+                 // style: textStyle.bodyNormal,
                 ),
                 validator: (value) {
                   if (value == null) {
@@ -124,7 +124,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   height: 60,
                  width: Get.size.width * 0.5,
                   child: FloatingActionButton.extended(
-                      backgroundColor: colors.primary,
+                    //  backgroundColor: colors.primary,
                       onPressed: () {
                         addAddressBottomSheet(
                             scrollPhysics: defaultPhysics,
@@ -166,8 +166,8 @@ class _AddressScreenState extends State<AddressScreen> {
                       },
                       label: AutoSizeText(
                         "Add new address",
-                        style: textStyle.bodyNormal
-                            .copyWith(color: colors.whiteColor),
+                      //  style: textStyle.bodyNormal
+                           // .copyWith(color: colors.whiteColor),
                         maxLines: 2,
                       )),
                 ),
@@ -180,7 +180,7 @@ class _AddressScreenState extends State<AddressScreen> {
 
                     return Container(
                       decoration: BoxDecoration(
-                          color: colors.gray,
+                        //  color: colors.gray,
                           borderRadius: BorderRadius.circular(12)),
                       margin: const EdgeInsets.fromLTRB(15, 10, 15, 15),
                       padding: const EdgeInsets.all(12),
@@ -190,7 +190,7 @@ class _AddressScreenState extends State<AddressScreen> {
                             width: 60,
                             height: 60,
                             child: CircleAvatar(
-                              backgroundColor: colors.whiteColor,
+                           //   backgroundColor: colors.whiteColor,
                               child: LottieBuilder.network(locationLottie),
                             ),
                           ),
@@ -204,7 +204,7 @@ class _AddressScreenState extends State<AddressScreen> {
                               children: [
                                 Text(
                                   address.addressName,
-                                  style: textStyle.titleLarge,
+                                //  style: textStyle.titleLarge,
                                 ),
                                 const SizedBox(
                                   height: 7,
@@ -212,7 +212,7 @@ class _AddressScreenState extends State<AddressScreen> {
                                 AutoSizeText(
                                   address.addressDetail,
                                   maxLines: 2,
-                                  style: textStyle.bodySmall,
+                               //   style: textStyle.bodySmall,
                                 ),
                               ],
                             ),
@@ -223,7 +223,7 @@ class _AddressScreenState extends State<AddressScreen> {
                                 CupertinoButton(
                                   child: Icon(
                                     CupertinoIcons.delete,
-                                    color: colors.blackColor,
+                                   // color: colors.blackColor,
                                   ),
                                   onPressed: () {
                                     showCupertinoDialog(
@@ -232,17 +232,17 @@ class _AddressScreenState extends State<AddressScreen> {
                                         return CupertinoAlertDialog(
                                           title: Text(
                                             "Remove address",
-                                            style: textStyle.titleLarge,
+                                        //    style: textStyle.titleLarge,
                                           ),
                                           content: Text(
                                             "Are you sure to remove address",
-                                            style: textStyle.bodyNormal,
+                                           // style: textStyle.bodyNormal,
                                           ),
                                           actions: [
                                             CupertinoButton(
                                               child: Text(
                                                 "Cancel",
-                                                style: textStyle.bodyNormal,
+                                             //   style: textStyle.bodyNormal,
                                               ),
                                               onPressed: () {
                                                 Get.back();
@@ -251,9 +251,9 @@ class _AddressScreenState extends State<AddressScreen> {
                                             CupertinoButton(
                                               child: Text(
                                                 "Yes",
-                                                style: textStyle.bodyNormal
-                                                    .copyWith(
-                                                        color: colors.red),
+                                             //   style: textStyle.bodyNormal
+                                               //     .copyWith(
+                                                 //       color: colors.red),
                                               ),
                                               onPressed: () {
                                                 Get.back();
@@ -361,7 +361,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   height: 60,
                   width: Get.size.width * 0.5,
                   child: FloatingActionButton.extended(
-                      backgroundColor: colors.primary,
+                   //   backgroundColor: colors.primary,
                       onPressed: () {
                         addAddressBottomSheet(
                             scrollPhysics: defaultPhysics,
@@ -402,8 +402,8 @@ class _AddressScreenState extends State<AddressScreen> {
                       },
                       label: AutoSizeText(
                         "Add new address",
-                        style: textStyle.bodyNormal
-                            .copyWith(color: colors.whiteColor),
+                    //    style: textStyle.bodyNormal
+                      //      .copyWith(color: colors.whiteColor),
                         maxLines: 2,
                       )),
                 ),
@@ -418,8 +418,8 @@ class _AddressScreenState extends State<AddressScreen> {
                       padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
                       child: AutoSizeText(
                         "your address list is empty try to add new one",
-                        style: textStyle.bodyNormal
-                            .copyWith(fontWeight: FontWeight.bold),
+                       // style: textStyle.bodyNormal
+                         //   .copyWith(fontWeight: FontWeight.bold),
                         maxLines: 2,
                       ),
                     ),

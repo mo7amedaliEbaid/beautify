@@ -53,7 +53,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     margin: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: colors.gray,
+                  //    color: colors.gray,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Column(
@@ -67,13 +67,13 @@ class _OrderScreenState extends State<OrderScreen> {
                             children: [
                               Text(
                                 "Order : ${order.productList[0].id}",
-                                style: textStyle.bodyNormal,
+                             //   style: textStyle.bodyNormal,
                               ),
                               CupertinoButton(
                                 child: Text(
                                   "View detail",
-                                  style: textStyle.bodyNormal
-                                      .copyWith(color: colors.primary),
+                                 // style: textStyle.bodyNormal
+                                   //   .copyWith(color: colors.primary),
                                 ),
                                 onPressed: () {
                                   Get.to(OrderDetailScreen(
@@ -86,15 +86,16 @@ class _OrderScreenState extends State<OrderScreen> {
                         orderHistoryItem(
                             rightTitle: order.time.toString().substring(0, 16),
                             leftTitle: "Date :",
-                            leftStyle: textStyle.bodyNormal,
-                            rightStyle: textStyle.bodyNormal
-                                .copyWith(color: colors.captionColor)),
+                            leftStyle: TextStyle(),
+                            rightStyle: TextStyle()),
+                            //    .copyWith(color: colors.captionColor)),
                         orderHistoryItem(
                             rightTitle: order.totalPrice,
                             leftTitle: "Amount :",
-                            leftStyle: textStyle.bodyNormal,
-                            rightStyle: textStyle.bodyNormal
-                                .copyWith(color: colors.captionColor)),
+                            leftStyle: TextStyle(),
+                            rightStyle: TextStyle()
+                              //  .copyWith(color: colors.captionColor)
+                        ),
                       ],
                     ),
                   );

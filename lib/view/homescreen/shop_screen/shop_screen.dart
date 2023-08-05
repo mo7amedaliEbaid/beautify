@@ -24,15 +24,15 @@ class ShopScreen extends StatelessWidget {
     final uiDuplicate = duplicateController.uiDuplicate;
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: colors.whiteColor,
-        backgroundColor: colors.blackColor,
+     //   foregroundColor: colors.whiteColor,
+     //   backgroundColor: colors.blackColor,
         centerTitle: true,
         title: Text(
           title,
-          style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
+       //   style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
         ),
       ),
-      backgroundColor: colors.blackColor,
+     // backgroundColor: colors.blackColor,
       body: gridViewScreensContainer(
         colors: colors,
         child: ProductGrideView(

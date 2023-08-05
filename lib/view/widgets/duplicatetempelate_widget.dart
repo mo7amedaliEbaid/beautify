@@ -20,16 +20,16 @@ class DuplicateTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: colors.whiteColor,
-        backgroundColor: colors.blackColor,
+      //  foregroundColor: colors.whiteColor,
+        //backgroundColor: colors.blackColor,
         centerTitle: true,
         title: Text(
           title,
-          style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
+      //    style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
         ),
       ),
       body: Container(
-        color: colors.blackColor,
+      //  color: colors.blackColor,
         child: duplicateContainer(colors: colors, child: child),
       ),
     );

@@ -35,14 +35,14 @@ class HomeProductView extends StatelessWidget {
           },
           child: badges.Badge(
                 position: badges.BadgePosition.custom(end: 0, top: 0), //BadgePosition(end: 0, top: 0),
-            badgeStyle: badges.BadgeStyle(badgeColor:colors.blackColor ),
+            badgeStyle: badges.BadgeStyle(/*badgeColor:colors.blackColor */),
             //  badgeColor: colors.blackColor,
 
             badgeContent: FavoriteBadge(
               product: product,
-              badgeBackgroundColor: colors.blackColor,
-              activeColor: colors.whiteColor,
-              inActive: colors.whiteColor,
+              badgeBackgroundColor: Colors.white,
+              activeColor: Colors.black54,
+              inActive:Colors.white
             ),
             child: Column(
               children: [
@@ -55,14 +55,14 @@ class HomeProductView extends StatelessWidget {
                 ),
                 Text(
                   product.name.split("Maybelline").last.substring(0, 7),
-                  style: textStyle.bodyNormal,
+                //  style: textStyle.bodyNormal,
                 ),
                 const SizedBox(
                   height: 5,
                 ),
                 Text(
                   "€${product.price}",
-                  style: textStyle.bodyNormal,
+               //   style: textStyle.bodyNormal,
                 )
               ],
             ),

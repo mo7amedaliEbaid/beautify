@@ -13,4 +13,23 @@ class IntroFunctions {
     status = storage.read(key);
     return status ?? true;
   }
+
+
+  bool isDark = false;
+  final GetStorage themestatus = GetStorage();
+  void inittheme() {
+
+    bool? cacheTheme = themestatus.read('theme');
+    isDark = cacheTheme ?? false;
+
+  }
+
+  bool get theme => isDark;
+
+  set theme(bool value) {
+    isDark = value;
+
+    themestatus.write('theme', value);
+
+  }
 }

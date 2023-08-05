@@ -55,8 +55,8 @@ class _SearchScreenState extends State<SearchScreen> {
               final GlobalKey<FormState> formKey = GlobalKey();
               return Scaffold(
                 appBar: AppBar(
-                  backgroundColor: colors.whiteColor,
-                  foregroundColor: colors.blackColor,
+                 // backgroundColor: colors.whiteColor,
+                  //foregroundColor: colors.blackColor,
                   title: Form(
                       key: formKey,
                       child: TextFormField(
@@ -77,14 +77,14 @@ class _SearchScreenState extends State<SearchScreen> {
                           contentPadding: EdgeInsets.zero,
                           border: InputBorder.none,
                           hintText: "Search by brand name..",
-                          hintStyle: textStyle.bodyNormal,
+                       //   hintStyle: textStyle.bodyNormal,
                         ),
                       )),
                   actions: [
                     CupertinoButton(
                       child: Icon(
                         Icons.search,
-                        color: colors.blackColor,
+                       // color: colors.blackColor,
                       ),
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
@@ -101,14 +101,14 @@ class _SearchScreenState extends State<SearchScreen> {
               );
             } else if (state is SearchSuccess) {
               return Scaffold(
-                backgroundColor: colors.blackColor,
+              //  backgroundColor: colors.blackColor,
                 appBar: AppBar(
-                  foregroundColor: colors.whiteColor,
-                  backgroundColor: colors.blackColor,
+               //   foregroundColor: colors.whiteColor,
+                //  backgroundColor: colors.blackColor,
                   title: Text(
                     "Search Result",
-                    style:
-                        textStyle.titleLarge.copyWith(color: colors.whiteColor),
+                 //   style:
+                       // textStyle.titleLarge.copyWith(color: colors.whiteColor),
                   ),
                 ),
                 body: gridViewScreensContainer(

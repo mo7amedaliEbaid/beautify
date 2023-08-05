@@ -50,7 +50,7 @@ class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: colors.whiteColor,
+     // backgroundColor: colors.whiteColor,
       body: PageView(
         physics: duplicateController.uiDuplicate.defaultScroll,
         controller: pageController,
@@ -67,35 +67,35 @@ class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
         selectedIndex: slectedIndex,
         items: [
           BottomNavyBarItem(
-              activeColor: colors.primary,
+            //  activeColor: colors.primary,
               textAlign: TextAlign.center,
-              inactiveColor: colors.blackColor,
+           //   inactiveColor: colors.blackColor,
               icon: const Icon(
                 CupertinoIcons.home,
               ),
               title: Text(
                 "Home",
-                style: textStyle.bodyNormal.copyWith(color: colors.primary),
+            //    style: textStyle.bodyNormal.copyWith(color: colors.primary),
               )),
           BottomNavyBarItem(
-              activeColor: colors.primary,
+            //  activeColor: colors.primary,
               textAlign: TextAlign.center,
-              inactiveColor: colors.blackColor,
+             // inactiveColor: colors.blackColor,
               icon: const Icon(
                 CupertinoIcons.cart,
               ),
               title: Text(
                 "Cart",
-                style: textStyle.bodyNormal.copyWith(color: colors.primary),
+               // style: textStyle.bodyNormal.copyWith(color: colors.primary),
               )),
           BottomNavyBarItem(
-              activeColor: colors.primary,
-              inactiveColor: colors.blackColor,
+          //    activeColor: colors.primary,
+            //  inactiveColor: colors.blackColor,
               textAlign: TextAlign.center,
               icon: const Icon(CupertinoIcons.person_alt_circle),
               title: Text(
                 "Profile",
-                style: textStyle.bodyNormal.copyWith(color: colors.primary),
+         //       style: textStyle.bodyNormal.copyWith(color: colors.primary),
               )),
         ],
         onItemSelected: (value) {

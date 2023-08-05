@@ -62,7 +62,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       widget: CupertinoButton(
                         child: Icon(
                           Icons.delete,
-                          color: colors.whiteColor,
+                        //  color: colors.whiteColor,
                         ),
                         onPressed: () async {
                           bool isDeleted = await profileFunctions

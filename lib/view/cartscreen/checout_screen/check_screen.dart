@@ -109,7 +109,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   isDense: true,
                   hint: Text(
                     "select country",
-                    style: state.textStyle.bodyNormal,
+                  //  style: state.textStyle.bodyNormal,
                   ),
                   dropdownStyleData: DropdownStyleData(
                     maxHeight: Get.size.height * 0.4,
@@ -148,12 +148,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             String addressDetail = "";
             return Scaffold(
               appBar: AppBar(
-                foregroundColor: colors.blackColor,
-                backgroundColor: colors.whiteColor,
+               // foregroundColor: colors.blackColor,
+                //backgroundColor: colors.whiteColor,
                 centerTitle: true,
                 title: Text(
                   "Checkout",
-                  style: textStyle.titleLarge,
+               //   style: textStyle.titleLarge,
                 ),
                 actions: [
                   CartLengthBadge(
@@ -176,14 +176,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         children: [
                           Text(
                             "Shipping Address",
-                            style: textStyle.titleLarge,
+                          //  style: textStyle.titleLarge,
                           ),
                           Container(
                             padding: const EdgeInsets.all(12),
                             margin: const EdgeInsets.only(top: 25, bottom: 15),
                             width: Get.mediaQuery.size.width,
                             decoration: BoxDecoration(
-                                color: colors.gray,
+                               // color: colors.gray,
                                 borderRadius: BorderRadius.circular(15)),
                             child: Row(
                               children: [
@@ -204,8 +204,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     children: [
                                       Text(
                                         "your address",
-                                        style: textStyle.bodyNormal.copyWith(
-                                            fontWeight: FontWeight.bold),
+                                      /*  style: textStyle.bodyNormal.copyWith(
+                                            fontWeight: FontWeight.bold),*/
                                       ),
                                       addresList.isNotEmpty
                                           ? SizedBox(
@@ -215,8 +215,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 decoration: InputDecoration(
                                                     hintText:
                                                         "Select an address",
-                                                    hintStyle:
-                                                        textStyle.bodySmall),
+                                                 /*   hintStyle:
+                                                        textStyle.bodySmall*/),
                                                 dropdownStyleData:
                                                     DropdownStyleData(
                                                         maxHeight:
@@ -232,7 +232,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                             )
                                           : Text(
                                               "you don't have any address",
-                                              style: textStyle.bodySmall,
+                                            //  style: textStyle.bodySmall,
                                             ),
                                     ],
                                   ),
@@ -245,7 +245,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                           return CupertinoAlertDialog(
                                             title: Text(
                                               "Address",
-                                              style: textStyle.bodyNormal,
+                                           //   style: textStyle.bodyNormal,
                                             ),
                                             content: const Text(""),
                                             actions: [
@@ -292,13 +292,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           Padding(
                             padding: const EdgeInsets.only(top: 10, bottom: 15),
                             child: Divider(
-                              color: colors.captionColor,
+                             // color: colors.captionColor,
                               thickness: 1,
                             ),
                           ),
                           Text(
                             "Order List",
-                            style: textStyle.titleLarge,
+                         //   style: textStyle.titleLarge,
                           ),
                           const SizedBox(
                             height: 20,
@@ -319,7 +319,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                   textStyle: textStyle,
                                   widget: Icon(
                                     CupertinoIcons.shopping_cart,
-                                    color: colors.whiteColor,
+                                //    color: colors.whiteColor,
                                   ));
                             },
                           ))

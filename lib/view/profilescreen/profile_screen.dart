@@ -51,7 +51,7 @@ class ProfileScreen extends StatelessWidget {
                         },
                         child: Icon(
                           CupertinoIcons.switch_camera,
-                          color: colors.whiteColor,
+                         // color: colors.whiteColor,
                           size: 20,
                         ),
                       ),
@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
-                      color: colors.blackColor, shape: BoxShape.circle),
+                     /* color: colors.blackColor,*/ shape: BoxShape.circle),
                   child: profileImage(colors: colors),
                 ),
               ),
@@ -123,19 +123,19 @@ class ProfileScreen extends StatelessWidget {
                             return CupertinoAlertDialog(
                               title: Text(
                                 "Log Out",
-                                style: textStyle.titleLarge
-                                    .copyWith(color: colors.red),
+                               // style: textStyle.titleLarge
+                                 //   .copyWith(color: colors.red),
                               ),
                               content: Text(
                                 "Are you sure you want log out?",
-                                style: textStyle.bodyNormal,
+                              //  style: textStyle.bodyNormal,
                                 overflow: TextOverflow.clip,
                                 textAlign: TextAlign.start,
                               ),
                               actions: [
                                 CupertinoButton(
                                   child:
-                                      Text("No", style: textStyle.bodyNormal),
+                                      Text("No", /*style: textStyle.bodyNormal*/),
                                   onPressed: () async {
                                     Get.back();
                                   },
@@ -143,8 +143,8 @@ class ProfileScreen extends StatelessWidget {
                                 CupertinoButton(
                                   child: Text(
                                     "yes",
-                                    style: textStyle.bodyNormal
-                                        .copyWith(color: colors.red),
+                                 //   style: textStyle.bodyNormal
+                                   //     .copyWith(color: colors.red),
                                   ),
                                   onPressed: () async {
                                     await profileController
@@ -187,7 +187,7 @@ class ProfileScreen extends StatelessWidget {
         } else {
           return Icon(
             CupertinoIcons.person_alt_circle,
-            color: colors.whiteColor,
+    //        color: colors.whiteColor,
             size: 40,
           );
         }
@@ -202,12 +202,12 @@ class ProfileScreen extends StatelessWidget {
       if (profileController.islogin) {
         return Text(
           profileController.information.name,
-          style: textStyle.titleLarge,
+        //  style: textStyle.titleLarge,
         );
       } else {
         return Text(
           "Mohamed Ali",
-          style: textStyle.titleLarge,
+     //     style: textStyle.titleLarge,
         );
       }
     });
@@ -220,12 +220,12 @@ class ProfileScreen extends StatelessWidget {
       if (profileController.islogin) {
         return Text(
           profileController.information.userName,
-          style: textStyle.bodyNormal,
+         // style: textStyle.bodyNormal,
         );
       } else {
         return Text(
           "mo7amedaliebaid@gmail.com",
-          style: textStyle.bodyNormal,
+        //  style: textStyle.bodyNormal,
         );
       }
     });
@@ -250,13 +250,13 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   itemName,
-                  style: textStyle.bodyNormal.copyWith(fontSize: 25),
+                //  style: textStyle.bodyNormal.copyWith(fontSize: 25),
                 ),
                 CupertinoButton(
                   onPressed: callback,
                   child: Icon(
                     CupertinoIcons.right_chevron,
-                    color: colors.blackColor,
+                 //   color: colors.blackColor,
                   ),
                 )
               ],
@@ -265,7 +265,7 @@ class ProfileScreen extends StatelessWidget {
           Container(
             height: 2,
             width: Get.mediaQuery.size.width,
-            color: colors.captionColor,
+      //      color: colors.captionColor,
           )
         ],
       ),

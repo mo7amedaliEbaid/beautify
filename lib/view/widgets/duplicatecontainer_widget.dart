@@ -10,7 +10,7 @@ Widget duplicateContainer(
     margin: const EdgeInsets.only(top: 10),
     decoration: BoxDecoration(
         borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
-        color: colors.whiteColor),
+      /*  color: colors.whiteColor*/),
     child: child,
   );
 }

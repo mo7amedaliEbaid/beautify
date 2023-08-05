@@ -45,18 +45,18 @@ class _DetailScreenState extends State<DetailScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                backgroundColor: colors.gray,
+              //  backgroundColor: colors.gray,
                 child: IconButton(
-                  highlightColor: colors.whiteColor,
-                  splashColor: colors.whiteColor,
+                //  highlightColor: colors.whiteColor,
+                //  splashColor: colors.whiteColor,
                   icon: isInFavorite
                       ? Icon(
                           CupertinoIcons.heart_fill,
-                          color: colors.blackColor,
+                     //     color: colors.blackColor,
                         )
                       : Icon(
                           CupertinoIcons.heart,
-                          color: colors.blackColor,
+                       //   color: colors.blackColor,
                         ),
                   onPressed: () async {
                     if (isInFavorite) {
@@ -75,14 +75,14 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: CupertinoTheme(
-                    data: CupertinoThemeData(primaryColor: colors.primary),
+                    data: CupertinoThemeData(primaryColor: Colors.white),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: CupertinoButton.filled(
                         child: Text(
                           "Add to cart",
-                          style: textStyle.bodyNormal
-                              .copyWith(color: colors.whiteColor),
+                   //       style: textStyle.bodyNormal
+                     //         .copyWith(color: colors.whiteColor),
                         ),
                         onPressed: () async {
                           bool isAdd = await cartFunctions.addToCart(
@@ -91,9 +91,9 @@ class _DetailScreenState extends State<DetailScreen> {
                             Get.snackbar("Add to cart", "",
                                 messageText: Text(
                                   "successfully add to cart",
-                                  style: textStyle.bodyNormal,
+                           //       style: textStyle.bodyNormal,
                                 ),
-                                backgroundColor: colors.gray);
+                               /* backgroundColor: colors.gray*/);
                           }
                         },
                       ),
@@ -102,13 +102,13 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ),
               CircleAvatar(
-                backgroundColor: colors.gray,
+              //  backgroundColor: colors.gray,
                 child: IconButton(
-                  highlightColor: colors.whiteColor,
-                  splashColor: colors.whiteColor,
+                 // highlightColor: colors.whiteColor,
+                 // splashColor: colors.whiteColor,
                   icon: Icon(
                     CupertinoIcons.arrow_up_right,
-                    color: colors.blackColor,
+                 //   color: colors.blackColor,
                   ),
                   onPressed: () {
                     Share.shareWithResult("mohamed");
@@ -118,14 +118,14 @@ class _DetailScreenState extends State<DetailScreen> {
             ],
           ),
         ),
-        backgroundColor: colors.whiteColor,
+     //   backgroundColor: colors.whiteColor,
         appBar: AppBar(
-          foregroundColor: colors.blackColor,
-          backgroundColor: colors.whiteColor,
+       //   foregroundColor: colors.blackColor,
+         // backgroundColor: colors.whiteColor,
           centerTitle: true,
           title: Text(
             "Product Detail",
-            style: textStyle.titleLarge,
+         //   style: textStyle.titleLarge,
           ),
           actions: [
             CartLengthBadge(
@@ -143,7 +143,7 @@ class _DetailScreenState extends State<DetailScreen> {
             Container(
               width: Get.size.width,
               height: Get.size.height * 0.4,
-              color: colors.blackColor,
+             // color: colors.blackColor,
               child: Column(
                 children: [
                   Expanded(
@@ -164,13 +164,13 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: colors.blackColor,
+             //   color: colors.blackColor,
               ),
               child: Container(
                 height: Get.size.height * 0.4,
                 margin: const EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                    color: colors.whiteColor,
+                 //   color: colors.whiteColor,
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(15))),
                 child: SingleChildScrollView(
@@ -187,7 +187,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           paddingFromRL(
                             child: Text(
                               widget.productEntity.name,
-                              style: textStyle.titleLarge,
+                            //  style: textStyle.titleLarge,
                               overflow: TextOverflow.clip,
                             ),
                           ),
@@ -205,7 +205,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 itemBuilder: (context, index) {
                                   return Icon(
                                     Icons.star,
-                                    color: colors.amber,
+                                  //  color: colors.amber,
                                   );
                                 },
                                 onRatingUpdate: (value) {
@@ -217,14 +217,14 @@ class _DetailScreenState extends State<DetailScreen> {
                                         itemBuilder: (context, index) {
                                           return Icon(
                                             Icons.star,
-                                            color: colors.amber,
+                                          //  color: colors.amber,
                                           );
                                         },
                                       ),
                                     ),
                                     content: Text(
                                       "Thank you for rating",
-                                      style: textStyle.titleLarge,
+                                   //   style: textStyle.titleLarge,
                                     ),
                                   ));
                                 },
@@ -234,7 +234,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               ),
                               Text(
                                 "1.248 Reviews",
-                                style: textStyle.bodyNormal,
+                             //   style: textStyle.bodyNormal,
                               )
                             ],
                           )
@@ -246,16 +246,16 @@ class _DetailScreenState extends State<DetailScreen> {
                       paddingFromRL(
                           child: Text(
                         widget.productEntity.description,
-                        style: textStyle.bodySmall
-                            .copyWith(color: colors.captionColor),
+                      //  style: textStyle.bodySmall
+                        //    .copyWith(color: colors.captionColor),
                       )),
                       const SizedBox(
                         height: 20,
                       ),
                       Text(
                         "€${widget.productEntity.price}",
-                        style: textStyle.titleLarge
-                            .copyWith(color: colors.primary),
+                     //   style: textStyle.titleLarge
+                       //     .copyWith(color: colors.primary),
                       ),
                       const SizedBox(
                         height: 15,

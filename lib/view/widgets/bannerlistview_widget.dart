@@ -27,8 +27,8 @@ class BannerListView extends StatelessWidget {
             children: [
               Text(
                 "Top deals",
-                style: textStyle.titleLarge
-                    .copyWith(fontWeight: FontWeight.normal),
+               // style: textStyle.titleLarge
+                 //   .copyWith(fontWeight: FontWeight.normal),
               ),
               CupertinoButton(
                 onPressed: callback,
@@ -36,12 +36,12 @@ class BannerListView extends StatelessWidget {
                   children: [
                     Text(
                       "See all",
-                      style:
-                      textStyle.bodyNormal.copyWith(color: colors.primary),
+                      //style:
+                     // textStyle.bodyNormal.copyWith(color: colors.primary),
                     ),
                     Icon(
                       Icons.keyboard_double_arrow_right,
-                      color: colors.primary,
+                 //     color: colors.primary,
                     )
                   ],
                 ),

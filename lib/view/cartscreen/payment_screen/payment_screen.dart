@@ -36,7 +36,7 @@ class PaymentScreen extends StatelessWidget {
         height: 60,
         width: Get.mediaQuery.size.width * 0.7,
         child: FloatingActionButton.extended(
-            backgroundColor: colors.primary,
+         //   backgroundColor: colors.primary,
             onPressed: () {
               showCupertinoDialog(
                 context: context,
@@ -44,11 +44,11 @@ class PaymentScreen extends StatelessWidget {
                   return CupertinoAlertDialog(
                     title: Text(
                       "Pay",
-                      style: textStyle.bodyNormal,
+                    //  style: textStyle.bodyNormal,
                     ),
                     content: Text(
                       "Do you want pay?",
-                      style: textStyle.bodyNormal,
+                  //    style: textStyle.bodyNormal,
                     ),
                     actions: [
                       CupertinoButton(
@@ -89,17 +89,17 @@ class PaymentScreen extends StatelessWidget {
             },
             label: Text(
               "Pay",
-              style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
+            //  style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
             )),
       ),
       appBar: AppBar(
-        backgroundColor: colors.whiteColor,
-        foregroundColor: colors.blackColor,
+       // backgroundColor: colors.whiteColor,
+      //  foregroundColor: colors.blackColor,
         centerTitle: true,
         automaticallyImplyLeading: true,
         title: Text(
           "E-Payment",
-          style: textStyle.titleLarge,
+         // style: textStyle.titleLarge,
         ),
       ),
       body: Padding(
@@ -133,7 +133,7 @@ class PaymentScreen extends StatelessWidget {
                           return SizedBox(
                             height: 40,
                             child: CircleAvatar(
-                              backgroundColor: colors.whiteColor,
+                             // backgroundColor: colors.whiteColor,
                               foregroundImage: CachedNetworkImageProvider(
                                   productList[index].imageUrl),
                             ),
@@ -153,8 +153,8 @@ class PaymentScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   productList[0].name.substring(0, 10),
-                                  style: textStyle.bodyNormal
-                                      .copyWith(fontWeight: FontWeight.bold),
+                                 /* style: textStyle.bodyNormal
+                                      .copyWith(fontWeight: FontWeight.bold),*/
                                   overflow: TextOverflow.clip,
                                   textAlign: TextAlign.start,
                                 ),
@@ -163,7 +163,7 @@ class PaymentScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   "and more",
-                                  style: textStyle.bodySmall,
+                                //  style: textStyle.bodySmall,
                                 ),
                               ],
                             )),
@@ -171,13 +171,13 @@ class PaymentScreen extends StatelessWidget {
                           children: [
                             Icon(
                               CupertinoIcons.number_circle,
-                              color: colors.blackColor,
+                           //   color: colors.blackColor,
                               size: 20,
                             ),
                             Text(
                               "Count : ${productList.length}",
-                              style: textStyle.bodySmall
-                                  .copyWith(color: colors.blackColor),
+                             // style: textStyle.bodySmall
+                               //   .copyWith(color: colors.blackColor),
                             ),
                           ],
                         )
@@ -194,56 +194,56 @@ class PaymentScreen extends StatelessWidget {
                           colors: colors,
                           prefix: Text(
                             "Recipient Name",
-                            style: textStyle.bodyNormal,
+                           // style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             profileController.information.name,
-                            style: textStyle.bodyNormal
-                                .copyWith(fontWeight: FontWeight.bold),
+                          //  style: textStyle.bodyNormal
+                           //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
                           colors: colors,
                           prefix: Text(
                             "Address",
-                            style: textStyle.bodyNormal,
+                         //   style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             addressDetail,
-                            style: textStyle.bodyNormal
-                                .copyWith(fontWeight: FontWeight.bold),
+                           // style: textStyle.bodyNormal
+                             //   .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
                           colors: colors,
                           prefix: Text(
                             "Payment Methods",
-                            style: textStyle.bodyNormal,
+                         //   style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             "My E-Wallet",
-                            style: textStyle.bodyNormal
-                                .copyWith(fontWeight: FontWeight.bold),
+                         //   style: textStyle.bodyNormal
+                           //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
                           colors: colors,
                           prefix: Text(
                             "Date",
-                            style: textStyle.bodyNormal,
+                          //  style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             dateTime.toString().substring(0, 16),
-                            style: textStyle.bodyNormal
-                                .copyWith(fontWeight: FontWeight.bold),
+                         //   style: textStyle.bodyNormal
+                           //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
                           colors: colors,
                           prefix: Text(
                             "Total",
-                            style: textStyle.bodyNormal,
+                           // style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             "€$totalPrice",
-                            style: textStyle.bodyNormal
-                                .copyWith(fontWeight: FontWeight.bold),
+                         //   style: textStyle.bodyNormal
+                          //      .copyWith(fontWeight: FontWeight.bold),
                           )),
                     ],
                   )),
@@ -261,7 +261,7 @@ class PaymentScreen extends StatelessWidget {
         margin: const EdgeInsets.only(top: 25, bottom: 25),
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: colors.gray,
+       //   color: colors.gray,
           borderRadius: BorderRadius.circular(15),
         ),
         child: widget);
@@ -286,7 +286,7 @@ class PaymentScreen extends StatelessWidget {
         Divider(
           thickness: 0.5,
           height: 1,
-          color: colors.captionColor,
+        //  color: colors.captionColor,
         )
       ],
     );

@@ -22,11 +22,11 @@ class AppException extends StatelessWidget {
             errorMessage == null
                 ? Text(
               "Undefined Error",
-              style: textStyle.titleLarge,
+           //   style: textStyle.titleLarge,
             )
                 : Text(
               errorMessage!,
-              style: textStyle.titleLarge,
+    //          style: textStyle.titleLarge,
             ),
             const SizedBox(
               height: 10,
@@ -35,7 +35,7 @@ class AppException extends StatelessWidget {
                 onPressed: callback,
                 child: Text(
                   "try Again",
-                  style: textStyle.bodyNormal,
+             //     style: textStyle.bodyNormal,
                 ))
           ],
         ),

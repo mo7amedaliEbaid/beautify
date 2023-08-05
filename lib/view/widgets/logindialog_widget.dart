@@ -16,7 +16,7 @@ void loginRequiredDialog({required CustomTextStyle textStyle}) {
       builder: (context) => CupertinoAlertDialog(
             title: Text(
               "Login",
-              style: textStyle.titleLarge,
+            //  style: textStyle.titleLarge,
             ),
             content: Column(
               children: [
@@ -27,7 +27,7 @@ void loginRequiredDialog({required CustomTextStyle textStyle}) {
                 ),
                 Text(
                   "To continue to payment please login",
-                  style: textStyle.bodyNormal,
+                 // style: textStyle.bodyNormal,
                   overflow: TextOverflow.clip,
                   textAlign: TextAlign.start,
                 ),
@@ -37,7 +37,7 @@ void loginRequiredDialog({required CustomTextStyle textStyle}) {
               CupertinoButton(
                 child: Text(
                   "Cancel",
-                  style: textStyle.bodyNormal,
+                //  style: textStyle.bodyNormal,
                 ),
                 onPressed: () {
                   Get.back();
@@ -50,7 +50,7 @@ void loginRequiredDialog({required CustomTextStyle textStyle}) {
                   },
                   child: Text(
                     "Login",
-                    style: textStyle.bodyNormal,
+                  //  style: textStyle.bodyNormal,
                   )),
             ],
           ));

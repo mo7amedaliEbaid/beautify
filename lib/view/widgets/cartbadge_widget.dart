@@ -24,23 +24,23 @@ class CartLengthBadge extends StatelessWidget {
       valueListenable: duplicateController.cartBoxListenable,
       builder: (context, value, child) {
         return badges.Badge(
-          badgeStyle: badges.BadgeStyle(badgeColor: colors.primary),
+          badgeStyle: badges.BadgeStyle(/*badgeColor: colors.primary*/),
           //  badgeColor: colors.primary,
              position:  badges.BadgePosition.custom(bottom: 5, end: 10),//BadgePosition(bottom: 5, end: 10),
           badgeContent: Container(
             alignment: Alignment.center,
             decoration:
-            BoxDecoration(shape: BoxShape.circle, color: colors.primary),
+            BoxDecoration(shape: BoxShape.circle, /*color: colors.primary*/),
             child: Text(
               value.values.length.toString(),
-              style: textStyle.bodySmall.copyWith(color: colors.whiteColor),
+              //style: textStyle.bodySmall.copyWith(color: colors.whiteColor),
             ),
           ),
           child: CupertinoButton(
             onPressed: badgeCallback,
             child: Icon(
               CupertinoIcons.bag,
-              color: colors.blackColor,
+              //color: colors.blackColor,
             ),
           ),
         );

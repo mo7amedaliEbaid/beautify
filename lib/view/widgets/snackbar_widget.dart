@@ -15,8 +15,8 @@ void snackBar(
   Get.snackbar(title, "",
       messageText: AutoSizeText(
         message,
-        style: textStyle.bodyNormal,
+     //   style: textStyle.bodyNormal,
         maxLines: 1,
       ),
-      backgroundColor: colors.gray);
+     /* backgroundColor: colors.gray*/);
 }

@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        systemNavigationBarColor: duplicateController.colors.whiteColor));
+        /*systemNavigationBarColor: duplicateController.colors.whiteColor*/));
     super.initState();
   }
 
@@ -71,21 +71,21 @@ class _HomeScreenState extends State<HomeScreen>
             final profileFunctions =
                 Get.find<ProfileController>().profileFunctions;
             return Scaffold(
-              backgroundColor: colors.blackColor,
+            //  backgroundColor: colors.blackColor,
               appBar: AppBar(
                 elevation: 0,
-                backgroundColor: colors.blackColor,
+              //  backgroundColor: colors.blackColor,
                 centerTitle: true,
                 title: Text(
                   "Beautify",
-                  style:
-                      textStyle.titleLarge.copyWith(color: colors.whiteColor),
+                //  style:
+                  //    textStyle.titleLarge.copyWith(color: colors.whiteColor),
                 ),
                 actions: [
                   CupertinoButton(
                     child: Icon(
                       Icons.search,
-                      color: colors.whiteColor,
+                 //     color: colors.whiteColor,
                     ),
                     onPressed: () {
                       Get.to(const SearchScreen());
@@ -108,16 +108,16 @@ class _HomeScreenState extends State<HomeScreen>
                             children: [
                               Text(
                                 "Maybelline Collection",
-                                style: textStyle.titleLarge.copyWith(
-                                  overflow: TextOverflow.clip,
-                                ),
+                               // style: textStyle.titleLarge.copyWith(
+                                 // overflow: TextOverflow.clip,
+                              //  ),
                               ),
                               const SizedBox(
                                 height: 5,
                               ),
                               Text(
                                 "Find the perfect watch for your wrist",
-                                style: textStyle.bodyNormal,
+                             //   style: textStyle.bodyNormal,
                               )
                             ],
                           ),

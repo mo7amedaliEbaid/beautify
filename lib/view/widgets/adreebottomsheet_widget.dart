@@ -34,7 +34,7 @@ void addAddressBottomSheet(
         height: Get.size.height * 0.8,
         padding: const EdgeInsets.fromLTRB(15, 4, 15, 15),
         decoration: BoxDecoration(
-            color: colors.whiteColor,
+           // color: colors.whiteColor,
             borderRadius:
             const BorderRadius.vertical(top: Radius.circular(15))),
         child: Scaffold(
@@ -43,12 +43,12 @@ void addAddressBottomSheet(
           floatingActionButton: SizedBox(
               width: Get.size.width * 0.5,
               child: FloatingActionButton.extended(
-                  backgroundColor: colors.primary,
+               //   backgroundColor: colors.primary,
                   onPressed: osSaveClicked,
                   label: Text(
                     "Save",
-                    style:
-                    textStyle.bodyNormal.copyWith(color: colors.whiteColor),
+                    //style:
+                   // textStyle.bodyNormal.copyWith(color: colors.whiteColor),
                   ))),
           body: SingleChildScrollView(
             physics: scrollPhysics,
@@ -59,7 +59,7 @@ void addAddressBottomSheet(
                     width: 40,
                     height: 7,
                     decoration: BoxDecoration(
-                        color: colors.captionColor,
+                 //       color: colors.captionColor,
                         borderRadius: BorderRadius.circular(3)),
                   ),
                   onPressed: () {

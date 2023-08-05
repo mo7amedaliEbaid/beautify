@@ -30,7 +30,7 @@ class OrderDetailScreen extends StatelessWidget {
                 const EdgeInsets.only(top: 12, right: 15, bottom: 12, left: 15),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: colors.gray, borderRadius: BorderRadius.circular(15)),
+              /*  color: colors.gray,*/ borderRadius: BorderRadius.circular(15)),
             child: AlignedGridView.count(
               physics: duplicateController.uiDuplicate.defaultScroll,
               crossAxisCount: 2,
@@ -42,7 +42,7 @@ class OrderDetailScreen extends StatelessWidget {
                 return Container(
                   height: 250,
                   decoration: BoxDecoration(
-                      color: colors.whiteColor,
+                    //  color: colors.whiteColor,
                       borderRadius: BorderRadius.circular(15)),
                   child: Column(
                     children: [
@@ -54,7 +54,7 @@ class OrderDetailScreen extends StatelessWidget {
                         children: [
                           Text(
                             product.name,
-                            style: textStyle.bodyNormal,
+                         //   style: textStyle.bodyNormal,
                             maxLines: 1,
                             overflow: TextOverflow.clip,
                             textAlign: TextAlign.center,
@@ -64,7 +64,7 @@ class OrderDetailScreen extends StatelessWidget {
                           ),
                           Text(
                             "€${product.price}",
-                            style: textStyle.bodyNormal,
+                       //     style: textStyle.bodyNormal,
                           ),
                         ],
                       ),

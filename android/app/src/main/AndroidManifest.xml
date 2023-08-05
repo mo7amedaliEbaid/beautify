@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="beautify"
+        android:label="Beautify"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/beautify_ic">
         <activity
             android:name=".MainActivity"
             android:exported="true"

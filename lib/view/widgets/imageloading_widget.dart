@@ -9,5 +9,5 @@ Widget imageLoading() {
   final controller = Get.find<DuplicateController>();
   final colors = controller.colors;
   return LoadingAnimationWidget.halfTriangleDot(
-      color: colors.primary, size: 20);
+      color: Colors.white, size: 20);
 }

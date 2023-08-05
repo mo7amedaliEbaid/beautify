@@ -91,7 +91,7 @@ class AddressFunctions {
           value: element,
           child: Text(
             element,
-            style: textStyle.bodyNormal,
+          //  style: textStyle.bodyNormal,
           ),
         ),
       );
@@ -110,7 +110,7 @@ class AddressFunctions {
           value: element.addressDetail,
           child: Text(
             element.addressName,
-            style: textStyle.bodyNormal,
+         //   style: textStyle.bodyNormal,
           ),
         ),
           

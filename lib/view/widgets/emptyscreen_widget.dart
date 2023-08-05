@@ -24,13 +24,13 @@ class EmptyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: colors.blackColor,
+     // backgroundColor: colors.blackColor,
       appBar: AppBar(
-        backgroundColor: colors.blackColor,
+     //   backgroundColor: colors.blackColor,
         centerTitle: true,
         title: Text(
           title,
-          style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
+      //    style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
         ),
       ),
       body: duplicateContainer(
@@ -50,8 +50,8 @@ class EmptyScreen extends StatelessWidget {
                 child: Center(
                   child: Text(
                     content,
-                    style: textStyle.bodyNormal
-                        .copyWith(fontWeight: FontWeight.bold),
+                 //   style: textStyle.bodyNormal
+                   //     .copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

@@ -27,15 +27,15 @@ class ShopProductView extends StatelessWidget {
         Get.to(DetailScreen(productEntity: product));
       },
       child: badges.Badge(
-        badgeStyle: badges.BadgeStyle(badgeColor: colors.whiteColor),
+        badgeStyle: badges.BadgeStyle(/*badgeColor: colors.whiteColor*/),
         //badgeColor: colors.whiteColor,
         position: badges.BadgePosition.custom(top: 0, end: 0),
         // position: const BadgePosition(top: 0, end: 0),
         badgeContent: FavoriteBadge(
           product: product,
-          badgeBackgroundColor: colors.whiteColor,
-          activeColor: colors.blackColor,
-          inActive: colors.blackColor,
+          badgeBackgroundColor: Colors.white,
+          activeColor: Colors.white,
+          inActive: Colors.white,
         ),
         child: Column(
           children: [
@@ -53,14 +53,14 @@ class ShopProductView extends StatelessWidget {
             ),
             Text(
               product.name.split("Maybelline").last.substring(0, 7),
-              style: textStyle.bodyNormal.copyWith(color: colors.whiteColor),
+            //  style: textStyle.bodyNormal.copyWith(color: colors.whiteColor),
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
               "€${product.price}",
-              style: textStyle.bodyNormal.copyWith(color: colors.whiteColor),
+            //  style: textStyle.bodyNormal.copyWith(color: colors.whiteColor),
             )
           ],
         ),

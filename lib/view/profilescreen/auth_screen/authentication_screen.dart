@@ -88,17 +88,17 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       alignment: Alignment.center,
                       height: 50,
                       decoration: BoxDecoration(
-                          color: colors.blackColor,
+                        //  color: colors.blackColor,
                           borderRadius: const BorderRadius.vertical(
                               top: Radius.circular(15))),
                       child: Text(
                         "Change password",
-                        style: textStyle.titleLarge
-                            .copyWith(color: colors.whiteColor),
+                   //     style: textStyle.titleLarge
+                     //       .copyWith(color: colors.whiteColor),
                       ),
                     ),
                     content: Container(
-                      color: colors.blackColor,
+                 //     color: colors.blackColor,
                       child: duplicateContainer(
                         colors: colors,
                         child: Container(
@@ -132,11 +132,11 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                         margin: const EdgeInsets.only(bottom: 20),
                         child: CupertinoTheme(
                           data:
-                              CupertinoThemeData(primaryColor: colors.primary),
+                              CupertinoThemeData(primaryColor: Colors.white),
                           child: CupertinoButton.filled(
                             child: Text(
                               "Save",
-                              style: textStyle.bodyNormal,
+                            //  style: textStyle.bodyNormal,
                             ),
                             onPressed: () {
                               if (userNameKey.currentState!.validate() &&
@@ -201,7 +201,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                               children: [
                                 AutoSizeText(
                                   "Let's sign you in",
-                                  style: textStyle.titleLarge,
+                                //  style: textStyle.titleLarge,
                                   maxLines: 1,
                                 ),
                                 const SizedBox(
@@ -209,7 +209,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                 ),
                                 AutoSizeText(
                                   "welcome back, we've been missed you",
-                                  style: textStyle.bodySmall,
+                                //  style: textStyle.bodySmall,
                                   maxLines: 1,
                                 )
                               ],
@@ -255,7 +255,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                   children: [
                                     Obx(
                                       () => Checkbox(
-                                        activeColor: colors.primary,
+                                      //  activeColor: colors.primary,
                                         value:
                                             profileController.rememberMeStatus,
                                         onChanged: (value) {
@@ -269,14 +269,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                     ),
                                     Text(
                                       "Remember me",
-                                      style: textStyle.bodySmall,
+                              //        style: textStyle.bodySmall,
                                     )
                                   ],
                                 ),
                                 CupertinoButton(
                                   child: Text(
                                     "Forgat password?",
-                                    style: textStyle.bodyNormal,
+                              //      style: textStyle.bodyNormal,
                                   ),
                                   onPressed: () {
                                     authenticationBloc!
@@ -290,13 +290,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                             padding: edgeInsets,
                             child: CupertinoTheme(
                                 data: CupertinoThemeData(
-                                    primaryColor: colors.primary),
+                                    primaryColor: Colors.white),
                                 child: CupertinoButton.filled(
                                     borderRadius: BorderRadius.circular(20),
                                     child: Text(
                                       "Login",
-                                      style: textStyle.bodyNormal
-                                          .copyWith(color: colors.whiteColor),
+                                 //     style: textStyle.bodyNormal
+                                   //       .copyWith(color: colors.whiteColor),
                                     ),
                                     onPressed: () async {
                                       authenticationBloc!.add(
@@ -316,14 +316,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     children: [
                       AutoSizeText(
                         "Don't have an account?",
-                        style: textStyle.bodySmall,
+                      //  style: textStyle.bodySmall,
                       ),
                       CupertinoButton(
                         child: Text(
                           "SignUp",
-                          style: textStyle.bodyNormal.copyWith(
+                       /*   style: textStyle.bodyNormal.copyWith(
                               fontSize: 19,
-                              decoration: TextDecoration.underline),
+                              decoration: TextDecoration.underline),*/
                         ),
                         onPressed: () {
                           authenticationBloc!.add(AuthenticationSignUpMode());
@@ -360,7 +360,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                 children: [
                                   AutoSizeText(
                                     "Let's sign you in",
-                                    style: textStyle.titleLarge,
+                                  //  style: textStyle.titleLarge,
                                     maxLines: 1,
                                   ),
                                   const SizedBox(
@@ -368,7 +368,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                   ),
                                   AutoSizeText(
                                     "welcome back, we've been missed you",
-                                    style: textStyle.bodySmall,
+                                   // style: textStyle.bodySmall,
                                     maxLines: 1,
                                   )
                                 ],
@@ -419,7 +419,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                 children: [
                                   Obx(
                                     () => Checkbox(
-                                      activeColor: colors.primary,
+                                     // activeColor: colors.primary,
                                       value: profileController.rememberMeStatus,
                                       onChanged: (value) {
                                         if (value != null) {
@@ -432,7 +432,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                   ),
                                   Text(
                                     "Remember me",
-                                    style: textStyle.bodySmall,
+                                 //   style: textStyle.bodySmall,
                                   )
                                 ],
                               ),
@@ -441,13 +441,13 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                               padding: edgeInsets,
                               child: CupertinoTheme(
                                   data: CupertinoThemeData(
-                                      primaryColor: colors.primary),
+                                      primaryColor:Colors.white),
                                   child: CupertinoButton.filled(
                                       borderRadius: BorderRadius.circular(20),
                                       child: Text(
                                         "SignUp",
-                                        style: textStyle.bodyNormal
-                                            .copyWith(color: colors.whiteColor),
+                                      //  style: textStyle.bodyNormal
+                                        //    .copyWith(color: colors.whiteColor),
                                       ),
                                       onPressed: () async {
                                         if (nameKey.currentState!.validate() &&
@@ -476,14 +476,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       children: [
                         AutoSizeText(
                           "have an account?",
-                          style: textStyle.bodySmall,
+                       //   style: textStyle.bodySmall,
                         ),
                         CupertinoButton(
                           child: Text(
                             "Login",
-                            style: textStyle.bodyNormal.copyWith(
+                         /*   style: textStyle.bodyNormal.copyWith(
                                 fontSize: 19,
-                                decoration: TextDecoration.underline),
+                                decoration: TextDecoration.underline),*/
                           ),
                           onPressed: () {
                             authenticationBloc!.add(AuthenticationLoginMode());

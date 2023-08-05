@@ -29,7 +29,7 @@ class CartBottomItem extends StatelessWidget {
           width: Get.mediaQuery.size.width,
           height: 100,
           decoration: BoxDecoration(
-              color: colors.gray,
+            //  color: colors.gray,
               borderRadius:
               const BorderRadius.vertical(top: Radius.circular(15))),
           padding:
@@ -45,13 +45,14 @@ class CartBottomItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: ElevatedButton(
                         style: ButtonStyle(
-                            backgroundColor:
-                            MaterialStatePropertyAll(colors.blackColor)),
+                          //  backgroundColor:
+                            //MaterialStatePropertyAll(colors.blackColor)
+                          ),
                         onPressed: callback,
                         child: Text(
                           navigateName,
-                          style: textStyle.bodyNormal
-                              .copyWith(color: colors.whiteColor),
+                       //   style: textStyle.bodyNormal
+                         //     .copyWith(color: colors.whiteColor),
                         )),
                   ),
                 ),

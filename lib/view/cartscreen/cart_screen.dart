@@ -70,7 +70,7 @@ class _CartScreenState extends State<CartScreen> {
                                 widget: CupertinoButton(
                                     child: Icon(
                                       Icons.delete,
-                                      color: colors.whiteColor,
+                                   //   color: colors.whiteColor,
                                     ),
                                     onPressed: () async {
                                       final bool isDeleted =
@@ -81,9 +81,9 @@ class _CartScreenState extends State<CartScreen> {
                                         Get.snackbar("Delete", "",
                                             messageText: Text(
                                               "Product removed successfully",
-                                              style: textStyle.bodyNormal,
+                                            //  style: textStyle.bodyNormal,
                                             ),
-                                            backgroundColor: colors.gray);
+                                          /*  backgroundColor: colors.gray*/);
                                         cartBloc!.add(CartStart());
                                       }
                                     }),
@@ -99,8 +99,8 @@ class _CartScreenState extends State<CartScreen> {
                           children: [
                             Text(
                               "Total price",
-                              style: textStyle.bodySmall
-                                  .copyWith(color: colors.captionColor),
+                             /* style: textStyle.bodySmall
+                                  .copyWith(color: colors.captionColor),*/
                             ),
                             const SizedBox(
                               height: 5,
@@ -109,8 +109,8 @@ class _CartScreenState extends State<CartScreen> {
                               width: 200,
                               child: AutoSizeText(
                                 "€$totalPrice",
-                                style:
-                                    textStyle.titleLarge.copyWith(fontSize: 20),
+                             //   style:
+                               //     textStyle.titleLarge.copyWith(fontSize: 20),
                                 maxFontSize: 25,
                                 minFontSize: 16,
                                 maxLines: 2,
