@@ -1,4 +1,4 @@
-import 'package:beautify/providers.dart';
+import 'package:beautify/providers/theme_provider.dart';
 import 'package:beautify/view/landing_screen/landing_screen.dart';
 import 'package:beautify/view/rootscreen/root.dart';
 import 'package:beautify/viewmodel/initial/initial.dart';

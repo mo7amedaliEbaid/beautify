@@ -2,7 +2,6 @@ import 'package:beautify/view/homescreen/search_screen/serach_screen.dart';
 import 'package:beautify/view/homescreen/shop_screen/shop_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:beautify/configs/configs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,7 @@ import '../../model/controllers/home_controller.dart';
 import '../../model/controllers/profile_controller.dart';
 
 import '../../model/tools/jsonparse/product_parse.dart';
-import '../../providers.dart';
+import '../../providers/theme_provider.dart';
 import '../widgets/bannerlistview_widget.dart';
 import '../widgets/customloading_widget.dart';
 import '../widgets/duplicatecontainer_widget.dart';
@@ -36,12 +35,6 @@ class _HomeScreenState extends State<HomeScreen>
   final duplicateController = Get.find<DuplicateController>();
   final homeController = Get.find<HomeController>();
   final getContext = Get.context!;
-  @override
-  void initState() {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        /*systemNavigationBarColor: duplicateController.colors.whiteColor*/));
-    super.initState();
-  }
 
   @override
   void dispose() {
@@ -65,8 +58,6 @@ class _HomeScreenState extends State<HomeScreen>
       },
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-      //    final CustomColors colors = duplicateController.colors;
-        //  final CustomTextStyle textStyle = duplicateController.textStyle;
           final ScrollPhysics physics =
               duplicateController.uiDuplicate.defaultScroll;
           if (state is HomeLoading) {
@@ -76,15 +67,12 @@ class _HomeScreenState extends State<HomeScreen>
             final profileFunctions =
                 Get.find<ProfileController>().profileFunctions;
             return Scaffold(
-            //  backgroundColor: colors.blackColor,
               appBar: AppBar(
                 elevation: 0,
-              //  backgroundColor: colors.blackColor,
                 centerTitle: true,
                 title: Text(
                   "Beautify",
-                //  style:
-                  //    textStyle.titleLarge.copyWith(color: colors.whiteColor),
+
                 ),
                 leading:  InkWell(
                   hoverColor: Colors.transparent,
@@ -95,8 +83,7 @@ class _HomeScreenState extends State<HomeScreen>
                     themeProvider.theme = !themeProvider.theme;
                   },
                   child: Container(
-                    height: AppDimensions.normalize(30),
-                    width: AppDimensions.normalize(30),
+                    margin: Space.all(.5,.5),
                     decoration: BoxDecoration(
                       color: themeProvider.isDark
                           ? Colors.grey[800]
@@ -108,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen>
                       color: themeProvider.isDark
                           ? Colors.yellow
                           : Colors.grey,
-                      size: AppDimensions.normalize(15),
+                      size: AppDimensions.normalize(10),
                     ),
                   ),
                 ),
@@ -125,7 +112,6 @@ class _HomeScreenState extends State<HomeScreen>
                 ],
               ),
               body: duplicateContainer(
-           //     colors: colors,
                 child: ListView.builder(
                   physics: physics,
                   itemCount: 6,
@@ -133,33 +119,25 @@ class _HomeScreenState extends State<HomeScreen>
                     switch (index) {
                       case 1:
                         return Padding(
-                          padding: const EdgeInsets.only(top: 10, bottom: 10),
+                          padding: Space.v!,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 "Maybelline Collection",
-                               // style: textStyle.titleLarge.copyWith(
-                                 // overflow: TextOverflow.clip,
-                              //  ),
                               ),
-                              const SizedBox(
-                                height: 5,
-                              ),
+                              Space.y!,
                               Text(
-                                "Find the perfect watch for your wrist",
-                             //   style: textStyle.bodyNormal,
+                                "Find the perfect makeup product",
                               )
                             ],
                           ),
                         );
                       case 2:
                         return ProductListView(
-                    //        colors: colors,
                             profileFunctions: profileFunctions,
                             reverse: false,
                             physics: physics,
-                      //      textStyle: textStyle,
                             productList: productList,
                             callback: () {
                               Get.to(ShopScreen(
@@ -175,14 +153,11 @@ class _HomeScreenState extends State<HomeScreen>
                                   productList: productList));
                             },
                             produtList: productList,
-                         //   colors: colors,
-                           /* textStyle: textStyle*/);
+                     );
 
                       case 4:
                         return ProductListView(
                             profileFunctions: profileFunctions,
-                         //   colors: colors,
-                            //textStyle: textStyle,
                             productList: productList.reversed.toList(),
                             title: "Featured products",
                             physics: physics,

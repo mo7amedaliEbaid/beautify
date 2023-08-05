@@ -11,5 +11,6 @@ Widget networkImage({required String imageUrl, double? width, double? height}) {
     placeholder: (context, url) {
       return imageLoading();
     },
+  //  errorWidget:Icon(Icons.error) ,
   );
 }

@@ -17,5 +17,6 @@ class HighPriorityInitial {
     Hive.registerAdapter(ProductEntityAdapter());
     Hive.registerAdapter(AddressEntityAdapter());
     Hive.registerAdapter(OrderEntityAdapter());
+    await Hive.openBox('app');
   }
 }

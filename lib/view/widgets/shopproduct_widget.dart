@@ -1,9 +1,12 @@
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:badges/badges.dart'as badges;
+import 'package:provider/provider.dart';
 
 import '../../model/tools/jsonparse/product_parse.dart';
+import '../../providers/theme_provider.dart';
 import '../homescreen/homedetails_screen/detail_screen.dart';
 import 'favouritebadge_widget.dart';
 import 'networkimage_widget.dart';
@@ -11,54 +14,44 @@ class ShopProductView extends StatelessWidget {
   const ShopProductView({
     Key? key,
     required this.product,
- //   required this.textStyle,
-   // required this.colors,
   }) : super(key: key);
 
   final ProductEntity product;
-  //final CustomTextStyle textStyle;
-  //final CustomColors colors;
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return InkWell(
       onTap: () async {
         Get.to(DetailScreen(productEntity: product));
       },
       child: badges.Badge(
-        badgeStyle: badges.BadgeStyle(/*badgeColor: colors.whiteColor*/),
-        //badgeColor: colors.whiteColor,
-        position: badges.BadgePosition.custom(top: 0, end: 0),
-        // position: const BadgePosition(top: 0, end: 0),
+        position: badges.BadgePosition.custom(end: 0, top: 0),
+        badgeStyle: badges.BadgeStyle(badgeColor:themeProvider.isDark?Colors.red:Colors.yellow ),
         badgeContent: FavoriteBadge(
           product: product,
-          badgeBackgroundColor: Colors.white,
-          activeColor: Colors.white,
-          inActive: Colors.white,
+          badgeBackgroundColor: themeProvider.isDark?Colors.green:Colors.green,
+          activeColor: Colors.red,
+          inActive:themeProvider.isDark?Colors.white:Colors.white,
         ),
         child: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
+            Space.y!,
             SizedBox(
-                width: 100,
-                height: 100,
+                width: AppDimensions.normalize(40),
+                height: AppDimensions.normalize(40),
                 child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(AppDimensions.normalize(6),),
                     child: networkImage(imageUrl: product.imageUrl))),
             const SizedBox(
               height: 5,
             ),
             Text(
               product.name.split("Maybelline").last.substring(0, 7),
-            //  style: textStyle.bodyNormal.copyWith(color: colors.whiteColor),
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            Space.yf(.1),
             Text(
               "€${product.price}",
-            //  style: textStyle.bodyNormal.copyWith(color: colors.whiteColor),
             )
           ],
         ),

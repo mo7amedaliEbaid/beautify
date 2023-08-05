@@ -1,11 +1,12 @@
+import 'package:beautify/configs/app_dimensions.dart';
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:badges/badges.dart'as badges;
-
-
-
+import 'package:provider/provider.dart';
 import '../../model/tools/jsonparse/product_parse.dart';
+import '../../providers/theme_provider.dart';
 import '../../viewmodel/profile/profile.dart';
 import '../homescreen/homedetails_screen/detail_screen.dart';
 import 'favouritebadge_widget.dart';
@@ -14,17 +15,15 @@ class HomeProductView extends StatelessWidget {
   const HomeProductView(
       {Key? key,
         required this.product,
-    //    required this.textStyle,
-      //  required this.colors,
         required this.profileFunctions})
       : super(key: key);
 
   final ProductEntity product;
- // final CustomTextStyle textStyle;
-  //final CustomColors colors;
   final ProfileFunctions profileFunctions;
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return ValueListenableBuilder(
       valueListenable: profileFunctions.favoriteListenable(),
       builder: (context, value, child) {
@@ -33,35 +32,28 @@ class HomeProductView extends StatelessWidget {
             Get.to(DetailScreen(productEntity: product));
           },
           child: badges.Badge(
-                position: badges.BadgePosition.custom(end: 0, top: 0), //BadgePosition(end: 0, top: 0),
-            badgeStyle: badges.BadgeStyle(/*badgeColor:colors.blackColor */),
-            //  badgeColor: colors.blackColor,
+                position: badges.BadgePosition.custom(end: 0, top: 0),
+            badgeStyle: badges.BadgeStyle(badgeColor:themeProvider.isDark?Colors.red:Colors.yellow ),
 
             badgeContent: FavoriteBadge(
               product: product,
-              badgeBackgroundColor: Colors.white,
-              activeColor: Colors.black54,
-              inActive:Colors.white
+              badgeBackgroundColor: themeProvider.isDark?Colors.green:Colors.green,
+              activeColor: Colors.red,
+              inActive:themeProvider.isDark?Colors.white:Colors.white,
             ),
             child: Column(
               children: [
                 SizedBox(
-                    width: 100,
-                    height: 100,
+                    width: AppDimensions.normalize(50),
+                    height: AppDimensions.normalize(50),
                     child: networkImage(imageUrl: product.imageUrl)),
-                const SizedBox(
-                  height: 5,
-                ),
+                Space.y!,
                 Text(
                   product.name.split("Maybelline").last.substring(0, 7),
-                //  style: textStyle.bodyNormal,
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
+                Space.y!,
                 Text(
                   "€${product.price}",
-               //   style: textStyle.bodyNormal,
                 )
               ],
             ),

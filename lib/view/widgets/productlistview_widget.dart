@@ -4,19 +4,16 @@ import 'package:flutter/material.dart';
 import '../../model/tools/jsonparse/product_parse.dart';
 import '../../viewmodel/profile/profile.dart';
 import 'homeproduct_widget.dart';
+import 'package:beautify/configs/configs.dart';
 class ProductListView extends StatelessWidget {
   const ProductListView(
       {super.key,
-     //   required this.colors,
-       // required this.textStyle,
         required this.productList,
         required this.title,
         required this.physics,
         required this.reverse,
         required this.callback,
         required this.profileFunctions});
-//  final CustomColors colors;
-  //final CustomTextStyle textStyle;
   final List<ProductEntity> productList;
   final String title;
   final ScrollPhysics physics;
@@ -26,7 +23,7 @@ class ProductListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10),
+      padding: Space.all(1,1),
       child: Column(
         children: [
           Row(
@@ -34,12 +31,11 @@ class ProductListView extends StatelessWidget {
             children: [
               Expanded(
                 child: Container(
-                  width: 200,
-                  height: 30,
+                  width: AppDimensions.normalize(20),
+                  height: AppDimensions.normalize(8),
                   child: AutoSizeText(
                     title,
-                   // style: textStyle.titleLarge.copyWith(
-                     // fontWeight: FontWeight.normal,
+                    style: AppText.h2,
                     ),
                   ),
                 ),
@@ -50,23 +46,18 @@ class ProductListView extends StatelessWidget {
                   children: [
                     Text(
                       "See all",
-                 //     style:
-                   //   textStyle.bodyNormal.copyWith(color: colors.primary),
                     ),
                     Icon(
                       Icons.keyboard_double_arrow_right,
-                 //     color: colors.primary,
                     ),
                   ],
                 ),
               )
             ],
           ),
-           SizedBox(
-            height: 10,
-          ),
+           Space.y!,
           SizedBox(
-            height: 200,
+            height: AppDimensions.normalize(70),
             child: ListView.builder(
               reverse: reverse,
               physics: physics,
@@ -75,12 +66,10 @@ class ProductListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 final product = productList[index];
                 return Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  padding: Space.h!,
                   child: HomeProductView(
                     profileFunctions: profileFunctions,
                     product: product,
-                  //  textStyle: textStyle,
-                    //colors: colors,
                   ),
                 );
               },

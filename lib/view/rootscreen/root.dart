@@ -50,8 +50,7 @@ class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     App.init(context);
-    bool isdark =
-        Get.find<DuplicateController>().introFunctions.isDark;
+
 
     return Scaffold(
       body: PageView(
