@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
 import 'duplicatecontainer_widget.dart';
 class DuplicateTemplate extends StatelessWidget {
   const DuplicateTemplate({

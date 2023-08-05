@@ -2,8 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
+
 import '../../model/tools/jsonparse/product_parse.dart';
 import '../homescreen/homedetails_screen/detail_screen.dart';
 import 'networkimage_widget.dart';

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:hive_flutter/adapters.dart';
 import '../../model/tools/entities/AddressEntity/address_entity.dart';
-import '../../model/tools/fonts/font.dart';
 
 class AddressFunctions {
   final String addressBox = "Address Box";
   final ValueNotifier<bool> valueNotifier = ValueNotifier(false);
   final List<String> countriesList = [
+    "Egypt",
     "United States",
     "Canada",
     "Afghanistan",

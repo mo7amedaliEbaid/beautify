@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../model/controllers/duplicate_controller.dart';
 import '../../model/controllers/initial_controller.dart';
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
 import '../cartscreen/cart_screen.dart';
 import '../homescreen/home_screen.dart';
 import '../profilescreen/profile_screen.dart';

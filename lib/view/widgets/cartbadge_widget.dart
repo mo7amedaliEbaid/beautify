@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:badges/badges.dart'as badges;
 
 import '../../model/controllers/duplicate_controller.dart';
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
 class CartLengthBadge extends StatelessWidget {
   const CartLengthBadge({
     Key? key,

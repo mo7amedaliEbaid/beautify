@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intro_slider/intro_slider.dart';
 import '../../model/controllers/duplicate_controller.dart';
-import '../../model/tools/colors/color.dart';
 import '../../model/tools/constants/assets.dart';
 import '../../viewmodel/onboarding/onboarding.dart';
 import '../rootscreen/root.dart';

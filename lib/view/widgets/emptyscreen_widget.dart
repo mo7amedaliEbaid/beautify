@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
 import 'duplicatecontainer_widget.dart';
 class EmptyScreen extends StatelessWidget {
   const EmptyScreen({

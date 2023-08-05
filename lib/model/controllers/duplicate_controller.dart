@@ -5,9 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import '../../viewmodel/cart/cart.dart';
 import '../../viewmodel/cart/payment.dart';
 import '../../viewmodel/onboarding/onboarding.dart';
-import '../tools/colors/color.dart';
 import '../tools/entities/entities.dart';
-import '../tools/fonts/font.dart';
 import '../tools/jsonparse/product_parse.dart';
 
 class DuplicateController extends GetxController {

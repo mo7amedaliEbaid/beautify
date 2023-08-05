@@ -5,10 +5,8 @@ import 'package:get/get.dart';
 
 import '../../../../model/controllers/duplicate_controller.dart';
 import '../../../../model/controllers/profile_controller.dart';
-import '../../../../model/tools/colors/color.dart';
 import '../../../../model/tools/entities/AddressEntity/address_entity.dart';
 import '../../../../model/tools/entities/entities.dart';
-import '../../../../model/tools/fonts/font.dart';
 
 
 

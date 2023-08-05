@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../model/controllers/duplicate_controller.dart';
 import '../../model/controllers/profile_controller.dart';
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
 import '../../viewmodel/profile/profile.dart';
 import '../widgets/duplicatetempelate_widget.dart';
 import '../widgets/logindialog_widget.dart';

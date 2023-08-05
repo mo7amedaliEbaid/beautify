@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:badges/badges.dart'as badges;
 
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
 import '../../model/tools/jsonparse/product_parse.dart';
 import '../homescreen/homedetails_screen/detail_screen.dart';
 import 'favouritebadge_widget.dart';

@@ -6,7 +6,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../../model/controllers/duplicate_controller.dart';
 import '../../../model/controllers/profile_controller.dart';
-import '../../../model/tools/colors/color.dart';
 import '../../../model/tools/entities/OrderEntity/order_entity.dart';
 import '../../../model/tools/jsonparse/product_parse.dart';
 import '../../rootscreen/root.dart';

@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../model/tools/colors/color.dart';
 import '../../model/tools/entities/entities.dart';
-import '../../model/tools/fonts/font.dart';
 import '../../model/tools/jsonparse/product_parse.dart';
 
 

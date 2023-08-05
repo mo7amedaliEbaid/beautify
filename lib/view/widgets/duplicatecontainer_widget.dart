@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import '../../model/tools/colors/color.dart';
 Widget duplicateContainer(
     {/*required CustomColors colors,*/ required Widget child}) {
   return Container(

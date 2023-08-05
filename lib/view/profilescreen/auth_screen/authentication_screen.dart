@@ -8,8 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 
 import '../../../model/controllers/duplicate_controller.dart';
-import '../../../model/tools/colors/color.dart';
-import '../../../model/tools/fonts/font.dart';
+
 import '../../widgets/customloading_widget.dart';
 import '../../widgets/duplicatecontainer_widget.dart';
 import '../../widgets/duplicatetempelate_widget.dart';

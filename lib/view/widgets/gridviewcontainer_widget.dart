@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../model/tools/colors/color.dart';
 
 Widget gridViewScreensContainer(
     {required Widget child,/* required CustomColors colors*/}) {

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../model/tools/constants/assets.dart';
-import '../../model/tools/fonts/font.dart';
 import '../profilescreen/auth_screen/authentication_screen.dart';
 
 

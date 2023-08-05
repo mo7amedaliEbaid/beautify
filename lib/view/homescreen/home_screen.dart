@@ -9,8 +9,7 @@ import 'package:get/get.dart';
 import '../../model/controllers/duplicate_controller.dart';
 import '../../model/controllers/home_controller.dart';
 import '../../model/controllers/profile_controller.dart';
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
+
 import '../../model/tools/jsonparse/product_parse.dart';
 import '../widgets/bannerlistview_widget.dart';
 import '../widgets/customloading_widget.dart';

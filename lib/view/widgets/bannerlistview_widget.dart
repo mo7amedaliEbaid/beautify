@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../model/tools/colors/color.dart';
-import '../../model/tools/fonts/font.dart';
+
 import '../../model/tools/jsonparse/product_parse.dart';
 import 'networkimage_widget.dart';
 class BannerListView extends StatelessWidget {
