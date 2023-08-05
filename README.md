@@ -1,14 +1,14 @@
 # Beautify
-Beautify is a flutter e-commerce app for displaying makeup products ,managing orders and sales
+Beautify is a flutter e-commerce app for displaying makeup products ,managing user's orders and sales.
 
 ## Architecture
-Clean Architecture
+✔️ Clean Architecture
 
 ## State Management
-Bloc && Getx
+✔️ Bloc && Getx
 
 ## Design Pattern
-MVVM
+✔️ MVVM
 
 ## Features and Components
 
@@ -43,7 +43,7 @@ build_runner:
 
 
 #### features management
-dio:
+dio:     
 image_picker:       
 dropdown_button2:       
 share_plus:     
@@ -58,7 +58,7 @@ intro_slider:
 lottie:     
 badges:     
 auto_size_text:     
-auto_size_text_field:
+auto_size_text_field:    
 barcode:        
 flutter_svg:        
 flutter_staggered_grid_view:        
@@ -76,4 +76,10 @@ flutter_staggered_grid_view:
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots/searchresult.jpg" width="170" />
 </p>
 
-For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots        
+For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots       
+
+## APK
+https://drive.google.com/drive/folders/1CLV36YolNhIGQIrm5r094isY2yt7LWsT?usp=sharing
+
+## Video
+https://drive.google.com/drive/folders/1pgcdRzZwbv0q-MUSG1ZbRfsci5IlU4jp?usp=sharing
