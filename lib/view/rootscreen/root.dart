@@ -1,8 +1,9 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:beautify/configs/configs.dart';
 import 'package:get/get.dart';
+import '../../configs/app.dart';
 import '../../model/controllers/duplicate_controller.dart';
 import '../../model/controllers/initial_controller.dart';
 import '../cartscreen/cart_screen.dart';
@@ -19,6 +20,7 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
   final duplicateController = Get.find<DuplicateController>();
   final initialController = Get.find<InitialController>();
+
  // late CustomColors colors = duplicateController.colors;
   //late CustomTextStyle textStyle = duplicateController.textStyle;
   late int slectedIndex = widget.index;
@@ -47,8 +49,11 @@ class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    App.init(context);
+    bool isdark =
+        Get.find<DuplicateController>().introFunctions.isDark;
+
     return Scaffold(
-     // backgroundColor: colors.whiteColor,
       body: PageView(
         physics: duplicateController.uiDuplicate.defaultScroll,
         controller: pageController,

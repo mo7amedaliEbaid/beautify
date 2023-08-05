@@ -3,14 +3,17 @@ import 'package:beautify/view/homescreen/shop_screen/shop_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import '../../configs/app.dart';
 import '../../model/controllers/duplicate_controller.dart';
 import '../../model/controllers/home_controller.dart';
 import '../../model/controllers/profile_controller.dart';
 
 import '../../model/tools/jsonparse/product_parse.dart';
+import '../../providers.dart';
 import '../widgets/bannerlistview_widget.dart';
 import '../widgets/customloading_widget.dart';
 import '../widgets/duplicatecontainer_widget.dart';
@@ -49,6 +52,9 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    App.init(context);
+
+    final themeProvider = Provider.of<ThemeProvider>(context);
 
     return BlocProvider(
       create: (context) {
@@ -80,11 +86,37 @@ class _HomeScreenState extends State<HomeScreen>
                 //  style:
                   //    textStyle.titleLarge.copyWith(color: colors.whiteColor),
                 ),
+                leading:  InkWell(
+                  hoverColor: Colors.transparent,
+                  onTap: () {
+                    setState(() {
+
+                    });
+                    themeProvider.theme = !themeProvider.theme;
+                  },
+                  child: Container(
+                    height: AppDimensions.normalize(30),
+                    width: AppDimensions.normalize(30),
+                    decoration: BoxDecoration(
+                      color: themeProvider.isDark
+                          ? Colors.grey[800]
+                          : Colors.grey[200],
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.brightness_6_outlined,
+                      color: themeProvider.isDark
+                          ? Colors.yellow
+                          : Colors.grey,
+                      size: AppDimensions.normalize(15),
+                    ),
+                  ),
+                ),
                 actions: [
                   CupertinoButton(
                     child: Icon(
                       Icons.search,
-                 //     color: colors.whiteColor,
+                     color: Colors.white,
                     ),
                     onPressed: () {
                       Get.to(const SearchScreen());
