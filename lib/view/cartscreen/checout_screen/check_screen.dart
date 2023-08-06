@@ -21,7 +21,7 @@ import '../../widgets/snackbar_widget.dart';
 import '../cart_screen.dart';
 import '../payment_screen/payment_screen.dart';
 import 'bloc/checkout_bloc.dart';
-
+import 'package:beautify/configs/configs.dart';
 class CheckoutScreen extends StatefulWidget {
   final List<ProductEntity> productList;
   final String totalPrice;
@@ -98,13 +98,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               dropDown: DropdownButtonFormField2(
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15))),
+                          borderRadius: BorderRadius.circular(AppDimensions.normalize(5)))),
                   isDense: true,
                   hint: Text(
                     "select country",
                   ),
                   dropdownStyleData: DropdownStyleData(
-                    maxHeight: Get.size.height * 0.4,
+                    maxHeight: AppDimensions.normalize(100),
+                    width: AppDimensions.normalize(80),
+                    padding: Space.all(1,1),
                     decoration: dropDownDecoration(),
                   ),
                   onChanged: (value) {
@@ -112,14 +114,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   },
                   dropdownSearchData: DropdownSearchData(
                     searchController: searchController,
-                    searchInnerWidgetHeight: 100,
-                    searchInnerWidget: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: TextField(
-                        controller: searchController,
-                        decoration:
-                            const InputDecoration(hintText: "search here"),
-                      ),
+
+                    searchInnerWidgetHeight: AppDimensions.normalize(50),
+                    searchInnerWidget: TextField(
+                      controller: searchController,
+                      decoration:
+                          const InputDecoration(hintText: "search here"),
                     ),
                   ),
                   items: state.popupMenuItemList),
@@ -154,29 +154,27 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 children: [
                   Positioned.fill(
                     child: Padding(
-                      padding: const EdgeInsets.all(7),
+                      padding: Space.all(.4,.4),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Shipping Address",
-                          //  style: textStyle.titleLarge,
+                           style: AppText.b1b,
                           ),
                           Container(
-                            padding: const EdgeInsets.all(12),
-                            margin: const EdgeInsets.only(top: 25, bottom: 15),
+                            margin:Space.all(.5,.5),
                             width: Get.mediaQuery.size.width,
                             decoration: BoxDecoration(
-                               // color: colors.gray,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(AppDimensions.normalize(2))),
                             child: Row(
                               children: [
                                 LottieBuilder.network(
                                   locationLottie,
                                   fit: BoxFit.cover,
                                   alignment: Alignment.centerLeft,
-                                  width: 80,
-                                  height: 80,
+                                  width: AppDimensions.normalize(35),
+                                  height:  AppDimensions.normalize(35),
                                 ),
                                 const SizedBox(
                                   width: 15,
@@ -188,8 +186,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                     children: [
                                       Text(
                                         "your address",
-                                      /*  style: textStyle.bodyNormal.copyWith(
-                                            fontWeight: FontWeight.bold),*/
                                       ),
                                       addresList.isNotEmpty
                                           ? SizedBox(
@@ -199,12 +195,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 decoration: InputDecoration(
                                                     hintText:
                                                         "Select an address",
-                                                 /*   hintStyle:
-                                                        textStyle.bodySmall*/),
+                                                ),
                                                 dropdownStyleData:
                                                     DropdownStyleData(
                                                         maxHeight:
-                                                            Get.width * 0.6,
+                                                           AppDimensions.normalize(100),
                                                         decoration:
                                                             dropDownDecoration()),
                                                 isExpanded: true,
@@ -216,7 +211,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                             )
                                           : Text(
                                               "you don't have any address",
-                                            //  style: textStyle.bodySmall,
+                                        style: AppText.b1b,
                                             ),
                                     ],
                                   ),
@@ -229,7 +224,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                           return CupertinoAlertDialog(
                                             title: Text(
                                               "Address",
-                                           //   style: textStyle.bodyNormal,
                                             ),
                                             content: const Text(""),
                                             actions: [
@@ -274,36 +268,29 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 10, bottom: 15),
+                            padding:Space.all(.2,.2),
                             child: Divider(
-                             // color: colors.captionColor,
                               thickness: 1,
                             ),
                           ),
                           Text(
                             "Order List",
-                         //   style: textStyle.titleLarge,
+                            style: AppText.h3b,
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
+                         Space.y!,
                           Expanded(
                               child: ListView.builder(
-                            padding: const EdgeInsets.only(bottom: 100),
+                            padding: Space.v2!,
                             physics:
                                 duplicateController.uiDuplicate.defaultScroll,
                             itemCount: widget.productList.length,
                             itemBuilder: (context, index) {
                               final product = widget.productList[index];
                               return HorizontalProductView(
-                             //     colors: colors,
-                                  margin: const EdgeInsets.only(
-                                      top: 10, bottom: 10),
+                                  margin: Space.all(.2,.5),
                                   product: product,
-                                 // textStyle: textStyle,
                                   widget: Icon(
                                     CupertinoIcons.shopping_cart,
-                                //    color: colors.whiteColor,
                                   ));
                             },
                           ))
@@ -312,9 +299,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     ),
                   ),
                   CartBottomItem(
-                    //colors: colors,
                     navigateName: "Continue to Payment",
-                    //textStyle: textStyle,
                     callback: () {
                       final isLogin = profileController.islogin;
                       if (isLogin) {
@@ -327,12 +312,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         } else {
                           snackBar(
                               title: "Address required",
-                              message: "please select an address",
-                           //   textStyle: textStyle,
-                              /*colors: colors*/);
+                              message: "please select an address",);
                         }
                       } else {
-                        loginRequiredDialog(/*textStyle: textStyle*/);
+                        loginRequiredDialog();
                       }
                     },
                   ),

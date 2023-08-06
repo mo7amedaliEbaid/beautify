@@ -24,8 +24,6 @@ class PaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
     final profileController = Get.find<ProfileController>();
- //   final colors = duplicateController.colors;
-   // final textStyle = duplicateController.textStyle;
     final paymentFunctions = duplicateController.paymentFunctions;
     final DateTime dateTime = DateTime.now();
 
@@ -35,7 +33,6 @@ class PaymentScreen extends StatelessWidget {
         height: 60,
         width: Get.mediaQuery.size.width * 0.7,
         child: FloatingActionButton.extended(
-         //   backgroundColor: colors.primary,
             onPressed: () {
               showCupertinoDialog(
                 context: context,
@@ -43,7 +40,6 @@ class PaymentScreen extends StatelessWidget {
                   return CupertinoAlertDialog(
                     title: Text(
                       "Pay",
-                    //  style: textStyle.bodyNormal,
                     ),
                     content: Text(
                       "Do you want pay?",

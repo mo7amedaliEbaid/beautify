@@ -24,6 +24,26 @@ Beautify is a flutter e-commerce app for displaying makeup products ,managing us
 - add and change address 
 - keep track of your orders
 - Animations 
+- Rate products
+- Checkout
+
+## Screens
+- Landing 
+- Home
+- Cart
+- Profile
+- ️Search
+- Search Result
+- search functionality
+- Product Details
+- Latest
+- Featured
+- Checkout
+- Payment
+- Address
+- Auth
+- Favourites
+- Orders
 
 ## Dependencies
 

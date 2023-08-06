@@ -2,31 +2,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-
+import 'package:beautify/configs/configs.dart';
 import '../../model/tools/constants/assets.dart';
 import '../profilescreen/auth_screen/authentication_screen.dart';
 
 
 
 
-void loginRequiredDialog(/*{required CustomTextStyle textStyle}*/) {
+void loginRequiredDialog() {
   showCupertinoDialog(
       context: Get.context!,
       builder: (context) => CupertinoAlertDialog(
             title: Text(
               "Login",
-            //  style: textStyle.titleLarge,
             ),
             content: Column(
               children: [
                 LottieBuilder.network(
                   loginLottie,
-                  width: 200,
-                  height: 200,
+                  width: AppDimensions.normalize(100),
+                  height: AppDimensions.normalize(80),
                 ),
                 Text(
                   "To continue to payment please login",
-                 // style: textStyle.bodyNormal,
                   overflow: TextOverflow.clip,
                   textAlign: TextAlign.start,
                 ),
@@ -36,7 +34,6 @@ void loginRequiredDialog(/*{required CustomTextStyle textStyle}*/) {
               CupertinoButton(
                 child: Text(
                   "Cancel",
-                //  style: textStyle.bodyNormal,
                 ),
                 onPressed: () {
                   Get.back();
@@ -49,7 +46,6 @@ void loginRequiredDialog(/*{required CustomTextStyle textStyle}*/) {
                   },
                   child: Text(
                     "Login",
-                  //  style: textStyle.bodyNormal,
                   )),
             ],
           ));
