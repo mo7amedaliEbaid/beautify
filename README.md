@@ -3,17 +3,15 @@ Beautify is a flutter e-commerce app for displaying makeup products ,managing us
 
 
 ## State Management
--️ Bloc
+- Bloc
 - Getx
 - Provider
 
 ## Design Pattern
 -️ MVVM
 
-## Features and Components
-- Multiple Themes
-- blocs 
-- controllers 
+## Features
+- Multiple Themes 
 - data caching 
 - ️image pickers 
 - cart 
