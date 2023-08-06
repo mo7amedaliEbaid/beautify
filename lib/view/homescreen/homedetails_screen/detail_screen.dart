@@ -1,13 +1,14 @@
 import 'dart:math';
-
+import 'package:beautify/providers/theme_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
-
+import 'package:beautify/configs/configs.dart';
 import '../../../model/controllers/duplicate_controller.dart';
 import '../../../model/controllers/profile_controller.dart';
 import '../../../model/tools/jsonparse/product_parse.dart';
@@ -29,13 +30,11 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
     final profileController = Get.find<ProfileController>();
-    //final CustomTextStyle textStyle = duplicateController.textStyle;
-   // final CustomColors colors = duplicateController.colors;
     final CartFunctions cartFunctions = duplicateController.cartFunctions;
     final profileFunctions = profileController.profileFunctions;
     final bool isInFavorite =
         profileFunctions.isInFavoriteBox(productEntity: widget.productEntity);
-
+final themeprovider=Provider.of<ThemeProvider>(context);
     return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: paddingFromRL(
@@ -43,18 +42,14 @@ class _DetailScreenState extends State<DetailScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-              //  backgroundColor: colors.gray,
                 child: IconButton(
-                //  highlightColor: colors.whiteColor,
-                //  splashColor: colors.whiteColor,
                   icon: isInFavorite
                       ? Icon(
                           CupertinoIcons.heart_fill,
-                     //     color: colors.blackColor,
+                    color: Colors.red,
                         )
                       : Icon(
                           CupertinoIcons.heart,
-                       //   color: colors.blackColor,
                         ),
                   onPressed: () async {
                     if (isInFavorite) {
@@ -71,16 +66,14 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: Space.h1!,
                   child: CupertinoTheme(
-                    data: CupertinoThemeData(primaryColor: Colors.white),
+                    data: CupertinoThemeData(primaryColor: Colors.blueAccent),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(AppDimensions.normalize(6)),
                       child: CupertinoButton.filled(
                         child: Text(
                           "Add to cart",
-                   //       style: textStyle.bodyNormal
-                     //         .copyWith(color: colors.whiteColor),
                         ),
                         onPressed: () async {
                           bool isAdd = await cartFunctions.addToCart(
@@ -89,9 +82,8 @@ class _DetailScreenState extends State<DetailScreen> {
                             Get.snackbar("Add to cart", "",
                                 messageText: Text(
                                   "successfully add to cart",
-                           //       style: textStyle.bodyNormal,
                                 ),
-                               /* backgroundColor: colors.gray*/);
+                     );
                           }
                         },
                       ),
@@ -100,13 +92,9 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
               ),
               CircleAvatar(
-              //  backgroundColor: colors.gray,
                 child: IconButton(
-                 // highlightColor: colors.whiteColor,
-                 // splashColor: colors.whiteColor,
                   icon: Icon(
                     CupertinoIcons.arrow_up_right,
-                 //   color: colors.blackColor,
                   ),
                   onPressed: () {
                     Share.shareWithResult("mohamed");
@@ -116,20 +104,15 @@ class _DetailScreenState extends State<DetailScreen> {
             ],
           ),
         ),
-     //   backgroundColor: colors.whiteColor,
         appBar: AppBar(
-       //   foregroundColor: colors.blackColor,
-         // backgroundColor: colors.whiteColor,
+
           centerTitle: true,
           title: Text(
             "Product Detail",
-         //   style: textStyle.titleLarge,
           ),
           actions: [
             CartLengthBadge(
               duplicateController: duplicateController,
-          //    colors: colors,
-            //  textStyle: textStyle,
               badgeCallback: () {
                 Get.to(const CartScreen());
               },
@@ -139,127 +122,97 @@ class _DetailScreenState extends State<DetailScreen> {
         body: Column(
           children: [
             Container(
-              width: Get.size.width,
-              height: Get.size.height * 0.4,
-             // color: colors.blackColor,
+              margin: Space.v1!,
+              width: AppDimensions.normalize(100),
+              height: AppDimensions.normalize(80),
               child: Column(
                 children: [
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        top: 15,
-                      ),
-                      height: 300,
-                      width: 300,
-                      child: CachedNetworkImage(
-                        imageUrl: widget.productEntity.imageUrl,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                  CachedNetworkImage(
+                    imageUrl: widget.productEntity.imageUrl,
+                    fit: BoxFit.fitHeight,
                   ),
                 ],
               ),
             ),
             Container(
+              height: AppDimensions.normalize(150),
               decoration: BoxDecoration(
-             //   color: colors.blackColor,
-              ),
-              child: Container(
-                height: Get.size.height * 0.4,
-                margin: const EdgeInsets.only(top: 20),
-                decoration: BoxDecoration(
-                 //   color: colors.whiteColor,
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(15))),
-                child: SingleChildScrollView(
-                  physics: duplicateController.uiDuplicate.defaultScroll,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          paddingFromRL(
-                            child: Text(
-                              widget.productEntity.name,
-                            //  style: textStyle.titleLarge,
-                              overflow: TextOverflow.clip,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              RatingBar.builder(
-                                initialRating: rate,
-                                direction: Axis.horizontal,
-                                maxRating: 5,
-                                allowHalfRating: true,
-                                itemBuilder: (context, index) {
-                                  return Icon(
-                                    Icons.star,
-                                  //  color: colors.amber,
-                                  );
-                                },
-                                onRatingUpdate: (value) {
-                                  Get.dialog(CupertinoAlertDialog(
-                                    title: Center(
-                                      child: RatingBarIndicator(
-                                        itemCount: 5,
-                                        rating: value,
-                                        itemBuilder: (context, index) {
-                                          return Icon(
-                                            Icons.star,
-                                          //  color: colors.amber,
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                    content: Text(
-                                      "Thank you for rating",
-                                   //   style: textStyle.titleLarge,
-                                    ),
-                                  ));
-                                },
-                              ),
-                              const SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "1.248 Reviews",
-                             //   style: textStyle.bodyNormal,
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      paddingFromRL(
+                color:themeprovider.isDark?Colors.blue:Colors.greenAccent ,
+                  borderRadius:
+                       BorderRadius.vertical(top: Radius.circular(AppDimensions.normalize(5)))),
+              child: SingleChildScrollView(
+                physics: duplicateController.uiDuplicate.defaultScroll,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                   Space.y1!,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        paddingFromRL(
                           child: Text(
-                        widget.productEntity.description,
-                      //  style: textStyle.bodySmall
-                        //    .copyWith(color: colors.captionColor),
-                      )),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        "€${widget.productEntity.price}",
-                     //   style: textStyle.titleLarge
-                       //     .copyWith(color: colors.primary),
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                    ],
-                  ),
+                            widget.productEntity.name,
+                            style: AppText.h3b,
+                            overflow: TextOverflow.clip,
+                          ),
+                        ),
+                     Space.y!,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RatingBar.builder(
+                              initialRating: rate,
+                              direction: Axis.horizontal,
+                              maxRating: 5,
+                              allowHalfRating: true,
+                              itemBuilder: (context, index) {
+                                return Icon(
+                                  Icons.star,
+                                 color: Colors.amber,
+                                );
+                              },
+                              onRatingUpdate: (value) {
+                                Get.dialog(CupertinoAlertDialog(
+                                  title: Center(
+                                    child: RatingBarIndicator(
+                                      itemCount: 5,
+                                      rating: value,
+                                      itemBuilder: (context, index) {
+                                        return Icon(
+                                          Icons.star,
+                                         color: Colors.amber,
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  content: Text(
+                                    "Thank you for rating",
+                                  ),
+                                ));
+                              },
+                            ),
+                         Space.x!,
+                            Text(
+                              "1.248 Reviews",
+                              style: AppText.b1b,
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    Space.y1!,
+                    paddingFromRL(
+                        child: Text(
+                      widget.productEntity.description,
+                    )),
+                 Space.y1!,
+                    Text(
+                      "€${widget.productEntity.price}",
+                      style: AppText.b1b
+
+                    ),
+                    Space.y1!
+                  ],
                 ),
               ),
             ),
@@ -270,7 +223,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
 Widget paddingFromRL({required Widget child}) {
   return Padding(
-    padding: const EdgeInsets.only(left: 15, right: 15),
+    padding: Space.h1!,
     child: child,
   );
 }

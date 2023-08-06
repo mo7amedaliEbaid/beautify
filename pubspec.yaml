@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/Img/
     - assets/Logo/
+    - assets/images/
 
 
   

@@ -16,3 +16,11 @@ const String emtySearchLottie =
 
 const String emptyListLottie =
     "https://assets10.lottiefiles.com/packages/lf20_ysrn2iwp.json";
+
+const List<String> makeupimgs=[
+  "assets/images/correct-order-to-apply-makeup-products_1.jpg",
+  "assets/images/DrugstoreMakeup.png",
+  "assets/images/kosas-organic-makeup-edited.jpeg",
+  "assets/images/Lipstick-for-multi-purpose-makeup.jpg",
+  "assets/images/makeup-order.jpg",
+];

@@ -72,18 +72,14 @@ class _HomeScreenState extends State<HomeScreen>
                 centerTitle: true,
                 title: Text(
                   "Beautify",
-
                 ),
-                leading:  InkWell(
+                leading: InkWell(
                   hoverColor: Colors.transparent,
                   onTap: () {
-                    setState(() {
-
-                    });
                     themeProvider.theme = !themeProvider.theme;
                   },
                   child: Container(
-                    margin: Space.all(.5,.5),
+                    margin: Space.all(.5, .5),
                     decoration: BoxDecoration(
                       color: themeProvider.isDark
                           ? Colors.grey[800]
@@ -92,9 +88,7 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                     child: Icon(
                       Icons.brightness_6_outlined,
-                      color: themeProvider.isDark
-                          ? Colors.yellow
-                          : Colors.grey,
+                      color: themeProvider.isDark ? Colors.yellow : Colors.grey,
                       size: AppDimensions.normalize(10),
                     ),
                   ),
@@ -103,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen>
                   CupertinoButton(
                     child: Icon(
                       Icons.search,
-                     color: Colors.white,
+                      color: Colors.white,
                     ),
                     onPressed: () {
                       Get.to(const SearchScreen());
@@ -134,6 +128,9 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                         );
                       case 2:
+                        return BannerListView();
+
+                      case 3:
                         return ProductListView(
                             profileFunctions: profileFunctions,
                             reverse: false,
@@ -141,19 +138,10 @@ class _HomeScreenState extends State<HomeScreen>
                             productList: productList,
                             callback: () {
                               Get.to(ShopScreen(
-                                  title: "Latest", productList:productList));
+                                  title: "Latest", productList: productList));
                             },
                             title: "Latest");
 
-                      case 3:
-                        return BannerListView(
-                            callback: () {
-                              Get.to(ShopScreen(
-                                  title: "Top deals",
-                                  productList: productList));
-                            },
-                            produtList: productList,
-                     );
 
                       case 4:
                         return ProductListView(

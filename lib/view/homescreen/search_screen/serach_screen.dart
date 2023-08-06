@@ -1,3 +1,5 @@
+import 'package:beautify/configs/app_dimensions.dart';
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,13 +28,29 @@ class _SearchScreenState extends State<SearchScreen> {
   SearchBloc? searchBloc;
   final homeController = Get.find<HomeController>();
   final duplicateController = Get.find<DuplicateController>();
-//  late CustomColors colors = duplicateController.colors;
-  //late CustomTextStyle textStyle = duplicateController.textStyle;
+
   @override
   void dispose() {
     searchBloc?.close();
     super.dispose();
   }
+
+  List<String> availablebrands = [
+    "almay",
+    "alva",
+    "anna sui",
+    "annabelle",
+    "benefit",
+    "boosh",
+    "clinique",
+    "colourpop",
+    "covergirl",
+    "dalish",
+    "deciem",
+    "dior",
+    "sante",
+    "stila"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +71,6 @@ class _SearchScreenState extends State<SearchScreen> {
               final GlobalKey<FormState> formKey = GlobalKey();
               return Scaffold(
                 appBar: AppBar(
-                 // backgroundColor: colors.whiteColor,
-                  //foregroundColor: colors.blackColor,
                   title: Form(
                       key: formKey,
                       child: TextFormField(
@@ -63,10 +79,9 @@ class _SearchScreenState extends State<SearchScreen> {
                             return null;
                           } else {
                             snackBar(
-                                title: "Search",
-                                message: "please type somethings ...",
-                        //        textStyle: textStyle,
-                                /*colors: colors*/);
+                              title: "Search",
+                              message: "please type somethings ...",
+                            );
                             return "";
                           }
                         },
@@ -75,14 +90,13 @@ class _SearchScreenState extends State<SearchScreen> {
                           contentPadding: EdgeInsets.zero,
                           border: InputBorder.none,
                           hintText: "Search by brand name..",
-                       //   hintStyle: textStyle.bodyNormal,
                         ),
                       )),
                   actions: [
                     CupertinoButton(
                       child: Icon(
                         Icons.search,
-                       // color: colors.blackColor,
+                        color: Colors.white,
                       ),
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
@@ -93,36 +107,57 @@ class _SearchScreenState extends State<SearchScreen> {
                     )
                   ],
                 ),
-                body: Center(
-                  child: LottieBuilder.network(searchLottie),
+                body: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: AppDimensions.normalize(120),
+                        width: AppDimensions.normalize(200),
+                        margin: Space.all(1, 1),
+                        child: GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  childAspectRatio: 5,
+                                  crossAxisSpacing: 3,
+                                  mainAxisSpacing: 3),
+                          itemCount: availablebrands.length,
+                          itemBuilder: (context, index) => Container(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      colors: [Colors.redAccent, Colors.greenAccent])),
+                              child: Center(
+                                  child: Text(
+                                availablebrands[index],
+                                style: AppText.h2,
+                              ))),
+                        ),
+                      ),
+                      Container(
+                          height: AppDimensions.normalize(100),
+                          width: AppDimensions.normalize(100),
+                          child: LottieBuilder.network(searchLottie)),
+                    ],
+                  ),
                 ),
               );
             } else if (state is SearchSuccess) {
               return Scaffold(
-              //  backgroundColor: colors.blackColor,
                 appBar: AppBar(
-               //   foregroundColor: colors.whiteColor,
-                //  backgroundColor: colors.blackColor,
                   title: Text(
                     "Search Result",
-                 //   style:
-                       // textStyle.titleLarge.copyWith(color: colors.whiteColor),
                   ),
                 ),
                 body: gridViewScreensContainer(
-                 //   colors: colors,
                     child: ProductGrideView(
-                        productList: state.productList,
-                        uiDuplicate: duplicateController.uiDuplicate,
-                      /*  colors: colors,
-                        textStyle: textStyle*/)),
+                  productList: state.productList,
+                  uiDuplicate: duplicateController.uiDuplicate,
+                )),
               );
             } else if (state is SearchEmptyScreen) {
               return EmptyScreen(
-              //    colors: colors,
-                //  textStyle: textStyle,
                   title: "Search Result",
-                  content: "Nothing found",
+                  content: "Nothing found\nPlease enter a valid brand",
                   lottieName: emtySearchLottie);
             } else if (state is SearchLoading) {
               return const CustomLoading();
