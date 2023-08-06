@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import '../../model/controllers/duplicate_controller.dart';
@@ -43,34 +43,27 @@ class _CartScreenState extends State<CartScreen> {
       child: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
           final duplicateController = Get.find<DuplicateController>();
-         // final colors = duplicateController.colors;
-          //final textStyle = duplicateController.textStyle;
           final uiDuplicate = duplicateController.uiDuplicate;
           if (state is CartSuccess) {
             final productList = state.productList;
             final String totalPrice = state.totalPrice;
             return DuplicateTemplate(
-              //  colors: colors,
-                //textStyle: textStyle,
                 title:"Cart Screen",
                 child: Stack(
                     children: [
                       Positioned.fill(
+                        bottom: AppDimensions.normalize(30),
                         child: ListView.builder(
-                          padding: const EdgeInsets.only(bottom: 120),
                           physics: uiDuplicate.defaultScroll,
                           itemCount: productList.length,
                           itemBuilder: (context, index) {
                             final product = productList[index];
                             return HorizontalProductView(
-                              //  colors: colors,
-                                margin: const EdgeInsets.only(
-                                    top: 15, right: 10, bottom: 15, left: 10),
+                                margin: Space.all(.5,.5),
                                 product: product,
                                 widget: CupertinoButton(
                                     child: Icon(
                                       Icons.delete,
-                                   //   color: colors.whiteColor,
                                     ),
                                     onPressed: () async {
                                       final bool isDeleted =
@@ -81,36 +74,29 @@ class _CartScreenState extends State<CartScreen> {
                                         Get.snackbar("Delete", "",
                                             messageText: Text(
                                               "Product removed successfully",
-                                            //  style: textStyle.bodyNormal,
                                             ),
-                                          /*  backgroundColor: colors.gray*/);
+                                        );
                                         cartBloc!.add(CartStart());
                                       }
                                     }),
-                               /* textStyle: textStyle*/);
+                              );
                           },
                         ),
                       ),
                       CartBottomItem(
-                       // colors: colors,
                         navigateName: "Checkout",
                         widget: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Total price",
-                             /* style: textStyle.bodySmall
-                                  .copyWith(color: colors.captionColor),*/
+                          style: AppText.h2b,
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                          Space.y!,
                             SizedBox(
-                              width: 200,
+                              width: AppDimensions.normalize(55),
                               child: AutoSizeText(
                                 "€$totalPrice",
-                             //   style:
-                               //     textStyle.titleLarge.copyWith(fontSize: 20),
                                 maxFontSize: 25,
                                 minFontSize: 16,
                                 maxLines: 2,
@@ -118,7 +104,6 @@ class _CartScreenState extends State<CartScreen> {
                             ),
                           ],
                         ),
-                     //   textStyle: textStyle,
                         callback: () {
                           Get.to(CheckoutScreen(
                               productList: productList,
@@ -137,8 +122,6 @@ class _CartScreenState extends State<CartScreen> {
             );
           } else if (state is CartEmpty) {
             return EmptyScreen(
-          //    colors: colors,
-            //  textStyle: textStyle,
               lottieName: emptyCartLottie,
               content: "your cart is empty , try to add something",
               title: "My cart",

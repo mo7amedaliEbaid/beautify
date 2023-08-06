@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-
+import 'package:beautify/configs/configs.dart';
 
 class CartBottomItem extends StatelessWidget {
   const CartBottomItem({
     Key? key,
-  //  required this.colors,
-    //required this.textStyle,
+
     this.widget,
     required this.callback,
     required this.navigateName,
   }) : super(key: key);
 
-//  final CustomColors colors;
-  //final CustomTextStyle textStyle;
+
   final GestureTapCallback callback;
   final Widget? widget;
   final String navigateName;
@@ -25,13 +23,13 @@ class CartBottomItem extends StatelessWidget {
         bottom: 0,
         child: Container(
           width: Get.mediaQuery.size.width,
-          height: 100,
+          height: AppDimensions.normalize(35),
           decoration: BoxDecoration(
-            //  color: colors.gray,
+          color: Colors.green,
               borderRadius:
-              const BorderRadius.vertical(top: Radius.circular(15))),
+               BorderRadius.vertical(top: Radius.circular(AppDimensions.normalize(10)))),
           padding:
-          const EdgeInsets.only(top: 10, right: 20, left: 20, bottom: 10),
+           Space.all(1,.7),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -43,14 +41,10 @@ class CartBottomItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: ElevatedButton(
                         style: ButtonStyle(
-                          //  backgroundColor:
-                            //MaterialStatePropertyAll(colors.blackColor)
                           ),
                         onPressed: callback,
                         child: Text(
                           navigateName,
-                       //   style: textStyle.bodyNormal
-                         //     .copyWith(color: colors.whiteColor),
                         )),
                   ),
                 ),

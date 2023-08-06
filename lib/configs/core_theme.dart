@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
 
-const fontFamily = 'Poppins';
+const fontFamily = '';
 
 final themeLight = ThemeData(
   fontFamily: fontFamily,

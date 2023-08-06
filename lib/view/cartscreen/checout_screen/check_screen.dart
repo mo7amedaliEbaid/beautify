@@ -53,7 +53,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         bloc.add(CheckoutStart());
         subscription = bloc.stream.listen((state) {
           if (state is CheckoutGetAddreesScreen) {
-          //  final colors = state.colors;
             final adNameController = TextEditingController();
             final GlobalKey<FormState> adNameKey = GlobalKey();
             final addressController = TextEditingController();
@@ -66,8 +65,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 TextEditingController();
             String country = "";
             addAddressBottomSheet(
-           //   textStyle: state.textStyle,
-          //    colors: colors,
               scrollPhysics: state.uiDuplicate.defaultScroll,
               osSaveClicked: () {
                 if (stateKey.currentState!.validate() &&
@@ -86,8 +83,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     snackBar(
                         title: "Country",
                         message: "Please slecet you're country",
-                     //   textStyle: state.textStyle,
-                       /* colors: colors*/);
+                  );
                   }
                 }
               },
@@ -100,20 +96,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               postalController: postalController,
               postalKey: postalKey,
               dropDown: DropdownButtonFormField2(
-                  //  buttonWidth: Get.size.width * 0.9,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15))),
                   isDense: true,
                   hint: Text(
                     "select country",
-                  //  style: state.textStyle.bodyNormal,
                   ),
                   dropdownStyleData: DropdownStyleData(
                     maxHeight: Get.size.height * 0.4,
                     decoration: dropDownDecoration(),
                   ),
-                  // dropdownDecoration: dropDownDecoration(),
                   onChanged: (value) {
                     country = value;
                   },
@@ -141,23 +134,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             final addresList = state.addressList;
             final duplicateController = state.duplicateController;
             final profileController = state.profileController;
-         //   final CustomColors colors = duplicateController.colors;
-         //   final CustomTextStyle textStyle = duplicateController.textStyle;
             String addressDetail = "";
             return Scaffold(
               appBar: AppBar(
-               // foregroundColor: colors.blackColor,
-                //backgroundColor: colors.whiteColor,
                 centerTitle: true,
                 title: Text(
                   "Checkout",
-               //   style: textStyle.titleLarge,
                 ),
                 actions: [
                   CartLengthBadge(
                     duplicateController: duplicateController,
-                  //  colors: colors,
-                 //   textStyle: textStyle,
                     badgeCallback: () {
                       Get.to(const CartScreen());
                     },
