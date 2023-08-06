@@ -1,14 +1,14 @@
 # Beautify
 Beautify is a flutter e-commerce app for displaying makeup products ,managing user's orders and sales.
 
-## Architecture
-✔️ Clean Architecture
 
 ## State Management
-✔️ Bloc && Getx && Provider
+-️ Bloc
+- Getx
+- Provider
 
 ## Design Pattern
-✔️ MVVM
+-️ MVVM
 
 ## Features and Components
 - Multiple Themes
@@ -94,6 +94,7 @@ flutter_staggered_grid_view:
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/searchresultdark.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/ab41b3045bda1a71646d9a0fc4459174077382bc/updated_screenshots/cartdark.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/ab41b3045bda1a71646d9a0fc4459174077382bc/updated_screenshots/cartlight.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/37395dabb92d19d504be3857cc51f1b7acbf8bf1/updated_screenshots/checkoutl.jpg" width="170" />
 </p>
 
 For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots       
