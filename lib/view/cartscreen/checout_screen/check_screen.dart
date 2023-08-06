@@ -12,7 +12,7 @@ import '../../../model/tools/jsonparse/product_parse.dart';
 import '../../profilescreen/address_screen/address_screen.dart';
 import '../../widgets/adreebottomsheet_widget.dart';
 import '../../widgets/cartbadge_widget.dart';
-import '../../widgets/cartitem_widget.dart';
+import '../../widgets/cartbottomitem_widget.dart';
 import '../../widgets/dropdowndecoration_widget.dart';
 import '../../widgets/editadressbutton_widget.dart';
 import '../../widgets/logindialog_widget.dart';

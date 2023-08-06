@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import '../../model/controllers/duplicate_controller.dart';
 import '../../model/tools/constants/assets.dart';
-import '../widgets/cartitem_widget.dart';
+import '../widgets/cartbottomitem_widget.dart';
 import '../widgets/customloading_widget.dart';
 import '../widgets/duplicatetempelate_widget.dart';
 import '../widgets/emptyscreen_widget.dart';

@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: theme.themeDark,
       title: 'Beautify',
       home: isFirst
-          ? const LandingScreen()
+          ?  LandingScreen()
           : const RootScreen(
               index: 0,
             ),
