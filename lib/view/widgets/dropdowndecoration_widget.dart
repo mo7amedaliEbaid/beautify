@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:beautify/configs/configs.dart';
 BoxDecoration dropDownDecoration() {
-  return BoxDecoration(borderRadius: BorderRadius.circular(15));
+  return BoxDecoration(borderRadius: BorderRadius.circular(AppDimensions.normalize(3)));
 }

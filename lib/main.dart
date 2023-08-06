@@ -3,8 +3,7 @@ import 'package:beautify/view/landing_screen/landing_screen.dart';
 import 'package:beautify/view/rootscreen/root.dart';
 import 'package:beautify/viewmodel/initial/initial.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'configs/core_theme.dart' as theme;
 import 'package:get/get.dart';
@@ -15,6 +14,10 @@ import 'model/controllers/duplicate_controller.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await HighPriorityInitial.initial();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => ThemeProvider()),

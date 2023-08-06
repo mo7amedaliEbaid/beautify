@@ -24,7 +24,7 @@ void addAddressBottomSheet(
     context: Get.context!,
     builder: (context) {
       return Container(
-        height: AppDimensions.normalize(190),
+        height: AppDimensions.normalize(250),
         child: Scaffold(
           floatingActionButtonLocation:
           FloatingActionButtonLocation.centerFloat,
@@ -52,7 +52,7 @@ void addAddressBottomSheet(
                   },
                 ),
                 SizedBox(
-                  height: Get.size.height * 0.6,
+                  height: AppDimensions.normalize(170),
                   child: SingleChildScrollView(
                     physics: scrollPhysics,
                     child: Column(
@@ -60,24 +60,28 @@ void addAddressBottomSheet(
                       children: [
                         dropDown,
                         textField(
+                          context: context,
                             inputType: TextInputType.streetAddress,
                             controller: stateController,
                             formKey: stateKey,
                             lable: "State",
                             edgeInsetsGeometry: Space.all(1,.2)),
                         textField(
+                          context: context,
                             inputType: TextInputType.streetAddress,
                             controller: addressController,
                             formKey: addressKey,
                             lable: "Address detail",
                             edgeInsetsGeometry: Space.all(1,.2)),
                         textField(
+                          context: context,
                             inputType: TextInputType.streetAddress,
                             controller: adNameController,
                             formKey: adNameKey,
                             lable: "Address name",
                             edgeInsetsGeometry: Space.all(1,.2)),
                         textField(
+                          context: context,
                             controller: postalController,
                             formKey: postalKey,
                             lable: "Postal code",

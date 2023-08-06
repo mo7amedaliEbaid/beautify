@@ -1,3 +1,4 @@
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -12,8 +13,6 @@ class AppException extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<DuplicateController>();
- //   final textStyle = controller.textStyle;
     return Scaffold(
       body: Center(
         child: Column(
@@ -22,20 +21,15 @@ class AppException extends StatelessWidget {
             errorMessage == null
                 ? Text(
               "Undefined Error",
-           //   style: textStyle.titleLarge,
             )
                 : Text(
               errorMessage!,
-    //          style: textStyle.titleLarge,
             ),
-            const SizedBox(
-              height: 10,
-            ),
+           Space.y!,
             ElevatedButton(
                 onPressed: callback,
                 child: Text(
                   "try Again",
-             //     style: textStyle.bodyNormal,
                 ))
           ],
         ),

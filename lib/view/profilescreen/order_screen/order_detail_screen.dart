@@ -1,8 +1,9 @@
+import 'package:beautify/configs/app_dimensions.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-
+import 'package:beautify/configs/configs.dart';
 import '../../../model/controllers/duplicate_controller.dart';
 import '../../../model/tools/jsonparse/product_parse.dart';
 import '../../widgets/duplicatetempelate_widget.dart';
@@ -14,57 +15,44 @@ class OrderDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
- //   final colors = duplicateController.colors;
-   // final textStyle = duplicateController.textStyle;
-
     return DuplicateTemplate(
-    //  colors: colors,
-      //textStyle: textStyle,
       title: "Order detail",
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: Get.height * 0.8,
+            height:AppDimensions.normalize(250),
             margin:
-                const EdgeInsets.only(top: 12, right: 15, bottom: 12, left: 15),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              /*  color: colors.gray,*/ borderRadius: BorderRadius.circular(15)),
+               Space.all(1.5,1.5),
             child: AlignedGridView.count(
               physics: duplicateController.uiDuplicate.defaultScroll,
               crossAxisCount: 2,
-              mainAxisSpacing: 5,
-              crossAxisSpacing: 10,
+              mainAxisSpacing: AppDimensions.normalize(2),
+              crossAxisSpacing: AppDimensions.normalize(2),
               itemCount: productList.length,
               itemBuilder: (context, index) {
                 final product = productList[index];
                 return Container(
-                  height: 250,
-                  decoration: BoxDecoration(
-                    //  color: colors.whiteColor,
-                      borderRadius: BorderRadius.circular(15)),
+                  height: AppDimensions.normalize(90),
                   child: Column(
                     children: [
                       Container(
-                          margin: const EdgeInsets.only(top: 10, bottom: 10),
-                          width: 130,
+                          margin: Space.v,
+                          width:  AppDimensions.normalize(47),
                           child: networkImage(imageUrl: product.imageUrl)),
                       Column(
                         children: [
                           Text(
                             product.name,
-                         //   style: textStyle.bodyNormal,
+                           style: AppText.b1b,
                             maxLines: 1,
                             overflow: TextOverflow.clip,
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
+                         Space.y!,
                           Text(
                             "€${product.price}",
-                       //     style: textStyle.bodyNormal,
+                            style: AppText.h3b,
                           ),
                         ],
                       ),

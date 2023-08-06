@@ -2,15 +2,11 @@ import 'dart:async';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:beautify/configs/configs.dart';
-import 'package:beautify/providers/theme_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
-
-import '../../../model/controllers/duplicate_controller.dart';
 
 import '../../widgets/customloading_widget.dart';
 import '../../widgets/duplicatecontainer_widget.dart';
@@ -46,7 +42,6 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeprovider=Provider.of<ThemeProvider>(context);
     return BlocProvider(
       create: (context) {
         final bloc = AuthenticationBloc();
@@ -75,49 +70,45 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
               context: context,
               builder: (context) {
                 return SizedBox(
-                  height: Get.mediaQuery.size.height * 0.6,
+                  height: AppDimensions.normalize(150),
                   child: AlertDialog(
                     contentPadding: EdgeInsets.zero,
                     titlePadding: EdgeInsets.zero,
                     shape: OutlineInputBorder(
                         borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(15)),
+                        borderRadius: BorderRadius.circular(AppDimensions.normalize(5))),
                     title: Container(
                       alignment: Alignment.center,
-                      height: 50,
+                      height: AppDimensions.normalize(15),
+                      margin: Space.v1,
                       decoration: BoxDecoration(
-                        //  color: colors.blackColor,
-                          borderRadius: const BorderRadius.vertical(
-                              top: Radius.circular(15))),
+                          borderRadius:  BorderRadius.vertical(
+                              top: Radius.circular(AppDimensions.normalize(5)))),
                       child: Text(
                         "Change password",
 
                       ),
                     ),
                     content: Container(
-                 //     color: colors.blackColor,
                       child: duplicateContainer(
-                      //  colors: colors,
                         child: Container(
-                          padding: const EdgeInsets.all(15),
-                          width: Get.mediaQuery.size.width * 0.8,
-                          height: Get.mediaQuery.size.height * .45,
+                         // padding: const EdgeInsets.all(15),
+                          width: AppDimensions.normalize(80),
+                          height: AppDimensions.normalize(100),
                           child: Column(
                             children: [
                               textField(
-                                //  textStyle: textStyle,
+                                context: context,
                                   controller: userNameController,
                                   formKey: userNameKey,
                                   lable: "user name",
-                              //    colors: colors,
-                                  edgeInsetsGeometry: const EdgeInsets.all(5)),
+                                  edgeInsetsGeometry: Space.all(.5,.5)),
                               textField(
-                                 // textStyle: textStyle,
+                                context: context,
                                   controller: passwordController,
                                   formKey: passwordKey,
                                   lable: "Password",
-                              //    colors: colors,
-                                  edgeInsetsGeometry: const EdgeInsets.all(5)),
+                                  edgeInsetsGeometry: Space.all(.5,.5)),
                             ],
                           ),
                         ),
@@ -126,26 +117,22 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     actions: [
                       Container(
                         alignment: Alignment.center,
-                        margin: const EdgeInsets.only(bottom: 20),
-                        child: CupertinoTheme(
-                          data:
-                              CupertinoThemeData(primaryColor: Colors.white),
-                          child: CupertinoButton.filled(
-                            child: Text(
-                              "Save",
-                            //  style: textStyle.bodyNormal,
-                            ),
-                            onPressed: () {
-                              if (userNameKey.currentState!.validate() &&
-                                  passwordKey.currentState!.validate()) {
-                                authenticationBloc!.add(
-                                    AuthenticationSaveChanges(
-                                        userName: userNameController.text,
-                                        password: passwordController.text));
-                                Navigator.pop(context);
-                              }
-                            },
+                        margin: Space.v1,
+                        child: CupertinoButton.filled(
+
+                          child: Text(
+                            "Save",
                           ),
+                          onPressed: () {
+                            if (userNameKey.currentState!.validate() &&
+                                passwordKey.currentState!.validate()) {
+                              authenticationBloc!.add(
+                                  AuthenticationSaveChanges(
+                                      userName: userNameController.text,
+                                      password: passwordController.text));
+                              Navigator.pop(context);
+                            }
+                          },
                         ),
                       )
                     ],
@@ -157,14 +144,12 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             snackBar(
                 title: "Account",
                 message: "Account not found",
-             //   textStyle: textStyle,
-                /*colors: colors*/);
+           );
           } else if (state is LoginUnSuccess) {
             snackBar(
                 title: "Incorrect information",
                 message: "Incorrect username and password entered",
-            //    textStyle: textStyle,
-         /*       colors: colors*/);
+ );
           }
         });
         authenticationBloc = bloc;
@@ -177,10 +162,8 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             final profileController = state.profileController;
 
 
-            const EdgeInsetsGeometry edgeInsets = EdgeInsets.all(15);
+             EdgeInsetsGeometry edgeInsets = Space.all(.5,.5);
             return DuplicateTemplate(
-        //      colors: colors,
-          //    textStyle: textStyle,
               title: "Login",
               child: Column(
                 children: [
@@ -190,38 +173,34 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 30, bottom: 20),
+                            padding:Space.all(.5,.5),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 AutoSizeText(
                                   "Let's sign you in",
-                                //  style: textStyle.titleLarge,
+                                style:AppText.h3b ,
                                   maxLines: 1,
                                 ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
+                                Space.y!,
                                 AutoSizeText(
                                   "welcome back, we've been missed you",
-                                //  style: textStyle.bodySmall,
+                                style: AppText.b1b,
                                   maxLines: 1,
                                 )
                               ],
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
+                          Space.y1!,
                           textField(
+                            context: context,
                               edgeInsetsGeometry: edgeInsets,
-                         //     colors: colors,
-                           //   textStyle: textStyle,
                               controller: userNameController,
                               formKey: userNameKey,
                               lable: "UserName or Email"),
                           Obx(
                             () => textField(
+                              context: context,
                                 suffix: CupertinoButton(
                                   child: Icon(profileController.obscureText
                                       ? CupertinoIcons.eye
@@ -235,8 +214,6 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                 ),
                                 obscureText: profileController.obscureText,
                                 edgeInsetsGeometry: edgeInsets,
-                             //   colors: colors,
-                               // textStyle: textStyle,
                                 controller: passwordController,
                                 formKey: passwordKey,
                                 lable: "Password"),
@@ -250,7 +227,6 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                   children: [
                                     Obx(
                                       () => Checkbox(
-                                      //  activeColor: colors.primary,
                                         value:
                                             profileController.rememberMeStatus,
                                         onChanged: (value) {
@@ -264,14 +240,12 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                                     ),
                                     Text(
                                       "Remember me",
-                              //        style: textStyle.bodySmall,
                                     )
                                   ],
                                 ),
                                 CupertinoButton(
                                   child: Text(
                                     "Forgat password?",
-                              //      style: textStyle.bodyNormal,
                                   ),
                                   onPressed: () {
                                     authenticationBloc!
@@ -283,24 +257,19 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                           ),
                           Padding(
                             padding: edgeInsets,
-                            child: CupertinoTheme(
-                                data: CupertinoThemeData(
-                                    primaryColor: Colors.white),
-                                child: CupertinoButton.filled(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Text(
-                                      "Login",
-                                 //     style: textStyle.bodyNormal
-                                   //       .copyWith(color: colors.whiteColor),
-                                    ),
-                                    onPressed: () async {
-                                      authenticationBloc!.add(
-                                          AuthenticatioLogin(
-                                              userName: userNameController.text,
-                                              password: passwordController.text,
-                                              isRemember: profileController
-                                                  .rememberMeStatus));
-                                    })),
+                            child: CupertinoButton.filled(
+                                borderRadius: BorderRadius.circular(AppDimensions.normalize(5)),
+                                child: Text(
+                                  "Login",
+                                ),
+                                onPressed: () async {
+                                  authenticationBloc!.add(
+                                      AuthenticatioLogin(
+                                          userName: userNameController.text,
+                                          password: passwordController.text,
+                                          isRemember: profileController
+                                              .rememberMeStatus));
+                                }),
                           ),
                         ],
                       ),
@@ -311,6 +280,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     children: [
                       AutoSizeText(
                         "Don't have an account?",
+                        style: AppText.b1b,
                       ),
                       CupertinoButton(
                         child: Text(
@@ -359,17 +329,20 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                             ),
                             Space.y1!,
                             textField(
+                              context: context,
                                 edgeInsetsGeometry: edgeInsets,
                                 controller: nameController,
                                 formKey: nameKey,
                                 lable: "Full Name"),
                             textField(
+                              context: context,
                                 edgeInsetsGeometry: edgeInsets,
                                 controller: userNameController,
                                 formKey: userNameKey,
                                 lable: "UserName or Email"),
                             Obx(
                               () => textField(
+                                context: context,
                                   suffix: CupertinoButton(
                                     child: Icon(profileController.obscureText
                                         ? CupertinoIcons.eye

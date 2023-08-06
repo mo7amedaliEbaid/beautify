@@ -1,3 +1,4 @@
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,11 +39,8 @@ class _OrderScreenState extends State<OrderScreen> {
         builder: (context, state) {
           if (state is OrderInitialScreen) {
             final duplicateController = state.duplicateController;
-       //     final colors = duplicateController.colors;
-          //  final textStyle = duplicateController.textStyle;
+
             return DuplicateTemplate(
-       //       colors: colors,
-         //     textStyle: textStyle,
               title: "Order history",
               child: ListView.builder(
                 physics: duplicateController.uiDuplicate.defaultScroll,
@@ -50,50 +48,43 @@ class _OrderScreenState extends State<OrderScreen> {
                 itemBuilder: (context, index) {
                   final order = state.orderHistoryList[index];
                   return Container(
-                    margin: const EdgeInsets.fromLTRB(15, 10, 15, 10),
-                    padding: const EdgeInsets.all(12),
+                    margin:Space.all(.8,.8),
+                    padding: Space.all(1,1.1),
                     decoration: BoxDecoration(
-                  //    color: colors.gray,
-                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xffc9c88f),
+                      borderRadius: BorderRadius.circular(AppDimensions.normalize(7)),
                     ),
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            top: 10,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Order : ${order.productList[0].id}",
-                             //   style: textStyle.bodyNormal,
-                              ),
-                              CupertinoButton(
-                                child: Text(
-                                  "View detail",
-                                 // style: textStyle.bodyNormal
-                                   //   .copyWith(color: colors.primary),
-                                ),
-                                onPressed: () {
-                                  Get.to(OrderDetailScreen(
-                                      productList: order.productList));
-                                },
-                              )
-                            ],
-                          ),
-                        ),
+                         Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             Text(
+                               "Order : ${order.productList[0].id}",
+                               style:AppText.b1b,
+                             ),
+                             CupertinoButton(
+                               child: Text(
+                                 "View detail",
+                                style: AppText.h3b,
+                               ),
+                               onPressed: () {
+                                 Get.to(OrderDetailScreen(
+                                     productList: order.productList));
+                               },
+                             )
+                           ],
+                         ),
                         orderHistoryItem(
                             rightTitle: order.time.toString().substring(0, 16),
                             leftTitle: "Date :",
-                            leftStyle: TextStyle(),
-                            rightStyle: TextStyle()),
-                            //    .copyWith(color: colors.captionColor)),
+                          leftStyle: AppText.b2!,
+                          rightStyle:  AppText.b2b!,),
                         orderHistoryItem(
                             rightTitle: order.totalPrice,
                             leftTitle: "Amount :",
-                            leftStyle: TextStyle(),
-                            rightStyle: TextStyle()
+                            leftStyle: AppText.b2!,
+                            rightStyle:  AppText.b2b!,
                               //  .copyWith(color: colors.captionColor)
                         ),
                       ],
@@ -103,10 +94,7 @@ class _OrderScreenState extends State<OrderScreen> {
               ),
             );
           } else if (state is OrderEmpty) {
-            final duplicateController = state.duplicateController;
             return EmptyScreen(
-             //   colors: duplicateController.colors,
-               // textStyle: duplicateController.textStyle,
                 title: "Order history",
                 content: "Your order history is empty",
                 lottieName: emptyListLottie);
@@ -124,21 +112,18 @@ class _OrderScreenState extends State<OrderScreen> {
       required String leftTitle,
       required TextStyle leftStyle,
       required TextStyle rightStyle}) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 5, right: 5, top: 10, bottom: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            leftTitle,
-            style: leftStyle,
-          ),
-          Text(
-            rightTitle,
-            style: rightStyle,
-          )
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          leftTitle,
+          style: leftStyle,
+        ),
+        Text(
+          rightTitle,
+          style: rightStyle,
+        )
+      ],
     );
   }
 }

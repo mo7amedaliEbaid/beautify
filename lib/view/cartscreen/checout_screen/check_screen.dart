@@ -190,7 +190,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                       addresList.isNotEmpty
                                           ? SizedBox(
                                               width: Get.width * 0.45,
-                                              height: 50,
+                                              height: AppDimensions.normalize(20),
                                               child: DropdownButtonFormField2(
                                                 decoration: InputDecoration(
                                                     hintText:

@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:beautify/configs/configs.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/cupertino.dart';
@@ -40,8 +40,6 @@ class _AddressScreenState extends State<AddressScreen> {
   @override
   Widget build(BuildContext context) {
     final duplicateController = Get.find<DuplicateController>();
-   // final colors = duplicateController.colors;
-    //final textStyle = duplicateController.textStyle;
     return BlocProvider(
       create: (context) {
         final bloc = AddressBloc();
@@ -52,8 +50,7 @@ class _AddressScreenState extends State<AddressScreen> {
             snackBar(
                 title: "Address",
                 message: "Your address edited successfully",
-            //    textStyle: textStyle,
-               /* colors: colors*/);
+        );
           }
         });
         return bloc;
@@ -74,15 +71,16 @@ class _AddressScreenState extends State<AddressScreen> {
           Widget dropDown({required List<DropdownMenuItem> countryList}) {
             return DropdownButtonFormField2(
                 buttonStyleData: ButtonStyleData(
-                  width: Get.size.width*.8 ,
+                  width: AppDimensions.normalize(120),
                 ),
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15))),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(AppDimensions.normalize(5))
+                  )
+                ),
                 isDense: true,
                 hint: Text(
                   "select country",
-                 // style: textStyle.bodyNormal,
                 ),
                 validator: (value) {
                   if (value == null) {
@@ -92,16 +90,16 @@ class _AddressScreenState extends State<AddressScreen> {
                   }
                 },
                 dropdownStyleData: DropdownStyleData(
-                    maxHeight: Get.size.height * 0.6,
+                    maxHeight: AppDimensions.normalize(120),
                     decoration: dropDownDecoration()),
                 onChanged: (value) {
                   country = value;
                 },
                 dropdownSearchData: DropdownSearchData(
-                  searchInnerWidgetHeight: 150,
+                  searchInnerWidgetHeight:AppDimensions.normalize(100),
                   searchController: searchController,
                   searchInnerWidget: Padding(
-                    padding: const EdgeInsets.all(2),
+                    padding: Space.all(.1,.1),
                     child: TextField(
                       controller: searchController,
                       decoration:
@@ -114,22 +112,17 @@ class _AddressScreenState extends State<AddressScreen> {
 
           if (state is AddressDefaultScreen) {
             return DuplicateTemplate(
-        //      colors: colors,
-          //    textStyle: textStyle,
               title: "My Address",
               child: Scaffold(
                 floatingActionButtonLocation:
                     FloatingActionButtonLocation.centerFloat,
                 floatingActionButton: SizedBox(
-                  height: 60,
-                 width: Get.size.width * 0.5,
+                  height: AppDimensions.normalize(22),
+                 width: AppDimensions.normalize(60),
                   child: FloatingActionButton.extended(
-                    //  backgroundColor: colors.primary,
                       onPressed: () {
                         addAddressBottomSheet(
                             scrollPhysics: defaultPhysics,
-                   //         textStyle: textStyle,
-                     //       colors: colors,
                             osSaveClicked: () {
                               if (adNameKey.currentState!.validate() &&
                                   addressKey.currentState!.validate() &&
@@ -148,8 +141,7 @@ class _AddressScreenState extends State<AddressScreen> {
                                   snackBar(
                                       title: "Country",
                                       message: "Please select your country",
-                             //         textStyle: textStyle,
-                                      /*colors: colors*/);
+                        );
                                 }
                               }
                             },
@@ -166,13 +158,11 @@ class _AddressScreenState extends State<AddressScreen> {
                       },
                       label: AutoSizeText(
                         "Add new address",
-                      //  style: textStyle.bodyNormal
-                           // .copyWith(color: colors.whiteColor),
                         maxLines: 2,
                       )),
                 ),
                 body: ListView.builder(
-                  padding: const EdgeInsets.only(bottom: 20),
+                  padding: Space.v,
                   physics: duplicateController.uiDuplicate.defaultScroll,
                   itemCount: state.addressList.length,
                   itemBuilder: (context, index) {
@@ -180,39 +170,34 @@ class _AddressScreenState extends State<AddressScreen> {
 
                     return Container(
                       decoration: BoxDecoration(
-                        //  color: colors.gray,
+                        color: Color(0xffafc282),
                           borderRadius: BorderRadius.circular(12)),
-                      margin: const EdgeInsets.fromLTRB(15, 10, 15, 15),
-                      padding: const EdgeInsets.all(12),
+                      margin: Space.all(.7,.7),
+                      padding:Space.all(.8,.2),
                       child: Row(
                         children: [
                           SizedBox(
-                            width: 60,
-                            height: 60,
+                            width: AppDimensions.normalize(30),
+                            height: AppDimensions.normalize(30),
                             child: CircleAvatar(
-                           //   backgroundColor: colors.whiteColor,
                               child: LottieBuilder.network(locationLottie),
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
+                          Space.x1!,
                           SizedBox(
-                            width: Get.size.width * 0.6,
+                            width:AppDimensions.normalize(50),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   address.addressName,
-                                //  style: textStyle.titleLarge,
+                                  style: AppText.b1b,
                                 ),
-                                const SizedBox(
-                                  height: 7,
-                                ),
+                                Space.y!,
                                 AutoSizeText(
                                   address.addressDetail,
                                   maxLines: 2,
-                               //   style: textStyle.bodySmall,
+                                 style: AppText.b2b,
                                 ),
                               ],
                             ),
@@ -223,7 +208,6 @@ class _AddressScreenState extends State<AddressScreen> {
                                 CupertinoButton(
                                   child: Icon(
                                     CupertinoIcons.delete,
-                                   // color: colors.blackColor,
                                   ),
                                   onPressed: () {
                                     showCupertinoDialog(
@@ -232,17 +216,14 @@ class _AddressScreenState extends State<AddressScreen> {
                                         return CupertinoAlertDialog(
                                           title: Text(
                                             "Remove address",
-                                        //    style: textStyle.titleLarge,
                                           ),
                                           content: Text(
                                             "Are you sure to remove address",
-                                           // style: textStyle.bodyNormal,
                                           ),
                                           actions: [
                                             CupertinoButton(
                                               child: Text(
                                                 "Cancel",
-                                             //   style: textStyle.bodyNormal,
                                               ),
                                               onPressed: () {
                                                 Get.back();
@@ -251,9 +232,6 @@ class _AddressScreenState extends State<AddressScreen> {
                                             CupertinoButton(
                                               child: Text(
                                                 "Yes",
-                                             //   style: textStyle.bodyNormal
-                                               //     .copyWith(
-                                                 //       color: colors.red),
                                               ),
                                               onPressed: () {
                                                 Get.back();
@@ -279,8 +257,6 @@ class _AddressScreenState extends State<AddressScreen> {
 
                                       addAddressBottomSheet(
                                         scrollPhysics: defaultPhysics,
-                                 //       textStyle: textStyle,
-                                   //     colors: colors,
                                         osSaveClicked: () {
                                           if (adNameKey.currentState!
                                                   .validate() &&
@@ -312,8 +288,7 @@ class _AddressScreenState extends State<AddressScreen> {
                                                   title: "Country",
                                                   message:
                                                       "Please select your country",
-                                              //    textStyle: textStyle,
-                                                 /* colors: colors*/);
+                                    );
                                             }
                                           }
                                         },
@@ -328,9 +303,7 @@ class _AddressScreenState extends State<AddressScreen> {
                                         dropDown: dropDown(
                                             countryList: state.countryItemList),
                                       );
-                                    },
-                                 /*   colors: colors,
-                                    textStyle: textStyle*/),
+                                    },),
                               ],
                             ),
                           ),
@@ -351,22 +324,17 @@ class _AddressScreenState extends State<AddressScreen> {
             );
           } else if (state is AddressEmpty) {
             return DuplicateTemplate(
-           /*   colors: colors,
-              textStyle: textStyle,*/
               title: "My Address",
               child: Scaffold(
                 floatingActionButtonLocation:
                     FloatingActionButtonLocation.centerFloat,
                 floatingActionButton: SizedBox(
-                  height: 60,
-                  width: Get.size.width * 0.5,
+                  height: AppDimensions.normalize(20),
+                  width:AppDimensions.normalize(65),
                   child: FloatingActionButton.extended(
-                   //   backgroundColor: colors.primary,
                       onPressed: () {
                         addAddressBottomSheet(
                             scrollPhysics: defaultPhysics,
-                       /*     textStyle: textStyle,
-                            colors: colors,*/
                             osSaveClicked: () {
                               if (adNameKey.currentState!.validate() &&
                                   addressKey.currentState!.validate() &&
@@ -385,8 +353,7 @@ class _AddressScreenState extends State<AddressScreen> {
                                   snackBar(
                                       title: "Country",
                                       message: "Please select your country",
-                                 /*     textStyle: textStyle,
-                                      colors: colors*/);
+                           );
                                 }
                               }
                             },
@@ -402,28 +369,27 @@ class _AddressScreenState extends State<AddressScreen> {
                       },
                       label: AutoSizeText(
                         "Add new address",
-                    //    style: textStyle.bodyNormal
-                      //      .copyWith(color: colors.whiteColor),
                         maxLines: 2,
                       )),
                 ),
-                body: Column(
-                  children: [
-                    LottieBuilder.network(
-                      emptyListLottie,
-                      width: Get.size.width * 0.8,
-                      height: Get.size.height * 0.6,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
-                      child: AutoSizeText(
+                body: Padding(
+                  padding: Space.all(1.5,1.5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      LottieBuilder.network(
+                        emptyListLottie,
+                        width: AppDimensions.normalize(125),
+                        height: AppDimensions.normalize(110),
+                      ),
+                      Space.y1!,
+                      AutoSizeText(
                         "your address list is empty try to add new one",
-                       // style: textStyle.bodyNormal
-                         //   .copyWith(fontWeight: FontWeight.bold),
+                     style: AppText.h3b,
                         maxLines: 2,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             );

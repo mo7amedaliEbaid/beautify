@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart'as badges;
-import 'package:provider/provider.dart';
 import 'package:beautify/configs/configs.dart';
 import '../../model/controllers/duplicate_controller.dart';
-import '../../providers/theme_provider.dart';
 class CartLengthBadge extends StatelessWidget {
   const CartLengthBadge({
     Key? key,
@@ -16,7 +14,6 @@ class CartLengthBadge extends StatelessWidget {
   final GestureTapCallback badgeCallback;
   @override
   Widget build(BuildContext context) {
-    final themeProvider=Provider.of<ThemeProvider>(context);
     return ValueListenableBuilder(
       valueListenable: duplicateController.cartBoxListenable,
       builder: (context, value, child) {

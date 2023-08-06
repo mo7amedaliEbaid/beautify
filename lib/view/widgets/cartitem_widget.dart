@@ -36,12 +36,10 @@ class CartBottomItem extends StatelessWidget {
               widget != null ? widget! : Container(),
               Expanded(
                 child: SizedBox(
-                  height: 50,
+                  height: AppDimensions.normalize(15),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(AppDimensions.normalize(4)),
                     child: ElevatedButton(
-                        style: ButtonStyle(
-                          ),
                         onPressed: callback,
                         child: Text(
                           navigateName,

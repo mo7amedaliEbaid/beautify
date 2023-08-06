@@ -1,3 +1,4 @@
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -33,8 +34,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     final profileController = Get.find<ProfileController>();
     final ProfileFunctions profileFunctions =
         profileController.profileFunctions;
-  //  final textStyle = duplicateController.textStyle;
-    //final colors = duplicateController.colors;
     return BlocProvider(
       create: (context) {
         final bloc = FavoriteBloc();
@@ -47,22 +46,17 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           if (state is FavoriteSuccess) {
             return DuplicateTemplate(
               title: "Favorite Screen",
-             // colors: colors,
-              //textStyle: textStyle,
               child: ListView.builder(
-                padding: const EdgeInsets.only(bottom: 40),
+                padding: Space.v,
                 physics: duplicateController.uiDuplicate.defaultScroll,
                 itemCount: state.productList.length,
                 itemBuilder: (context, index) {
                   final product = state.productList[index];
                   return HorizontalProductView(
-                     // colors: colors,
                       product: product,
-                      //textStyle: textStyle,
                       widget: CupertinoButton(
                         child: Icon(
                           Icons.delete,
-                        //  color: colors.whiteColor,
                         ),
                         onPressed: () async {
                           bool isDeleted = await profileFunctions
@@ -72,15 +66,12 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           }
                         },
                       ),
-                      margin: const EdgeInsets.only(
-                          top: 15, right: 8, left: 8, bottom: 15));
+                      margin: Space.all(.5,.5));
                 },
               ),
             );
           } else if (state is FavoriteEmpty) {
             return EmptyScreen(
-            //    colors: colors,
-               // textStyle: textStyle,
                 title: "Favorite Screen",
                 content: "you're favorite list is empty",
                 lottieName: emptyListLottie);

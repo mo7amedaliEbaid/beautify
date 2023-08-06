@@ -69,10 +69,9 @@ class _LandingScreenState extends State<LandingScreen> {
                 width: AppDimensions.normalize(10),
                 height: AppDimensions.normalize(3),
                 decoration: BoxDecoration(
-                   /* color: colors.whiteColor,*/ borderRadius: BorderRadius.circular(12)),
+                borderRadius: BorderRadius.circular(12)),
                 child: Icon(
                   CupertinoIcons.right_chevron,
-                 // color: colors.blackColor,
                 ),
               ),
               renderSkipBtn: Container(
@@ -80,7 +79,6 @@ class _LandingScreenState extends State<LandingScreen> {
                   width: 40,
                   height: 30,
                   decoration: BoxDecoration(
-                    //  color: colors.whiteColor,
                       borderRadius: BorderRadius.circular(12)),
                   child: Icon(
                     Icons.skip_next,

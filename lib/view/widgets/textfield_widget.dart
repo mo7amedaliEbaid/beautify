@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 Widget textField(
     {
+     required BuildContext context,
       required TextEditingController controller,
       required GlobalKey<FormState> formKey,
       required String lable,
@@ -15,6 +16,7 @@ Widget textField(
       child: Form(
         key: formKey,
         child: TextFormField(
+          onTapOutside: (event)=>FocusScope.of(context).unfocus(),
             obscureText: obscureText,
             keyboardType: inputType,
             validator: (value) {

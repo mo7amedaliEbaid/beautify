@@ -20,9 +20,6 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
   final duplicateController = Get.find<DuplicateController>();
   final initialController = Get.find<InitialController>();
-
- // late CustomColors colors = duplicateController.colors;
-  //late CustomTextStyle textStyle = duplicateController.textStyle;
   late int slectedIndex = widget.index;
   late PageController pageController =
       PageController(initialPage: slectedIndex, keepPage: true);
@@ -69,35 +66,26 @@ class _RootScreenState extends State<RootScreen> with WidgetsBindingObserver {
         selectedIndex: slectedIndex,
         items: [
           BottomNavyBarItem(
-            //  activeColor: colors.primary,
               textAlign: TextAlign.center,
-           //   inactiveColor: colors.blackColor,
               icon: const Icon(
                 CupertinoIcons.home,
               ),
               title: Text(
                 "Home",
-            //    style: textStyle.bodyNormal.copyWith(color: colors.primary),
               )),
           BottomNavyBarItem(
-            //  activeColor: colors.primary,
               textAlign: TextAlign.center,
-             // inactiveColor: colors.blackColor,
               icon: const Icon(
                 CupertinoIcons.cart,
               ),
               title: Text(
                 "Cart",
-               // style: textStyle.bodyNormal.copyWith(color: colors.primary),
               )),
           BottomNavyBarItem(
-          //    activeColor: colors.primary,
-            //  inactiveColor: colors.blackColor,
               textAlign: TextAlign.center,
               icon: const Icon(CupertinoIcons.person_alt_circle),
               title: Text(
                 "Profile",
-         //       style: textStyle.bodyNormal.copyWith(color: colors.primary),
               )),
         ],
         onItemSelected: (value) {

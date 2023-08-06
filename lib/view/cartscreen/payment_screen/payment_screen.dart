@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:beautify/configs/configs.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../../model/controllers/duplicate_controller.dart';
@@ -30,8 +30,8 @@ class PaymentScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: SizedBox(
-        height: 60,
-        width: Get.mediaQuery.size.width * 0.7,
+        height: AppDimensions.normalize(20),
+        width: Get.mediaQuery.size.width * 0.6,
         child: FloatingActionButton.extended(
             onPressed: () {
               showCupertinoDialog(
@@ -43,7 +43,6 @@ class PaymentScreen extends StatelessWidget {
                     ),
                     content: Text(
                       "Do you want pay?",
-                  //    style: textStyle.bodyNormal,
                     ),
                     actions: [
                       CupertinoButton(
@@ -72,8 +71,7 @@ class PaymentScreen extends StatelessWidget {
                             snackBar(
                                 title: "Pay",
                                 message: "Successfully payed",
-                              //  textStyle: textStyle,
-                               /* colors: colors*/);
+                         );
                           }
                         },
                       ),
@@ -84,37 +82,34 @@ class PaymentScreen extends StatelessWidget {
             },
             label: Text(
               "Pay",
-            //  style: textStyle.titleLarge.copyWith(color: colors.whiteColor),
             )),
       ),
       appBar: AppBar(
-       // backgroundColor: colors.whiteColor,
-      //  foregroundColor: colors.blackColor,
         centerTitle: true,
         automaticallyImplyLeading: true,
         title: Text(
           "E-Payment",
-         // style: textStyle.titleLarge,
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15),
+        padding:Space.v1!,
         child: SingleChildScrollView(
           physics: duplicateController.uiDuplicate.defaultScroll,
           child: Column(
             children: [
+              Space.y1!,
               Align(
                 alignment: Alignment.center,
                 child: SvgPicture.string(
                   paymentFunctions.createBarcode(),
                 ),
               ),
+              Space.y1!,
               duplicateContainer(
-              //  colors: colors,
                 widget: Column(
                   children: [
                     SizedBox(
-                      height: 100,
+                      height: AppDimensions.normalize(40),
                       width: Get.mediaQuery.size.width * 0.8,
                       child: GridView.builder(
                         physics: duplicateController.uiDuplicate.defaultScroll,
@@ -126,9 +121,8 @@ class PaymentScreen extends StatelessWidget {
                                 crossAxisSpacing: 10),
                         itemBuilder: (context, index) {
                           return SizedBox(
-                            height: 40,
+                            height: AppDimensions.normalize(20),
                             child: CircleAvatar(
-                             // backgroundColor: colors.whiteColor,
                               foregroundImage: CachedNetworkImageProvider(
                                   productList[index].imageUrl),
                             ),
@@ -136,29 +130,23 @@ class PaymentScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                    const SizedBox(
-                      width: 10,
-                    ),
+                   Space.y!,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
-                            width: Get.mediaQuery.size.width * 0.48,
+                            width: AppDimensions.normalize(100),
                             child: Row(
                               children: [
                                 Text(
                                   productList[0].name.substring(0, 10),
-                                 /* style: textStyle.bodyNormal
-                                      .copyWith(fontWeight: FontWeight.bold),*/
                                   overflow: TextOverflow.clip,
                                   textAlign: TextAlign.start,
+                                  style: AppText.b1b,
                                 ),
-                                const SizedBox(
-                                  width: 7,
-                                ),
+                                Space.x!,
                                 Text(
                                   "and more",
-                                //  style: textStyle.bodySmall,
                                 ),
                               ],
                             )),
@@ -166,13 +154,11 @@ class PaymentScreen extends StatelessWidget {
                           children: [
                             Icon(
                               CupertinoIcons.number_circle,
-                           //   color: colors.blackColor,
                               size: 20,
                             ),
                             Text(
                               "Count : ${productList.length}",
-                             // style: textStyle.bodySmall
-                               //   .copyWith(color: colors.blackColor),
+                             style: AppText.h3b
                             ),
                           ],
                         )
@@ -182,63 +168,43 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ),
               duplicateContainer(
-                 // colors: colors,
                   widget: Column(
                     children: [
                       duplicateRowItem(
-                   //       colors: colors,
                           prefix: Text(
                             "Recipient Name",
-                           // style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             profileController.information.name,
-                          //  style: textStyle.bodyNormal
-                           //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                         // colors: colors,
                           prefix: Text(
                             "Address",
-                         //   style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             addressDetail,
-                           // style: textStyle.bodyNormal
-                             //   .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                        //  colors: colors,
                           prefix: Text(
                             "Payment Methods",
-                         //   style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             "My E-Wallet",
-                         //   style: textStyle.bodyNormal
-                           //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                         // colors: colors,
                           prefix: Text(
                             "Date",
-                          //  style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             dateTime.toString().substring(0, 16),
-                         //   style: textStyle.bodyNormal
-                           //     .copyWith(fontWeight: FontWeight.bold),
                           )),
                       duplicateRowItem(
-                      //   colors: colors,
                           prefix: Text(
                             "Total",
-                           // style: textStyle.bodyNormal,
                           ),
                           suffix: Text(
                             "€$totalPrice",
-                         //   style: textStyle.bodyNormal
-                          //      .copyWith(fontWeight: FontWeight.bold),
+                            style: AppText.h3b,
                           )),
                     ],
                   )),
@@ -250,34 +216,28 @@ class PaymentScreen extends StatelessWidget {
   }
 
   Widget duplicateContainer(
-      {required Widget widget/*, required CustomColors colors*/}) {
+      {required Widget widget}) {
     return Container(
-        width: Get.mediaQuery.size.width,
-        margin: const EdgeInsets.only(top: 25, bottom: 25),
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(
-       //   color: colors.gray,
-          borderRadius: BorderRadius.circular(15),
-        ),
+        width: AppDimensions.size?.width,
+        margin: Space.all(.5,.5),
+        padding: Space.all(.5,.5),
         child: widget);
   }
 
   Widget duplicateRowItem(
       {required Widget prefix,
       required Widget suffix,
-   /*   required CustomColors colors*/}) {
+   }) {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 10),
+          padding: Space.all(.5,.5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [prefix, suffix],
           ),
         ),
-        const SizedBox(
-          height: 10,
-        ),
+        Space.y!,
         Divider(
           thickness: 0.5,
           height: 1,

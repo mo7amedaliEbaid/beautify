@@ -7,14 +7,11 @@ import 'package:get/get_core/src/get_main.dart';
 
 void snackBar(
     {required String title,
-      required String message,
-     // required CustomTextStyle textStyle,
-/*      required CustomColors colors*/}) {
+      required String message,}) {
   Get.snackbar(title, "",
       messageText: AutoSizeText(
         message,
-     //   style: textStyle.bodyNormal,
         maxLines: 1,
       ),
-     /* backgroundColor: colors.gray*/);
+    );
 }
