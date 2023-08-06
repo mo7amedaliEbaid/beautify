@@ -114,11 +114,3 @@ Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/beautify/blob/c
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/payment.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/orderdetails.jpg" width="170" />
 </p>
-
-For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots       
-
-## APK
-https://drive.google.com/drive/folders/1CLV36YolNhIGQIrm5r094isY2yt7LWsT?usp=sharing
-
-## Video
-https://drive.google.com/drive/folders/1pgcdRzZwbv0q-MUSG1ZbRfsci5IlU4jp?usp=sharing
