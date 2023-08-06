@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-
-import '../../../../model/controllers/duplicate_controller.dart';
 import '../../../../model/controllers/profile_controller.dart';
 import '../../../../model/tools/entities/AddressEntity/address_entity.dart';
 
@@ -15,16 +13,14 @@ part 'address_state.dart';
 class AddressBloc extends Bloc<AddressEvent, AddressState> {
   AddressBloc() : super(AddressInitial()) {
     on<AddressEvent>((event, emit) async {
-      final duplicateController = Get.find<DuplicateController>();
       final profileController = Get.find<ProfileController>();
       final addressFunctions = profileController.addressFunctions;
-   //   final textStyle = duplicateController.textStyle;
       try {
         if (event is AddressStart) {
           emit(AddressLoading());
           final addressList = await addressFunctions.getAddressList();
           final countryItemList =
-              await addressFunctions.countryMenuList(/*textStyle: textStyle*/);
+              await addressFunctions.countryMenuList();
           if (addressList.isNotEmpty) {
             emit(AddressDefaultScreen(
                 addressList:addressList, countryItemList: countryItemList));
@@ -38,7 +34,7 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
           if (isCompleted) {
             final addressList = await addressFunctions.getAddressList();
             final countryItemList =
-                await addressFunctions.countryMenuList(/*textStyle: textStyle*/);
+                await addressFunctions.countryMenuList();
             if (addressList.isNotEmpty) {
               emit(AddressDefaultScreen(
                   addressList: addressList, countryItemList: countryItemList));
@@ -55,7 +51,7 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
           if (isCompleted) {
             final addressList = await addressFunctions.getAddressList();
             final countryItemList =
-                await addressFunctions.countryMenuList(/*textStyle: textStyle*/);
+                await addressFunctions.countryMenuList();
             emit(AddressEditedSuccessfully());
             emit(AddressDefaultScreen(
                 addressList: addressList, countryItemList: countryItemList));
@@ -68,7 +64,7 @@ class AddressBloc extends Bloc<AddressEvent, AddressState> {
               addressEntity: event.addressEntity);
           final addressList = await addressFunctions.getAddressList();
           final countryItemList =
-              await addressFunctions.countryMenuList(/*textStyle: textStyle*/);
+              await addressFunctions.countryMenuList();
           emit(AddressDefaultScreen(
               addressList: addressList, countryItemList: countryItemList));
         }
