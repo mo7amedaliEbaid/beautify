@@ -72,6 +72,8 @@ flutter_staggered_grid_view:
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/featureddark.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/searchdark.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/searchresultdark.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/ab41b3045bda1a71646d9a0fc4459174077382bc/updated_screenshots/cartdark.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/ab41b3045bda1a71646d9a0fc4459174077382bc/updated_screenshots/cartlight.jpg" width="170" />
 </p>
 
 For more screen shots https://github.com/mo7amedaliEbaid/beautify/blob/94142fc1629cab28c32868817d1517add2f2e40b/beautify_screenshots       
