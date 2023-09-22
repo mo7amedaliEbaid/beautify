@@ -7,7 +7,7 @@ Beautify is a flutter e-commerce app for displaying makeup products ,managing us
 - Getx
 - Provider
 
-## Design Pattern
+## Architechture Pattern
 - MVVM
 
 ## Features
