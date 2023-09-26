@@ -98,7 +98,6 @@ flutter_staggered_grid_view:
 Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots)
 <br />
 <p float="left">
-<img src="" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/landingdark.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/landing.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/homedark.jpg" width="170" />
