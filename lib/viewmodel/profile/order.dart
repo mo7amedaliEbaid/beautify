@@ -2,9 +2,9 @@ import 'package:hive/hive.dart';
 
 import '../../model/tools/entities/OrderEntity/order_entity.dart';
 
-
 class OrderFunctions {
   final String orderBoxName = "Order Box";
+
   Future<void> openOrderBox() async {
     bool isOpen = Hive.isBoxOpen(orderBoxName);
     if (!isOpen) {

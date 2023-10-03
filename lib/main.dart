@@ -47,6 +47,7 @@ class _MyAppState extends State<MyApp> {
     widget.provider.init();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     bool isFirst =
@@ -59,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: theme.themeDark,
       title: 'Beautify',
       home: isFirst
-          ?  LandingScreen()
+          ? LandingScreen()
           : const RootScreen(
               index: 0,
             ),

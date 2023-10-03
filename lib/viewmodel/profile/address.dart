@@ -76,9 +76,11 @@ class AddressFunctions {
     return true;
   }
 
-  Future<List<DropdownMenuItem>> countryMenuList(/*{
+  Future<List<DropdownMenuItem>> countryMenuList(
+      /*{
     required CustomTextStyle textStyle,
-  }*/) async {
+  }*/
+      ) async {
     List<DropdownMenuItem> popupMenuList = [];
     for (var element in countriesList) {
       popupMenuList.add(
@@ -86,7 +88,7 @@ class AddressFunctions {
           value: element,
           child: Text(
             element,
-          //  style: textStyle.bodyNormal,
+            //  style: textStyle.bodyNormal,
           ),
         ),
       );
@@ -95,21 +97,19 @@ class AddressFunctions {
   }
 
   Future<List<DropdownMenuItem>> addressItemList(
-    /*  {required CustomTextStyle textStyle}*/) async {
+      /*  {required CustomTextStyle textStyle}*/) async {
     final List<AddressEntity> addressList = await getAddressList();
     final List<DropdownMenuItem> popupMenuList = [];
     for (var element in addressList) {
       popupMenuList.add(
         DropdownMenuItem(
-         
           value: element.addressDetail,
           child: Text(
             element.addressName,
-         //   style: textStyle.bodyNormal,
+            //   style: textStyle.bodyNormal,
           ),
         ),
-          
-          );
+      );
     }
     return popupMenuList;
   }
