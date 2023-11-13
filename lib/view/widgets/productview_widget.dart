@@ -6,7 +6,6 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:provider/provider.dart';
 
 import '../../model/tools/jsonparse/product_parse.dart';
-import '../../providers/theme_provider.dart';
 import '../homescreen/homedetails_screen/detail_screen.dart';
 import 'networkimage_widget.dart';
 class HorizontalProductView extends StatelessWidget {
@@ -22,7 +21,7 @@ class HorizontalProductView extends StatelessWidget {
   final EdgeInsetsGeometry margin;
   @override
   Widget build(BuildContext context) {
-    final themeprovider=Provider.of<ThemeProvider>(context);
+
     return InkWell(
       onTap: () {
         Get.to(DetailScreen(productEntity: product));
@@ -31,7 +30,7 @@ class HorizontalProductView extends StatelessWidget {
         margin: margin,
         padding: Space.all(.2,.2),
         decoration: BoxDecoration(
-          color:themeprovider.isDark? Color(0xff677354):Color(0xffbbd591),
+          color:Color(0xffbbd591),
      borderRadius: BorderRadius.circular(AppDimensions.normalize(7))),
         child: Row(
           children: [

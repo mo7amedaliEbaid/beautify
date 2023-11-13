@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:badges/badges.dart' as badges;
 import 'package:badges/badges.dart';
-import 'package:beautify/providers/theme_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,7 +21,6 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeprovider = Provider.of<ThemeProvider>(context);
     final profileController = Get.find<ProfileController>();
     final ProfileFunctions profileFunctions =
         profileController.profileFunctions;
@@ -54,10 +52,7 @@ class ProfileScreen extends StatelessWidget {
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
-                      color: themeprovider.isDark
-                          ? Color(0xFC8F6E81)
-                          : Color(0xffd06dae),
-                      shape: BoxShape.circle),
+                      color: Color(0xFC8F6E81), shape: BoxShape.circle),
                   child: profileImage(),
                 ),
               ),
@@ -208,10 +203,9 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget profileItem(
-      {required String itemName,
-      required GestureTapCallback callback}) {
+      {required String itemName, required GestureTapCallback callback}) {
     return Padding(
-      padding: Space.all(.3,.2),
+      padding: Space.all(.3, .2),
       child: Column(
         children: [
           Container(
@@ -235,7 +229,7 @@ class ProfileScreen extends StatelessWidget {
           Container(
             height: 1,
             width: Get.mediaQuery.size.width,
-                 color: Colors.red,
+            color: Colors.red,
           )
         ],
       ),

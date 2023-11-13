@@ -6,7 +6,6 @@ import 'package:badges/badges.dart'as badges;
 import 'package:provider/provider.dart';
 
 import '../../model/tools/jsonparse/product_parse.dart';
-import '../../providers/theme_provider.dart';
 import '../homescreen/homedetails_screen/detail_screen.dart';
 import 'favouritebadge_widget.dart';
 import 'networkimage_widget.dart';
@@ -19,7 +18,7 @@ class ShopProductView extends StatelessWidget {
   final ProductEntity product;
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+
 
     return InkWell(
       onTap: () async {
@@ -27,12 +26,12 @@ class ShopProductView extends StatelessWidget {
       },
       child: badges.Badge(
         position: badges.BadgePosition.custom(end: 0, top: 0),
-        badgeStyle: badges.BadgeStyle(badgeColor:themeProvider.isDark?Colors.red:Colors.yellow ),
+        badgeStyle: badges.BadgeStyle(badgeColor:Colors.red),
         badgeContent: FavoriteBadge(
           product: product,
-          badgeBackgroundColor: themeProvider.isDark?Colors.green:Colors.green,
+          badgeBackgroundColor:Colors.green,
           activeColor: Colors.red,
-          inActive:themeProvider.isDark?Colors.white:Colors.white,
+          inActive:Colors.white,
         ),
         child: Column(
           children: [

@@ -11,8 +11,8 @@ import '../../model/controllers/duplicate_controller.dart';
 import '../../model/controllers/home_controller.dart';
 import '../../model/controllers/profile_controller.dart';
 
+import '../../model/controllers/theme_controller.dart';
 import '../../model/tools/jsonparse/product_parse.dart';
-import '../../providers/theme_provider.dart';
 import '../widgets/bannerlistview_widget.dart';
 import '../widgets/customloading_widget.dart';
 import '../widgets/duplicatecontainer_widget.dart';
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen>
     super.build(context);
     App.init(context);
 
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    final ThemeController themeController = Get.find();
 
     return BlocProvider(
       create: (context) {
@@ -73,12 +73,18 @@ class _HomeScreenState extends State<HomeScreen>
                 title: Text(
                   "Beautify",
                 ),
-                leading: InkWell(
+                leading: Obx(
+                      () => Switch(
+                    value: themeController.isDarkMode.value,
+                    onChanged: (value) {
+                      themeController.toggleTheme();
+                    },
+                  ), /*InkWell(
                   hoverColor: Colors.transparent,
                   onTap: () {
                     themeProvider.theme = !themeProvider.theme;
-                  },
-                  child: Container(
+                  },*/
+                 /* child: Container(
                     margin: Space.all(.5, .5),
                     decoration: BoxDecoration(
                       color: themeProvider.isDark
@@ -91,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen>
                       color: themeProvider.isDark ? Colors.yellow : Colors.grey,
                       size: AppDimensions.normalize(10),
                     ),
-                  ),
+                  ),*/
                 ),
                 actions: [
                   CupertinoButton(

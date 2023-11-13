@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:beautify/providers/theme_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +33,7 @@ class _DetailScreenState extends State<DetailScreen> {
     final profileFunctions = profileController.profileFunctions;
     final bool isInFavorite =
         profileFunctions.isInFavoriteBox(productEntity: widget.productEntity);
-final themeprovider=Provider.of<ThemeProvider>(context);
+
     return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: paddingFromRL(
@@ -137,7 +136,7 @@ final themeprovider=Provider.of<ThemeProvider>(context);
             Container(
               height: AppDimensions.normalize(150),
               decoration: BoxDecoration(
-                color:themeprovider.isDark?Colors.blue:Colors.greenAccent ,
+                color:Colors.blue ,
                   borderRadius:
                        BorderRadius.vertical(top: Radius.circular(AppDimensions.normalize(5)))),
               child: SingleChildScrollView(
